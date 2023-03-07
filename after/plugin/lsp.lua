@@ -11,7 +11,8 @@ vim.keymap.set("n", "<leader>sh", vim.lsp.buf.signature_help)
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.formatting)
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
-
+vim.keymap.set({"n", "v"}, "<leader>lca", "<cmd>Lspsaga code_action<CR>")
+vim.keymap.set("n", "lgr", "<cmd>Lspsaga rename ++project<CR>")
 
 -- all workspace diagnostics
 vim.keymap.set("n", "<leader>aa", vim.diagnostic.setqflist)

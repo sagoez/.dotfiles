@@ -1,4 +1,10 @@
 vim.g.mapleader = " "
+vim.opt_global.completeopt = { "menuone", "noinsert", "noselect" }
+vim.g.copilot_assume_mapped = true
+
+vim.g.copilot_filetypes = {
+    ["*"] = true
+}
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
