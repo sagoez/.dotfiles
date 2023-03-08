@@ -1,108 +1,251 @@
--- LSP mappings
-vim.keymap.set("n", "gd",  vim.lsp.buf.definition)
-vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { noremap=true, silent=true, buffer=bufnr })
-vim.keymap.set("n", "K",  vim.lsp.buf.hover)
-vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
-vim.keymap.set("n", "gr", vim.lsp.buf.references)
-vim.keymap.set("n", "gds", vim.lsp.buf.document_symbol)
-vim.keymap.set("n", "gws", vim.lsp.buf.workspace_symbol)
-vim.keymap.set("n", "<leader>cl", vim.lsp.codelens.run)
-vim.keymap.set("n", "<leader>sh", vim.lsp.buf.signature_help)
-vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.formatting)
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
-vim.keymap.set({"n", "v"}, "<leader>lca", "<cmd>Lspsaga code_action<CR>")
-vim.keymap.set("n", "lgr", "<cmd>Lspsaga rename ++project<CR>")
+local api = vim.api
+local map = vim.keymap.set
 
--- all workspace diagnostics
-vim.keymap.set("n", "<leader>aa", vim.diagnostic.setqflist)
-
--- all workspace errors
-vim.keymap.set("n", "<leader>ae", function()
-  vim.diagnostic.setqflist({ severity = "E" })
-end)
-
--- all workspace warnings
-vim.keymap.set("n", "<leader>aw", function()
-  vim.diagnostic.setqflist({ severity = "W" })
-end)
-
--- buffer diagnostics only
-vim.keymap.set("n", "<leader>d", vim.diagnostic.setloclist)
-
-vim.keymap.set("n", "[c", function()
-  vim.diagnostic.goto_prev({ wrap = false })
-end)
-
-vim.keymap.set("n", "]c", function()
-  vim.diagnostic.goto_next({ wrap = false })
-end)
-
--- Example mappings for usage with nvim-dap. If you don't use that, you can
--- skip these
-vim.keymap.set("n", "<leader>dc", function()
-  require("dap").continue()
-end)
-
-vim.keymap.set("n", "<leader>dr", function()
-  require("dap").repl.toggle()
-end)
-
-vim.keymap.set("n", "<leader>dK", function()
-  require("dap.ui.widgets").hover()
-end)
-
-vim.keymap.set("n", "<leader>dt", function()
-  require("dap").toggle_breakpoint()
-end)
-
-vim.keymap.set("n", "<leader>dso", function()
-  require("dap").step_over()
-end)
-
-vim.keymap.set("n", "<leader>dsi", function()
-  require("dap").step_into()
-end)
-
-vim.keymap.set("n", "<leader>dl", function()
-  require("dap").run_last()
-end)
-
--- completion related settings
--- This is similiar to what I use
-local cmp = require("cmp")
-cmp.setup({
-  sources = {
-    { name = "nvim_lsp" },
-    { name = "vsnip" },
-  },
-  snippet = {
-    expand = function(args)
-      -- Comes from vsnip
-      vim.fn["vsnip#anonymous"](args.body)
-    end,
-  },
-  mapping = cmp.mapping.preset.insert({
-    -- None of this made sense to me when first looking into this since there
-    -- is no vim docs, but you can't have select = true here _unless_ you are
-    -- also using the snippet stuff. So keep in mind that if you remove
-    -- snippets you need to remove this select
-    ["<CR>"] = cmp.mapping.confirm({ select = true }),
-    -- I use tabs... some say you should stick to ins-completion but this is just here as an example
-    ["<Tab>"] = function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      else
-        fallback()
-      end
-    end,
-    ["<S-Tab>"] = function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      else
-        fallback()
-      end
-    end,
-  }),
+require("neodev").setup({
+    -- add any options here, or leave empty to use the default settings
 })
+local lsp_config = require("lspconfig")
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+lsp_config.util.default_config = vim.tbl_extend("force", lsp_config.util.default_config, {
+    capabilities = capabilities,
+})
+
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
+
+local lsp_group = api.nvim_create_augroup("lsp", { clear = true })
+
+local on_attach = function(client, bufnr)
+    -- LSP agnostic mappings
+    map("n", "gd", vim.lsp.buf.definition)
+    map("n", "gtd", vim.lsp.buf.type_definition)
+    map("n", "K", vim.lsp.buf.hover)
+    map("n", "gi", vim.lsp.buf.implementation)
+    map("n", "gr", vim.lsp.buf.references)
+    map("n", "<leader>sh", vim.lsp.buf.signature_help)
+    map("n", "<leader>rn", vim.lsp.buf.rename)
+    map("n", "<leader>ca", vim.lsp.buf.code_action)
+    map("n", "<leader>cl", vim.lsp.codelens.run)
+
+    map("n", "<leader>o", function()
+        vim.lsp.buf.format({ async = true })
+    end)
+
+    api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+end
+
+--================================
+-- Metals specific setup
+--================================
+local metals_config = require("metals").bare_config()
+metals_config.tvp = {
+    icons = {
+        enabled = true,
+    },
+}
+
+--metals_config.cmd = { "cs", "launch", "tech.neader:langoustine-tracer_3:0.0.18", "--", "metals" }
+metals_config.settings = {
+    --disabledMode = true,
+    --bloopVersion = "1.5.3-15-49c6986e-20220816-2002",
+    showImplicitArguments = true,
+    showImplicitConversionsAndClasses = true,
+    showInferredType = true,
+    --enableSemanticHighlighting = true,
+    --fallbackScalaVersion = "2.13.10",
+    serverVersion = "latest.snapshot",
+    --serverVersion = "0.11.2+74-7a6a65a7-SNAPSHOT",
+    --serverVersion = "0.11.11-SNAPSHOT",
+    --testUserInterface = "Test Explorer",
+}
+
+metals_config.init_options.statusBarProvider = "on"
+metals_config.capabilities = capabilities
+
+metals_config.on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+
+    map("v", "K", require("metals").type_of_range)
+
+    map("n", "<leader>ws", function()
+        require("metals").hover_worksheet({ border = "single" })
+    end)
+
+    map("n", "<leader>tt", require("metals.tvp").toggle_tree_view)
+
+    map("n", "<leader>tr", require("metals.tvp").reveal_in_tree)
+
+    map("n", "<leader>mmc", require("metals").commands)
+
+    map("n", "<leader>mts", function()
+        require("metals").toggle_setting("showImplicitArguments")
+    end)
+
+    -- A lot of the servers I use won't support document_highlight or codelens,
+    -- so we juse use them in Metals
+    api.nvim_create_autocmd("CursorHold", {
+        callback = vim.lsp.buf.document_highlight,
+        buffer = bufnr,
+        group = lsp_group,
+    })
+    api.nvim_create_autocmd("CursorMoved", {
+        callback = vim.lsp.buf.clear_references,
+        buffer = bufnr,
+        group = lsp_group,
+    })
+    api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
+        callback = vim.lsp.codelens.refresh,
+        buffer = bufnr,
+        group = lsp_group,
+    })
+    api.nvim_create_autocmd("FileType", {
+        pattern = { "dap-repl" },
+        callback = function()
+            require("dap.ext.autocompl").attach()
+        end,
+        group = lsp_group,
+    })
+
+    -- nvim-dap
+    -- I only use nvim-dap with Scala, so we keep it all in here
+    local dap = require("dap")
+
+    dap.configurations.scala = {
+        {
+            type = "scala",
+            request = "launch",
+            name = "Run or test with input",
+            metals = {
+                runType = "runOrTestFile",
+                args = function()
+                    local args_string = vim.fn.input("Arguments: ")
+                    return vim.split(args_string, " +")
+                end,
+            },
+        },
+        {
+            type = "scala",
+            request = "launch",
+            name = "Run or Test",
+            metals = {
+                runType = "runOrTestFile",
+            },
+        },
+        {
+            type = "scala",
+            request = "launch",
+            name = "Test Target",
+            metals = {
+                runType = "testTarget",
+            },
+        },
+        {
+            type = "scala",
+            request = "launch",
+            name = "Run minimal2 main",
+            metals = {
+                mainClass = "minimal2.Main",
+                buildTarget = "minimal",
+            },
+        },
+    }
+
+    map("n", "<leader>dc", require("dap").continue)
+    map("n", "<leader>dr", require("dap").repl.toggle)
+    map("n", "<leader>dK", require("dap.ui.widgets").hover)
+    map("n", "<leader>dt", function()
+        require("dap").toggle_breakpoint('x == 6')
+    end)
+    map("n", "<leader>dso", require("dap").step_over)
+    map("n", "<leader>dsi", require("dap").step_into)
+    map("n", "<leader>drl", require("dap").run_last)
+
+    dap.listeners.after["event_terminated"]["nvim-metals"] = function(session, body)
+        --vim.notify("Tests have finished!")
+        dap.repl.open()
+    end
+
+    require("metals").setup_dap()
+end
+
+local nvim_metals_group = api.nvim_create_augroup("nvim-metals", { clear = true })
+api.nvim_create_autocmd("FileType", {
+    pattern = { "scala", "sbt", "java" },
+    callback = function()
+        require("metals").initialize_or_attach(metals_config)
+    end,
+    group = nvim_metals_group,
+})
+
+-- TODO: Move to rust_tools.lua
+require("rust-tools").setup({
+    tools = { hover_with_actions = false },
+    server = { on_attach = on_attach },
+})
+
+-- For editing tree-sitter grammars
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    pattern = { "grammar.js", "corpus/*.txt" },
+    callback = function()
+        vim.cmd("setfiletype tree-sitter-grammar")
+    end,
+})
+
+vim.api.nvim_create_autocmd({ "BufReadPost" }, {
+    pattern = { "grammar.js" },
+    command = "set syntax=javascript",
+})
+
+lsp_config.lua_ls.setup({
+    on_attach = on_attach,
+    commands = {
+        Format = {
+            function()
+                require("stylua-nvim").format_file()
+            end,
+        },
+    },
+    settings = {
+        Lua = {
+            diagnostics = { globals = { "vim", "it", "describe", "before_each" } },
+            telemetry = { enable = false },
+        },
+    },
+})
+
+lsp_config.jsonls.setup({
+    on_attach = on_attach,
+    commands = {
+        Format = {
+            function()
+                vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line("$"), 0 })
+            end,
+        },
+    },
+})
+
+lsp_config.yamlls.setup({
+    on_attach = on_attach,
+    settings = {
+        yaml = {
+            schemas = {
+                ["https://raw.githubusercontent.com/oyvindberg/bleep/master/schema.json"] = "bleep.yaml",
+            },
+        },
+    },
+})
+
+lsp_config.smithy_ls.setup({
+    on_attach = on_attach,
+    cmd = { "cs", "launch", "com.disneystreaming.smithy:smithy-language-server:0.0.21", "--", "0" },
+})
+
+-- These server just use the vanilla setup
+local servers = { "bashls", "dockerls", "html", "tsserver", "gopls", "clangd" }
+for _, server in pairs(servers) do
+    lsp_config[server].setup({ on_attach = on_attach })
+end
+
+-- Uncomment for trace logs from neovim
+-- vim.lsp.set_log_level('trace')
 
