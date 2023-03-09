@@ -1,10 +1,10 @@
 local builtin = require('telescope.builtin')
 
 vim.keymap.set('n', '<C-p>', builtin.git_files, {})
-vim.keymap.set('n', '<leader>ps', function()
-    builtin.grep_string({ search = vim.fn.input("Grep > ") });
-end)
-vim.keymap.set("n", "<leader>pf", function()
+-- vim.keymap.set('n', '<leader>ps', function()
+-- builtin.grep_string({ search = vim.fn.input("Grep > ") });
+-- end)
+vim.keymap.set("n", "<leader>ff", function()
     require("telescope.builtin").find_files({ layout_strategy = "vertical" })
 end)
 
@@ -37,7 +37,7 @@ require("telescope").setup({
         grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
         mappings = {
             n = {
-                ["f"] = actions.send_to_qflist,
+                    ["f"] = actions.send_to_qflist,
             },
         },
     },

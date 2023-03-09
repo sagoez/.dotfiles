@@ -6,16 +6,16 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
-    use{ -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    config = function()
-        vim.cmd.colorscheme 'onedark'
-    end}
+    use { -- Theme inspired by Atom
+        'navarasu/onedark.nvim',
+        config = function()
+            vim.cmd.colorscheme 'onedark'
+        end }
     use { 'ThePrimeagen/harpoon' }
     use { 'mbbill/undotree' }
     use { 'tpope/vim-fugitive' }
     use({ "folke/neodev.nvim" })
-    use{
+    use {
         "hrsh7th/nvim-cmp",
         requires = {
             { "hrsh7th/cmp-buffer" },
@@ -26,16 +26,16 @@ return require('packer').startup(function(use)
             { "hrsh7th/cmp-nvim-lsp-signature-help" },
         },
     }
-    use{ "dstein64/vim-startuptime" }
-    use{ "jbyuki/venn.nvim" }
-    use{ "kevinhwang91/nvim-bqf" }
-    use{ "kyazdani42/nvim-web-devicons" }
-    use{
+    use { "dstein64/vim-startuptime" }
+    use { "jbyuki/venn.nvim" }
+    use { "kevinhwang91/nvim-bqf" }
+    use { "kyazdani42/nvim-web-devicons" }
+    use {
         "lukas-reineke/indent-blankline.nvim",
     }
-    use{ "machakann/vim-sandwich" }
-    use { "neovim/nvim-lspconfig"}
-    use{
+    use { "machakann/vim-sandwich" }
+    use { "neovim/nvim-lspconfig" }
+    use {
         "nvim-telescope/telescope.nvim",
         requires = {
             { "nvim-lua/popup.nvim" },
@@ -43,11 +43,11 @@ return require('packer').startup(function(use)
             { "nvim-telescope/telescope-fzy-native.nvim" },
         },
     }
-    use{
+    use {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
     }
-    use { "simrat39/rust-tools.nvim"}
+    use { "simrat39/rust-tools.nvim" }
     use {
         "scalameta/nvim-metals",
         requires = {
@@ -55,8 +55,8 @@ return require('packer').startup(function(use)
             "mfussenegger/nvim-dap",
         },
     }
-    use {'folke/zen-mode.nvim'}
-    use {'kevinhwang91/nvim-bqf'}
+    use { 'folke/zen-mode.nvim' }
+    use { 'kevinhwang91/nvim-bqf' }
     use {
         "glepnir/lspsaga.nvim",
         branch = "main",
@@ -64,13 +64,13 @@ return require('packer').startup(function(use)
             require("lspsaga")
         end,
         requires = {
-            {"nvim-tree/nvim-web-devicons"},
+            { "nvim-tree/nvim-web-devicons" },
         }
     }
-    use{ "stevearc/dressing.nvim" }
-    use{ "rebelot/kanagawa.nvim" }
-    use{ "wakatime/vim-wakatime" }
-    use{ "tpope/vim-vinegar" }
-    use{ "windwp/nvim-autopairs"}
-    use {"github/copilot.vim"}
+    use { "stevearc/dressing.nvim" }
+    use { "rebelot/kanagawa.nvim" }
+    use { "wakatime/vim-wakatime" }
+    use { "tpope/vim-vinegar" }
+    use { "windwp/nvim-autopairs" }
+    use { "github/copilot.vim" }
 end)
