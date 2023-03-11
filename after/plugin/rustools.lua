@@ -31,3 +31,7 @@ local opts = {
 }
 
 require("rust-tools").setup(opts)
+
+vim.keymap.set("n", "<leader>rh", "<cmd>RustHoverActions<CR>")
+vim.keymap.set("n", "<leader>rr", "<cmd>RustRunnables<CR>")
+vim.keymap.set("n", "<leader>ra", "<cmd>RustCodeAction<CR>")

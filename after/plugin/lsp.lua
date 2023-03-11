@@ -27,7 +27,7 @@ local on_attach = function(client, bufnr)
     map("n", "<leader>ca", vim.lsp.buf.code_action)
     map("n", "<leader>cl", vim.lsp.codelens.run)
 
-    map("n", "<leader>o", function()
+    map("n", "<leader>f", function()
         vim.lsp.buf.format({ async = true })
     end)
 
