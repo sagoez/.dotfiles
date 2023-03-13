@@ -34,6 +34,7 @@ return require('packer').startup(function(use)
         "lukas-reineke/indent-blankline.nvim",
     }
     use { "machakann/vim-sandwich" }
+    use { "eandrju/cellular-automaton.nvim" }
     use { "neovim/nvim-lspconfig" }
     use {
         "nvim-telescope/telescope.nvim",
