@@ -26,13 +26,10 @@ return require('packer').startup(function(use)
             { "hrsh7th/cmp-nvim-lsp-signature-help" },
         },
     }
+    use { "lukas-reineke/indent-blankline.nvim" }
     use { "dstein64/vim-startuptime" }
     use { "jbyuki/venn.nvim" }
-    use { "kevinhwang91/nvim-bqf" }
     use { "kyazdani42/nvim-web-devicons" }
-    use {
-        "lukas-reineke/indent-blankline.nvim",
-    }
     use { "machakann/vim-sandwich" }
     use { "eandrju/cellular-automaton.nvim" }
     use { "neovim/nvim-lspconfig" }
@@ -44,6 +41,7 @@ return require('packer').startup(function(use)
             { "nvim-telescope/telescope-fzy-native.nvim" },
         },
     }
+    use { "vim-airline/vim-airline" }
     use {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
