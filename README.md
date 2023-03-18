@@ -1,8 +1,6 @@
-# NVIM Configuration
+# Dotfiles
 
-To make sure that the configuration works, you need to install the following:
-
-Once downloaded, you need to install the plugins. To do so, run the following command:
+To make sure that the configuration works, you need to install GNU Stow. Once downloaded, you need to install the plugins. To do so, run the following command:
 
 ```bash
 cd dots/brew && brew bundle
