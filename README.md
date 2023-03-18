@@ -5,10 +5,12 @@ To make sure that the configuration works, you need to install the following:
 Once downloaded, you need to install the plugins. To do so, run the following command:
 
 ```bash
-brew bundle
+cd dots/brew && brew bundle
 ```
 
-This will install all the plugins that are needed for the configuration to work.
+This will install all the plugins that are needed for the configuration to work. I use GNU Stow to manage my dotfiles,
+a quick guide on how to use it can be found [here](https://www.youtube.com/watch?v=90xMTKml9O0&t=1s&ab_channel=chris%40machine).
+
 
 ## Plugins
 

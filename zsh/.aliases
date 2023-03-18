@@ -1,0 +1,9 @@
+# Open a directory in the current window in neovim
+alias vi="nvim"
+
+# Go to Evolution directory
+alias e="cd $HOME/Evolution/"
+
+# Go to Learning directory
+alias m="cd $HOME/Learning/"
+
