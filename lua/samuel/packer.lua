@@ -27,11 +27,14 @@ return require('packer').startup(function(use)
         },
     }
     use { "lukas-reineke/indent-blankline.nvim" }
+    use { "iamcco/markdown-preview.nvim" }
+    use { "folke/todo-comments.nvim" }
     use { "dstein64/vim-startuptime" }
     use { "jbyuki/venn.nvim" }
     use { "kyazdani42/nvim-web-devicons" }
     use { "machakann/vim-sandwich" }
     use { "eandrju/cellular-automaton.nvim" }
+    use { "folke/trouble.nvim" }
     use { "neovim/nvim-lspconfig" }
     use {
         "nvim-telescope/telescope.nvim",
