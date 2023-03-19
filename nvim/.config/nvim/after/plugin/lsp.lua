@@ -177,11 +177,35 @@ api.nvim_create_autocmd("FileType", {
     group = nvim_metals_group,
 })
 
--- TODO: Move to rust_tools.lua
-require("rust-tools").setup({
-    tools = { hover_with_actions = false },
-    server = { on_attach = on_attach },
-})
+local rust_tools_opts = {
+    tools = {
+        hover_with_actions = false,
+        reload_workspace_from_cargo_toml = true,
+        inlay_hints = {
+            only_current_line = false,
+            show_parameter_hints = true,
+            parameter_hints_prefix = " <-",
+            other_hints_prefix = "=> ",
+            max_len_align = false,
+            max_len_align_padding = 1,
+            right_align = false,
+            right_align_padding = 7,
+            highlight = "Comment",
+        },
+    },
+    server = {
+        on_attach = on_attach,
+        settings = {
+            ["rust-analyzer"] = {
+                checkOnSave = {
+                    command = "clippy",
+                },
+            },
+        },
+    },
+}
+
+require("rust-tools").setup(rust_tools_opts)
 
 -- For editing tree-sitter grammars
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
@@ -248,4 +272,3 @@ end
 
 -- Uncomment for trace logs from neovim
 -- vim.lsp.set_log_level('trace')
-

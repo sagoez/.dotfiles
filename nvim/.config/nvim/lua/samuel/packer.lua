@@ -30,7 +30,7 @@ return require('packer').startup(function(use)
     use { "iamcco/markdown-preview.nvim" }
     use { "folke/todo-comments.nvim" }
     use { "dstein64/vim-startuptime" }
-    use { "jbyuki/venn.nvim" }
+    use { "kosayoda/nvim-lightbulb" }
     use { "kyazdani42/nvim-web-devicons" }
     use { "machakann/vim-sandwich" }
     use { "eandrju/cellular-automaton.nvim" }
