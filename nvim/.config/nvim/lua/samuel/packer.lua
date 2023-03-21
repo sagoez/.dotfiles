@@ -14,7 +14,8 @@ return require('packer').startup(function(use)
     use { 'ThePrimeagen/harpoon' }
     use { 'mbbill/undotree' }
     use { 'tpope/vim-fugitive' }
-    use({ "folke/neodev.nvim" })
+    use { 'nvim-treesitter/nvim-treesitter-context' }
+    use { "folke/neodev.nvim" }
     use {
         "hrsh7th/nvim-cmp",
         requires = {
