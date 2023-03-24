@@ -4,7 +4,6 @@ export GOPATH="$HOME/go" # default packages installation path
 # >>> eval homebrew <<<
 if [[ `uname` == "Linux" ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-    echo "Exporting Coursier path"
     export PATH="$HOME/.local/share/coursier/bin:$PATH"
 else 
     eval "$(/opt/homebrew/bin/brew shellenv)"
