@@ -1,14 +1,11 @@
 . "$HOME/.cargo/env"
-# >>> golang path export <<<
+export GOPATH="$HOME/go" # default packages installation path
 
-case ":${PATH}:" in
-    *:"$HOME/go/bin":*)
-        ;;
-    *)
-        # Prepending path in case a system-installed rustc needs to be overridden
-        export PATH="$HOME/.cargo/bin:$PATH"
-        ;;
-esac
+export PATH="$GOPATH/bin:$PATH"
+
+# Prepending path in case a system-installed rustc needs to be overridden
+
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # >>> coursier install directory <<<
 export PATH="$PATH:/Users/$USER/Library/Application Support/Coursier/bin"
