@@ -3,14 +3,13 @@
 
 # Install Homebrew
 echo "Installing Homebrew"
-if [[ `uname` == 'Darwin' ]]; then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-else
+if [[ `uname` == 'Linux' ]]; then
     apt-get update && \
     apt-get install sudo && \
-    sudo apt install build-essential curl file git && \
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    sudo apt install build-essential curl file git
 fi
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "Installing ZSH"
 # Install ZSH
@@ -58,20 +57,33 @@ rm -rf Fira*
 rm LICENSE
 rm readme.md
 rm FiraCode.zip
-echo "Installing Brewfile"
+
+echo -e "\e[1;31mInstalling Brewfile, this install will fail if run as a root user\e[0m"
 # Install Brewfile
 read -p "Please enter your dotfiles directory path: " dotfiles
 
 if [[ $dotfiles == "" ]]
 then
-  echo "Assuming dotfiles directory is in home directory (~/.dotfiles)"
-  cd ~/.dotfiles/brew && \
-    brew bundle && \
-    cd
-else 
-  cd $dotfiles/brew && \
-    brew bundle && \
-    cd
+    if [[ `uname` == 'Linux' ]]; then
+        echo "Assuming dotfiles directory is in home directory (~/.dotfiles)"
+        cd ~/.dotfiles/brew && \
+            /home/linuxbrew/.linuxbrew/bin/brew bundle && \
+            cd
+    else 
+        echo "Assuming dotfiles directory is in home directory (~/.dotfiles)"
+        cd ~/.dotfiles/brew && \
+            brew bundle && \
+            cd
+    fi
+else
+    if [[ `uname` == 'Linux' ]]; then
+        cd $dotfiles/brew && \
+            /home/linuxbrew/.linuxbrew/bin/brew bundle && \
+            cd
+    else 
+        cd $dotfiles/brew && \
+            brew bundle && \
+            cd
 fi
 
 echo "Installing Oh My Zsh plugins"
