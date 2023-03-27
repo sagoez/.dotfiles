@@ -65,11 +65,11 @@ read -p "Please enter your dotfiles directory path: " dotfiles
 if [[ $dotfiles == "" ]]
 then
   echo "Assuming dotfiles directory is in home directory (~/.dotfiles)"
-  cd ~/.dotfiles && \
+  cd ~/.dotfiles/brew && \
     brew bundle && \
     cd
 else 
-  cd $dotfiles && \
+  cd $dotfiles/brew && \
     brew bundle && \
     cd
 fi
