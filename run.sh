@@ -1,6 +1,12 @@
 #!/bin/bash
 # This is a script to quickly setup a new machine
 
+# Fail on error
+set -e
+
+# Printing commands and arguments as they are executed
+set -x
+
 # Install Homebrew
 echo "Installing Homebrew"
 if [[ `uname` == 'Linux' ]]; then
