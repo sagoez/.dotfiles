@@ -5,7 +5,7 @@ echo "Installing Homebrew"
 if [[ `uname` == 'Darwin' ]]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
-    sudo apt install build-essential curl git && \
+    sudo apt install build-essential curl file git && \
     curl -fsSL -o install.sh https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh && \
     /bin/bash install.sh && \
     brew doctor
