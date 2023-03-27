@@ -18,9 +18,9 @@ if [[ `uname` == 'Linux' ]]; then
     chsh -s $(which zsh)
 fi
 
-echo "Installing Oh My Zsh"
+echo "Installing Oh My Zsh, type 'exit' once installed to continue"
 # Install Oh My zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 
 
 echo "Installing Powerlevel10k"
 # Install Powerlevel10k
@@ -87,9 +87,6 @@ echo "Installing Colorls"
 # Install Colorls
 sudo gem install colorls
 
-# Source ZSH
-source ~/.zshrc
-
 # Stow dotfiles
 echo "Stowing dotfiles"
 stow nvim/ && stow zsh/
@@ -99,3 +96,6 @@ if [[ `uname` == 'Linux' ]]; then
 else
     stow gpg/
 fi
+
+# Source ZSH
+zsh && source ~/.zshrc
