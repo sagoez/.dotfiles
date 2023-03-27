@@ -1,3 +1,4 @@
+#!/bin/bash
 # This is a script to quickly setup a new machine
 
 # Install Homebrew
