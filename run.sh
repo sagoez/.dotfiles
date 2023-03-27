@@ -18,7 +18,7 @@ if [[ `uname` == 'Linux' ]]; then
     chsh -s $(which zsh)
 fi
 
-echo "Installing Oh My Zsh, type 'exit' once installed to continue"
+echo -e  "\e[1;31mInstalling Oh My Zsh, type 'exit' once installed to continue\e[0m"
 # Install Oh My zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" 
 
@@ -45,6 +45,7 @@ then
   if [[ `uname` == 'Darwin' ]]; then
     open Fira\ Code\ Light\ Nerd\ Font\ Complete\ Mono.ttf
   else
+    sudo apt-get install --reinstall xdg-utils && \
     xdg-open Fira\ Code\ Light\ Nerd\ Font\ Complete\ Mono.ttf
   fi
 else
@@ -98,4 +99,6 @@ else
 fi
 
 # Source ZSH
-zsh && source ~/.zshrc
+echo "Sourcing ZSH"
+/bin/zsh -c "source ~/.zshrc" && \
+    zsh
