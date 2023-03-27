@@ -5,10 +5,10 @@ echo "Installing Homebrew"
 if [[ `uname` == 'Darwin' ]]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
+    apt-get install sudo && \
+    sudo apt update && \
     sudo apt install build-essential curl file git && \
-    curl -fsSL -o install.sh https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh && \
-    /bin/bash install.sh && \
-    brew doctor
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 echo "Installing ZSH"
@@ -57,7 +57,6 @@ rm -rf Fira*
 rm LICENSE
 rm readme.md
 rm FiraCode.zip
-
 echo "Installing Brewfile"
 # Install Brewfile
 read -p "Please enter your dotfiles directory path: " dotfiles
@@ -91,3 +90,13 @@ sudo gem install colorls
 
 # Source ZSH
 source ~/.zshrc
+
+# Stow dotfiles
+echo "Stowing dotfiles"
+stow nvim/ && stow zsh/
+
+if [[ `uname` == 'Linux' ]]; then
+    stow i3/ 
+else
+    stow gpg/
+fi
