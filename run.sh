@@ -5,8 +5,8 @@ echo "Installing Homebrew"
 if [[ `uname` == 'Darwin' ]]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
+    apt-get update && \
     apt-get install sudo && \
-    sudo apt update && \
     sudo apt install build-essential curl file git && \
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
@@ -15,8 +15,7 @@ echo "Installing ZSH"
 # Install ZSH
 if [[ `uname` == 'Linux' ]]; then
   sudo apt install zsh && \
-    chsh -s $(which zsh) && \
-    zsh
+    chsh -s $(which zsh)
 fi
 
 echo "Installing Oh My Zsh"
