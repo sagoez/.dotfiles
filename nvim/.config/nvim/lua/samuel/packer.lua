@@ -28,7 +28,6 @@ return require('packer').startup(function(use)
         },
     }
     use { "lukas-reineke/indent-blankline.nvim" }
-    use { "iamcco/markdown-preview.nvim" }
     use { "folke/todo-comments.nvim" }
     use { "dstein64/vim-startuptime" }
     use { "kosayoda/nvim-lightbulb" }
