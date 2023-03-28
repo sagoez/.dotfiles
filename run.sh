@@ -43,26 +43,28 @@ else
     unzip FiraCode.zip
 fi
 
+echo -e "\e[1;31mYour FiraCode Nerd Fonts are located at $pwd, install the ones you consider relevant.\e[0m"
+
 # Prompt asking to install fonts
-read -p "Do you want to install the fonts? (y/n) " -n 1 -r
-
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-  if [[ `uname` == 'Darwin' ]]; then
-    open Fira\ Code\ Light\ Nerd\ Font\ Complete\ Mono.ttf
-  else
-    sudo apt-get install --reinstall xdg-utils && \
-    xdg-open Fira\ Code\ Light\ Nerd\ Font\ Complete\ Mono.ttf
-  fi
-else
-    echo "Fonts not installed, please install them manually"
-fi
-
-# Cleaning up font files and zips
-rm -rf Fira*
-rm LICENSE
-rm readme.md
-rm FiraCode.zip
+# read -p "Do you want to install the fonts? (y/n) " -n 1 -r
+# 
+# if [[ $REPLY =~ ^[Yy]$ ]]
+# then
+#   if [[ `uname` == 'Darwin' ]]; then
+#     open Fira\ Code\ Light\ Nerd\ Font\ Complete\ Mono.ttf
+#   else
+#     sudo apt-get install --reinstall xdg-utils && \
+#     xdg-open Fira\ Code\ Light\ Nerd\ Font\ Complete\ Mono.ttf
+#   fi
+# else
+#     echo "Fonts not installed, please install them manually"
+# fi
+# 
+# # Cleaning up font files and zips
+# rm -rf Fira*
+# rm LICENSE
+# rm readme.md
+# rm FiraCode.zip
 
 echo -e "\e[1;31mInstalling Brewfile, this install will fail if run as a root user\e[0m"
 # Install Brewfile
