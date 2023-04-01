@@ -29,7 +29,6 @@ return require('packer').startup(function(use)
             'nvim-tree/nvim-web-devicons',
         }
     }
-    use { "SmiteshP/nvim-navic" }
     use { "lukas-reineke/indent-blankline.nvim" }
     use { "folke/todo-comments.nvim" }
     use { "dstein64/vim-startuptime" }
@@ -59,7 +58,6 @@ return require('packer').startup(function(use)
             "mfussenegger/nvim-dap",
         },
     }
-    use { 'folke/zen-mode.nvim' }
     use { 'kevinhwang91/nvim-bqf' }
     use {
         "glepnir/lspsaga.nvim",
@@ -76,8 +74,5 @@ return require('packer').startup(function(use)
     use { "wakatime/vim-wakatime" }
     use { "tpope/vim-vinegar" }
     use { "windwp/nvim-autopairs" }
-    use { "rebelot/heirline.nvim",
-        requires = { "nvim-tree/nvim-web-devicons" },
-    }
     use { "github/copilot.vim" }
 end)
