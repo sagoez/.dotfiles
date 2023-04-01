@@ -11,6 +11,10 @@ lsp_config.util.default_config = vim.tbl_extend("force", lsp_config.util.default
     capabilities = capabilities,
 })
 
+require("fidget").setup({
+    -- add any options here, or leave empty to use the default settings
+})
+
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
 
 local lsp_group = api.nvim_create_augroup("lsp", { clear = true })
@@ -44,19 +48,11 @@ metals_config.tvp = {
     },
 }
 
---metals_config.cmd = { "cs", "launch", "tech.neader:langoustine-tracer_3:0.0.18", "--", "metals" }
 metals_config.settings = {
-    --disabledMode = true,
-    --bloopVersion = "1.5.3-15-49c6986e-20220816-2002",
     showImplicitArguments = true,
     showImplicitConversionsAndClasses = true,
     showInferredType = true,
-    --enableSemanticHighlighting = true,
-    --fallbackScalaVersion = "2.13.10",
     serverVersion = "latest.snapshot",
-    --serverVersion = "0.11.2+74-7a6a65a7-SNAPSHOT",
-    --serverVersion = "0.11.11-SNAPSHOT",
-    --testUserInterface = "Test Explorer",
 }
 
 metals_config.init_options.statusBarProvider = "on"
@@ -65,7 +61,7 @@ metals_config.capabilities = capabilities
 metals_config.on_attach = function(client, bufnr)
     on_attach(client, bufnr)
 
-    map("v", "K", require("metals").type_of_range)
+    map("v", "KA", require("metals").type_of_range)
 
     map("n", "<leader>ws", function()
         require("metals").hover_worksheet({ border = "single" })
@@ -81,8 +77,6 @@ metals_config.on_attach = function(client, bufnr)
         require("metals").toggle_setting("showImplicitArguments")
     end)
 
-    -- A lot of the servers I use won't support document_highlight or codelens,
-    -- so we juse use them in Metals
     api.nvim_create_autocmd("CursorHold", {
         callback = vim.lsp.buf.document_highlight,
         buffer = bufnr,
@@ -106,8 +100,6 @@ metals_config.on_attach = function(client, bufnr)
         group = lsp_group,
     })
 
-    -- nvim-dap
-    -- I only use nvim-dap with Scala, so we keep it all in here
     local dap = require("dap")
 
     dap.configurations.scala = {
@@ -269,6 +261,3 @@ local servers = { "bashls", "dockerls", "html", "tsserver", "gopls", "clangd" }
 for _, server in pairs(servers) do
     lsp_config[server].setup({ on_attach = on_attach })
 end
-
--- Uncomment for trace logs from neovim
--- vim.lsp.set_log_level('trace')

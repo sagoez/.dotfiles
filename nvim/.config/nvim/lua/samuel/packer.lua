@@ -5,16 +5,12 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
     -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
-    use { -- Theme inspired by Atom
-        'navarasu/onedark.nvim',
-        config = function()
-            vim.cmd.colorscheme 'onedark'
-        end }
+    use { 'wbthomason/packer.nvim' }
     use { 'ThePrimeagen/harpoon' }
     use { 'mbbill/undotree' }
     use { 'tpope/vim-fugitive' }
     use { 'nvim-treesitter/nvim-treesitter-context' }
+    use { "j-hui/fidget.nvim" }
     use { "folke/neodev.nvim" }
     use {
         "hrsh7th/nvim-cmp",
@@ -27,6 +23,13 @@ return require('packer').startup(function(use)
             { "hrsh7th/cmp-nvim-lsp-signature-help" },
         },
     }
+    use { "lewis6991/gitsigns.nvim" }
+    use { "kyazdani42/nvim-tree.lua",
+        requires = {
+            'nvim-tree/nvim-web-devicons',
+        }
+    }
+    use { "SmiteshP/nvim-navic" }
     use { "lukas-reineke/indent-blankline.nvim" }
     use { "folke/todo-comments.nvim" }
     use { "dstein64/vim-startuptime" }
@@ -44,7 +47,6 @@ return require('packer').startup(function(use)
             { "nvim-telescope/telescope-fzy-native.nvim" },
         },
     }
-    use { "vim-airline/vim-airline" }
     use {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
@@ -74,5 +76,8 @@ return require('packer').startup(function(use)
     use { "wakatime/vim-wakatime" }
     use { "tpope/vim-vinegar" }
     use { "windwp/nvim-autopairs" }
+    use { "rebelot/heirline.nvim",
+        requires = { "nvim-tree/nvim-web-devicons" },
+    }
     use { "github/copilot.vim" }
 end)

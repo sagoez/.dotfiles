@@ -1,4 +1,9 @@
 vim.g.mapleader = " "
+
+vim.o.background = nil
+vim.o.cmdheight = 0
+vim.o.showtabline = 2
+vim.o.laststatus = 3
 vim.opt_global.completeopt = { "menuone", "noinsert", "noselect" }
 vim.g.copilot_assume_mapped = true
 
