@@ -100,6 +100,7 @@ that are needed are marked with a `*`.
 - derailed/k9s/k9s: K9s is a terminal based UI to interact with your Kubernetes clusters.
 - amethyst (MacOS): Amethyst is a tiling window manager for macOS that models many of its concepts after i3.
 - conduktor (MacOS): Conduktor is a modern Kafka Desktop Client.
+- warp(MacOS): Warp is a terminal for MacOS that makes you more productive.
 
 **Recommended [linux]**: If you're using i3 I highly recommend using [rofi](https://github.com/davatorium/rofi) and/or [xfce4-appfinder](https://gitlab.xfce.org/xfce/xfce4-appfinder) for apps and [pavucontrol](https://freedesktop.org/software/pulseaudio/pavucontrol/) for sound, since getting used to app names can be a bit hard at the beginning.  
 
