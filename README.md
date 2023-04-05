@@ -1,6 +1,6 @@
 # Dotfiles
 
-To see a full guide on how to install and use these dotfiles, please visit [install](./docs/INSTALL.md) page.
+To see a full guide on how to use these configuration, please visit [install](./docs/INSTALL.md) page.
 
 ## What does this bundles? 
 

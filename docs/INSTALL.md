@@ -58,7 +58,12 @@ sudo apt install ruby-full
 sudo gem install colorls
 ```
 
-13. Stow folders 
+13. Install i3 
+```bash
+sudo apt install i3
+```
+
+14. Stow folders 
 ```bash
 cd ~/.dotfiles && stow nvim && stow zsh && stow i3
 ```
