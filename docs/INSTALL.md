@@ -75,5 +75,5 @@ cd ~/.dotfiles && stow nvim && stow zsh && stow i3
 1. Run steps 1-3-5-6-7-8-9-10-11-12 from the Linux installation
 2. Stow folders 
 ```bash 
-cd ~/.dotfiles && stow nvim && stow zsh && stow gpg
+cd ~/.dotfiles && stow nvim && stow zsh && stow gpg && stow warp
 ```
