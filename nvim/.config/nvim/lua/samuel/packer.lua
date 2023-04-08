@@ -12,8 +12,6 @@ return require('packer').startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter-context' }
     use { "j-hui/fidget.nvim" }
     use { "folke/neodev.nvim" }
-    use { "godlygeek/tabular" }
-    use { "preservim/vim-markdown" }
     use {
         "hrsh7th/nvim-cmp",
         requires = {

@@ -97,7 +97,7 @@ jabba install openjdk@1.17-0
 
 ### Installation
 
-1. Run steps 1-3-5-6-7-8-9-10-11-12 from the Linux installation
+1. Run steps 1-3-5-6-7-8-9-10-11-12-15-16 from the Linux installation
 2. Stow folders
 
 ```bash
