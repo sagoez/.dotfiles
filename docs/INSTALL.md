@@ -30,13 +30,13 @@ sudo apt install zsh && chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-6. Install `Powerlevel10k`
+6. Install [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip)
+
+7. Install `Powerlevel10k`
 
 ```bash
 git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 ```
-
-7. Install [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/FiraCode.zip)
 
 8. Install `Brewfile`
 
@@ -54,6 +54,12 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+
+11. Install `git-open`
+
+```bash
+git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
 ```
 
 11. Install `ruby`
@@ -74,10 +80,11 @@ sudo gem install colorls
 sudo apt install i3
 ```
 
-14. Stow folders
+14. Install jabba
 
 ```bash
-cd ~/.dotfiles && stow nvim && stow zsh && stow i3
+curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
+jabba install openjdk@1.17-0
 ```
 
 15. Setup coursier
@@ -86,18 +93,17 @@ cd ~/.dotfiles && stow nvim && stow zsh && stow i3
 coursier setup
 ```
 
-16. Install jabba
+16. Stow folders
 
 ```bash
-curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
-jabba install openjdk@1.17-0
+cd ~/.dotfiles && stow nvim && stow zsh && stow i3
 ```
 
 ## MacOS
 
 ### Installation
 
-1. Run steps 1-3-5-6-7-8-9-10-11-12-15-16 from the Linux installation
+1. Run steps 1-3-5-6-7-8-9-10-11-12-14-15 from the Linux installation
 2. Stow folders
 
 ```bash
