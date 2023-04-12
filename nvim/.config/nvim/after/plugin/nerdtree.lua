@@ -138,15 +138,6 @@ local function make_rename_params(old_fname, new_fname)
     }
 end
 
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
-    callback = function(args)
-        if vim.fn.isdirectory(args.match) == 1 then
-            vim.cmd("NvimTreeToggle")
-            return true
-        end
-    end,
-})
-
 local Event = api.events.Event
 api.events.subscribe(Event.NodeRenamed, function(data)
     local clients = vim.lsp.get_active_clients()

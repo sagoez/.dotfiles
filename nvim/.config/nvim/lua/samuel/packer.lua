@@ -12,6 +12,7 @@ return require('packer').startup(function(use)
     use { 'nvim-treesitter/nvim-treesitter-context' }
     use { "j-hui/fidget.nvim" }
     use { "folke/neodev.nvim" }
+    use { "vim-airline/vim-airline" }
     use {
         "hrsh7th/nvim-cmp",
         requires = {

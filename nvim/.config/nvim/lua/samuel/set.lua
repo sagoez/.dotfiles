@@ -38,3 +38,12 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 300
+
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+    callback = function(args)
+        if vim.fn.isdirectory(args.match) == 1 then
+            vim.cmd("NvimTreeToggle")
+            return true
+        end
+    end,
+})
