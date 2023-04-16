@@ -48,6 +48,26 @@ metals_config.tvp = {
     },
 }
 
+
+local function metals_status_handler(err, status, ctx)
+  local val = {}
+  -- trim and remove spinner
+  local text = status.text:gsub('[⠇⠋⠙⠸⠴⠦]', ''):gsub("^%s*(.-)%s*$", "%1")
+  if status.hide then
+    val = {kind = "end"}
+  elseif status.show then
+    val = {kind = "begin", title = text}
+  elseif status.text then
+    val = {kind = "report", message = text}
+  else
+    return
+  end
+  local msg = {token = "metals", value = val}
+  vim.lsp.handlers["$/progress"](err, msg, ctx)
+end
+
+metals_config.handlers = { ['metals/status'] = metals_status_handler }
+
 metals_config.settings = {
     showImplicitArguments = true,
     showImplicitConversionsAndClasses = true,
