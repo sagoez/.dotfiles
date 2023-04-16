@@ -34,7 +34,7 @@ that are needed are marked with a `*`.
 
 ![V1](./docs/LOOK_ONE.png)
 
-![V2](./docs/LOOK_TWO.png)
+![V2](./docs/LOOK_.png)
 
 **Recommended [linux]**: If you're using i3 I highly recommend using [rofi](https://github.com/davatorium/rofi) and/or [xfce4-appfinder](https://gitlab.xfce.org/xfce/xfce4-appfinder) for apps and [pavucontrol](https://freedesktop.org/software/pulseaudio/pavucontrol/) for sound, since getting used to app names can be a bit hard at the beginning.  
 
