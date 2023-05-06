@@ -33,6 +33,10 @@ return require('packer').startup(function(use)
             'nvim-tree/nvim-web-devicons',
         }
     }
+    use {
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    }
     use { "lukas-reineke/indent-blankline.nvim" }
     use { "folke/todo-comments.nvim" }
     use { "dstein64/vim-startuptime" }
