@@ -1,5 +1,8 @@
-. "$HOME/.cargo/env"
 export GOPATH="$HOME/go" # default packages installation path
+
+export PATH="$GOPATH/bin:$HOME/.cargo/bin:$PATH"
+
+. "$HOME/.cargo/env"
 
 # >>> eval homebrew <<<
 if [[ `uname` == "Linux" ]]; then
@@ -10,4 +13,3 @@ else
     export PATH="/Users/$USER/Library/Application Support/Coursier/bin:$PATH"
 fi
 
-export PATH="$GOPATH/bin:$HOME/.cargo/bin:$PATH"
