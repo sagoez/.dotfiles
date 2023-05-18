@@ -1,43 +1,67 @@
-vim.g.mapleader = " "
+local g = vim.g
 
-vim.o.background = nil
-vim.o.cmdheight = 0
-vim.o.showtabline = 2
-vim.o.laststatus = 3
-vim.opt_global.completeopt = { "menuone", "noinsert", "noselect" }
-vim.g.copilot_assume_mapped = true
+g.mapleader = " "
+local opt = vim.opt
+local global_opt = vim.opt_global
 
-vim.g.copilot_filetypes = {
+g.netrw_gx = "<cWORD>"
+
+local indent = 2
+
+-- global
+global_opt.shortmess:append("c")
+global_opt.termguicolors = true
+global_opt.hidden = true
+global_opt.showtabline = 1
+global_opt.updatetime = 300
+global_opt.showmatch = true
+global_opt.laststatus = 3
+global_opt.wildignore = { ".git", "*/node_modules/*", "*/target/*", ".metals", ".bloop", ".ammonite" }
+global_opt.ignorecase = true
+global_opt.smartcase = true
+global_opt.clipboard = "unnamed"
+global_opt.completeopt = { "menuone", "noinsert", "noselect" }
+global_opt.scrolloff = 5
+global_opt.laststatus = 3
+global_opt.mouse = ""
+global_opt.cmdheight = 0
+
+if g.light then
+  global_opt.background = "light"
+else
+  global_opt.background = "dark"
+end
+
+opt.wrap = false
+opt.cursorline = true
+opt.signcolumn = "yes"
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldenable = false
+
+opt.tabstop = indent
+opt.shiftwidth = indent
+opt.softtabstop = indent
+opt.expandtab = true
+opt.fileformat = "unix"
+opt.modeline = false
+
+g.copilot_assume_mapped = true
+g.copilot_filetypes = {
     ["*"] = true
 }
 
-vim.opt.nu = true
-vim.opt.relativenumber = true
-
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-
-vim.opt.smartindent = true
-
-vim.opt.wrap = false
-
-vim.opt.swapfile = false
-vim.opt.backup = false
+opt.nu = true
+opt.relativenumber = true
+opt.swapfile = false
+opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
-
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-
-vim.opt.termguicolors = true
-
-vim.opt.scrolloff = 16
-vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
-
-vim.opt.updatetime = 300
+opt.undofile = true
+opt.hlsearch = false
+opt.incsearch = true
+opt.scrolloff = 16
+opt.signcolumn = "yes"
+opt.isfname:append("@-@")
 
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
     callback = function(args)

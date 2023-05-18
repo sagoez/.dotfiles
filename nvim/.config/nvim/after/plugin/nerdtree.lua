@@ -106,7 +106,8 @@ require("nvim-tree").setup({
         },
     },
     view = {
-        adaptive_size = false,
+        -- // Beware this won't work well for deep nested directories
+        adaptive_size = true,
     },
     renderer = {
         -- highlight_opened_files = 'name',
