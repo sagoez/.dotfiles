@@ -99,7 +99,65 @@ coursier setup
 cd ~/.dotfiles && stow nvim && stow zsh && stow i3
 ```
 
-## MacOS
+## Optionally on Ubuntu to personalise your wm
+
+17. Install `feh`
+
+```bash
+sudo apt install feh
+```
+
+18. Remove `iLock`
+
+```bash
+sudo apt remove i3lock
+```
+
+19. Install `i3lock-color`
+
+```bash
+git clone https://github.com/Raymo111/i3lock-color.git
+cd i3lock-color
+./install-i3lock-color.sh
+```
+
+20. Install theme
+
+```bash
+sudo apt install materia-gtk-theme papirus-icon-theme
+```
+
+21. Install `lxappearance`
+
+```bash
+sudo apt install lxappearance
+```
+
+22. Type `lxappearance`
+
+```bash
+lxappearance
+```
+
+23. Install `picom`
+
+```bash
+sudo apt install picom
+```
+
+24. Install `fonts-droid-fallback`
+
+```bash
+sudo apt install fonts-droid-fallback
+```
+
+25. Install `pavucontrol`
+
+```bash
+sudo apt install pavucontrol
+```
+
+# MacOS
 
 ### Installation
 

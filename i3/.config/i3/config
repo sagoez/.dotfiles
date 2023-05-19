@@ -24,7 +24,7 @@ font pango:monospace 8
 exec --no-startup-id dex --autostart --environment i3
 
 # Start feh to set background
-exec --no-startup-id ~/.fehbg
+exec_always feh --bg-fill ~/.dotfiles/i3/static/wallpaper.jpg
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -192,7 +192,19 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        status_command i3status -c /home/$USER/.config/i3status/i3status.conf
+        i3bar_command i3bar --transparency
+        tray_output none
+        colors {
+                background $bgcolor
+                separator #191919
+                #                       border          background      text
+                focused_workspace       $bgcolor        $bgcolor        $text
+                inactive_workspace      $in-bgcolor     $in-bgcolor     $text
+                urgent_workspace        $u-bgcolor      $u-bgcolor      $text   
+
+        }
+        font pango: Droid Sans Mono 12
 }
 
 # Start on startup
@@ -201,3 +213,25 @@ exec gnome-terminal
 exec spotify
 exec discord
 exec slack
+
+# Shortcut for Lockscreen
+bindsym $mod+x exec /home/$USER/.dotfiles/i3/.config/i3/lock
+
+# Transparency with picom compositor
+exec_always picom -f
+
+# Color shemes for windows 
+set $text       #ffffff
+set $u-bgcolor  #ff0000
+set $indicator  #a8a3c1
+set $in-text    #969696
+set $bgcolor    #523d6499
+set $in-bgcolor #3636364D
+set $focused-ws #523d6480
+set $bar-color  #523d640D
+
+#                       border          background      text            indicator (a line which shows where the next window will be placed)     
+client.focused          $bgcolor        $bgcolor        $text           $indicator
+client.unfocused        $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
+client.focused_inactive $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
+client.urgent           $u-bgcolor      $u-bgcolor      $text           $u-bgcolor
