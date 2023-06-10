@@ -34,6 +34,15 @@ return require('packer').startup(function(use)
       { "hrsh7th/cmp-nvim-lsp-signature-help" },
     },
   }
+  use {
+    "williamboman/mason.nvim",
+    run = ":MasonUpdate",
+    requires = {
+      "williamboman/mason-lspconfig.nvim",
+      "neovim/nvim-lspconfig"
+    },
+  }
+  use { "williamboman/mason-lspconfig.nvim" }
   use { "lewis6991/gitsigns.nvim" }
   use { "kyazdani42/nvim-tree.lua",
     requires = {
@@ -90,8 +99,10 @@ return require('packer').startup(function(use)
   use { "tpope/vim-vinegar" }
   use { "windwp/nvim-autopairs" }
   use { "github/copilot.vim" }
-  use { "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = {
-      "markdown" } end, ft = { "markdown" }, }
+  use { "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function()
+    vim.g.mkdp_filetypes = {
+      "markdown" }
+  end, ft = { "markdown" }, }
   if packer_bootstrap then
     require('packer').sync()
   end
