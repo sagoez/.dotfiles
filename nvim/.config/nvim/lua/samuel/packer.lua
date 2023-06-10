@@ -17,7 +17,7 @@ return require('packer').startup(function(use)
   use { 'mbbill/undotree' }
   use { 'tpope/vim-fugitive' }
   use { 'nvim-treesitter/nvim-treesitter-context' }
-  use { "j-hui/fidget.nvim" }
+  use { "j-hui/fidget.nvim", tag = "legacy" }
   use { "folke/neodev.nvim" }
   use { "nvim-lualine/lualine.nvim",
     requires = { "nvim-tree/nvim-web-devicons", opt = true }
