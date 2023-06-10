@@ -209,7 +209,7 @@ bar {
 
 # Start on startup
 exec google-chrome
-exec gnome-terminal
+exec kitty
 exec spotify
 exec discord
 exec slack

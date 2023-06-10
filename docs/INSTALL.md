@@ -85,6 +85,7 @@ sudo apt install i3
 ```bash
 curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
 jabba install openjdk@1.17-0
+jabba alias default openjdk@1.17.0
 ```
 
 15. Setup coursier
@@ -92,14 +93,25 @@ jabba install openjdk@1.17-0
 ```bash
 coursier setup
 brew uninstall --ignore-dependencies java
-jabba alias default openjdk@1.17.0
 ```
 
-16. Stow folders
+16. Install kitty
+
+```bash
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+sudo ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten /usr/local/sbin/
+cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
+sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
+sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
+
+```
+17. Stow folders
 
 ```bash
 cd ~/.dotfiles && stow nvim && stow zsh && stow i3
 ```
+
 
 ## Optionally on Ubuntu to personalise your wm
 
@@ -159,16 +171,6 @@ sudo apt install fonts-droid-fallback
 sudo apt install pavucontrol
 ```
 
-26. Install kitty
-
-```bash
-curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-sudo ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten /usr/local/sbin/
-cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
-cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
-sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
-sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
-```
 
 
 # MacOS

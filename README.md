@@ -27,8 +27,8 @@ that are needed are marked with a `*`.
 - yaml-language-server: YAML language server
 - derailed/k9s/k9s: K9s is a terminal based UI to interact with your Kubernetes clusters.
 - amethyst (MacOS): Amethyst is a tiling window manager for macOS that models many of its concepts after i3.
-- warp (MacOS): Warp is a terminal for MacOS that makes you more productive.
 - fzf: fzf is a general-purpose command-line fuzzy finder.
+- kitty: A modern, hackable, featureful, OpenGL-based terminal emulator.
 
 ## How does it look like?
 
