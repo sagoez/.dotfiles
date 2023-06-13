@@ -44,7 +44,7 @@ return require('packer').startup(function(use)
   }
   use { "williamboman/mason-lspconfig.nvim" }
   use { "lewis6991/gitsigns.nvim" }
-  use { "kyazdani42/nvim-tree.lua",
+  use { "nvim-tree/nvim-tree.lua",
     requires = {
       'nvim-tree/nvim-web-devicons',
     }
@@ -57,7 +57,7 @@ return require('packer').startup(function(use)
   use { "folke/todo-comments.nvim" }
   use { "dstein64/vim-startuptime" }
   use { "kosayoda/nvim-lightbulb" }
-  use { "kyazdani42/nvim-web-devicons" }
+  use { "nvim-tree/nvim-web-devicons" }
   use { "machakann/vim-sandwich" }
   use { "eandrju/cellular-automaton.nvim" }
   use { "folke/trouble.nvim" }
