@@ -31,7 +31,7 @@ vim.keymap.set("n", "gws", require("telescope.builtin").lsp_dynamic_workspace_sy
 local actions = require("telescope.actions")
 require("telescope").setup({
     defaults = {
-        file_ignore_patterns = { "target", "node_modules", "parser.c", "out", "%.min.js" },
+        file_ignore_patterns = { "target", "node_modules", "parser.c", "%.min.js" },
         prompt_prefix = "❯",
         file_previewer = require("telescope.previewers").vim_buffer_cat.new,
         grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
