@@ -7,3 +7,5 @@ alias e="cd $HOME/Evolution/"
 # Go to Learning directory
 alias m="cd $HOME/Learning/"
 
+# Open image in kitty terminal
+alias icat="kitty +kitten icat"
