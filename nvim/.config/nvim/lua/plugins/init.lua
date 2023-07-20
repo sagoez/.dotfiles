@@ -6,7 +6,6 @@ return {
   { "dstein64/vim-startuptime",         cmd = "StartupTime" },
   { "nvim-tree/nvim-web-devicons",      lazy = true },
   { "machakann/vim-sandwich" },
-  { "eandrju/cellular-automaton.nvim" },
   { "neovim/nvim-lspconfig" },
   {
     "nvim-treesitter/nvim-treesitter",
@@ -20,7 +19,18 @@ return {
       "mfussenegger/nvim-dap",
     },
   },
-  { 'kevinhwang91/nvim-bqf' },
+  {
+    'kevinhwang91/nvim-bqf',
+    dependencies = {
+      'junegunn/fzf',
+    }
+  },
+  {
+    'junegunn/fzf',
+    build = function()
+      vim.fn['fzf#install']()
+    end
+  },
   {
     "glepnir/lspsaga.nvim",
     branch = "main",
@@ -31,9 +41,8 @@ return {
       { "nvim-tree/nvim-web-devicons" },
     }
   },
-  { "stevearc/dressing.nvim", event = "VeryLazy" },
+  { "stevearc/dressing.nvim",  event = "VeryLazy" },
   { "wakatime/vim-wakatime" },
-  { "tpope/vim-vinegar" },
   { "windwp/nvim-autopairs" },
   { "github/copilot.vim" },
 }
