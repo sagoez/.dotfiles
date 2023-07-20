@@ -21,12 +21,14 @@ return {
   },
   {
     'kevinhwang91/nvim-bqf',
+    event = "VeryLazy",
     dependencies = {
       'junegunn/fzf',
     }
   },
   {
     'junegunn/fzf',
+    event = "VeryLazy",
     build = function()
       vim.fn['fzf#install']()
     end
