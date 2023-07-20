@@ -1,6 +1,5 @@
 local g = vim.g
 
-g.mapleader = " "
 local opt = vim.opt
 local global_opt = vim.opt_global
 
@@ -63,15 +62,11 @@ opt.scrolloff = 16
 opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 
-vim.api.nvim_create_autocmd({ "BufEnter" }, {
-    callback = function(args)
-        if vim.fn.isdirectory(args.match) == 1 then
-            vim.cmd("NvimTreeToggle")
-            return true
-        end
-    end,
-})
-
-
--- colorscheme
-vim.cmd("colorscheme kanagawa")
+-- vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  --  callback = function(args)
+   --     if vim.fn.isdirectory(args.match) == 1 then
+     --       vim.cmd("NvimTreeToggle")
+       --     return true
+        --end
+    --end,
+--})
