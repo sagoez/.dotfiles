@@ -30,7 +30,7 @@ sudo apt install zsh && chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-6. Install [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hasklig.zip)
+6. Install [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraCode.zip)
 
 7. Install `Powerlevel10k`
 
