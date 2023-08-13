@@ -115,19 +115,19 @@ cd ~/.dotfiles && stow nvim && stow zsh && stow i3
 
 ## Optionally on Ubuntu to personalise your wm
 
-17. Install `feh`
+18. Install `feh`
 
 ```bash
 sudo apt install feh
 ```
 
-18. Remove `iLock`
+19. Remove `iLock`
 
 ```bash
 sudo apt remove i3lock
 ```
 
-19. Install `i3lock-color`
+20. Install `i3lock-color`
 
 ```bash
 git clone https://github.com/Raymo111/i3lock-color.git
@@ -135,43 +135,53 @@ cd i3lock-color
 ./install-i3lock-color.sh
 ```
 
-20. Install theme
+21. Install theme
 
 ```bash
 sudo apt install materia-gtk-theme papirus-icon-theme
 ```
 
-21. Install `lxappearance`
+22. Install `lxappearance`
 
 ```bash
 sudo apt install lxappearance
 ```
 
-22. Type `lxappearance`
+23. Type `lxappearance`
 
 ```bash
 lxappearance
 ```
 
-23. Install `picom`
+24. Install `picom`
 
 ```bash
 sudo apt install picom
 ```
 
-24. Install `fonts-droid-fallback`
+25. Install `fonts-droid-fallback`
 
 ```bash
 sudo apt install fonts-droid-fallback
 ```
 
-25. Install `pavucontrol`
+26. Install `pavucontrol`
 
 ```bash
 sudo apt install pavucontrol
 ```
 
+27. Download and install the following programs:
 
+```bash
+Spotify
+Discord
+Slack
+DBeaver
+Docker
+Postman
+Redis Insight
+```
 
 # MacOS
 
