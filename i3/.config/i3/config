@@ -157,6 +157,7 @@ assign [class="DBeaver"] $ws3
 assign [class="discord"] $ws4
 for_window [class="^Spotify"] move --no-auto-back-and-forth to workspace $ws5
 assign [class="Slack"] $ws6
+assign [class="docker desktop"] $ws7
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
