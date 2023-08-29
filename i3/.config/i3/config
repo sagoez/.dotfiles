@@ -241,3 +241,7 @@ client.focused          $bgcolor        $bgcolor        $text           $indicat
 client.unfocused        $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
 client.focused_inactive $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
 client.urgent           $u-bgcolor      $u-bgcolor      $text           $u-bgcolor
+
+# Fig
+no_focus [class="Fig" instance="fig" window_role="autocomplete"]
+for_window [class="Fig" instance="fig" window_role="autocomplete"] border pixel 0
