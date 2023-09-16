@@ -32,6 +32,10 @@ vim.keymap.set("n", "<leader><leader>", function()
   vim.cmd("so")
 end)
 
+vim.keymap.set("n", "<leader>ch", function()
+  vim.cmd("setlocal spell! spelllang=en_us")
+end)
+
 vim.keymap.set("n", "<leader>ee", function()
   vim.diagnostic.open_float(0, { scope = "line" })
 end)
