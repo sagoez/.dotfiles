@@ -16,6 +16,7 @@ return {
       compile = true,
       dimInactive = false,
       transparent = true,
+      terminalColors = true,       -- define vim.g.terminal_color_{0,17}
       background = { light = "lotus", dark = "dragon" },
       overrides = function(colors)
         local theme = colors.theme
