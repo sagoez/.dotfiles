@@ -1,9 +1,20 @@
 return {
   "lukas-reineke/indent-blankline.nvim",
+  main = "ibl",
+  opts = {},
   config = function()
-    require("indent_blankline").setup({
-      char = ".",
-      filetype_exclude = { "help" },
-    })
+    require("ibl").setup {
+      indent = {
+        highlight = "Whitespace",
+        char = ".",
+      },
+      whitespace = {
+        highlight = "Whitespace",
+        remove_blankline_trail = true,
+      },
+      scope = {
+        enabled = true,
+      },
+    }
   end
 }
