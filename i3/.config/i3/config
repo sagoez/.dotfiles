@@ -226,6 +226,9 @@ bindsym $mod+x exec /home/$USER/.dotfiles/i3/.config/i3/lock
 # Transparency with picom compositor
 exec_always picom -f
 
+# Exec docker desktop
+exec_always systemctl --user start docker-desktop
+
 # Color shemes for windows 
 set $text       #ffffff
 set $u-bgcolor  #ff0000
