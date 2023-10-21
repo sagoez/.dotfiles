@@ -183,6 +183,12 @@ Postman
 Redis Insight
 ```
 
+28. Install `polybar`
+
+```bash
+sudo apt install polybar
+```
+
 # MacOS
 
 ### Installation
