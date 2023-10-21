@@ -7,6 +7,15 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# If MacOS
+if [ "$(uname)" == "Darwin" ]; then
+    # If Homebrew is installed
+    if [ -x "$(command -v brew)" ]; then
+        # Then use it
+        export PATH="/opt/homebrew/bin:$PATH"
+    fi
+fi
+
 # Locale
 export LC_ALL=en_US.UTF-8
 
