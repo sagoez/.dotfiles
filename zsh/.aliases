@@ -9,3 +9,7 @@ alias m="cd $HOME/Learning/"
 
 # Open image in kitty terminal
 alias icat="kitty +kitten icat"
+
+# Search directory using fzf
+alias sd="cd ~ && cd \$(find * -type d | fzf)"
+
