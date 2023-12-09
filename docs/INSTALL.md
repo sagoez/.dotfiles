@@ -121,57 +121,25 @@ cd ~/.dotfiles && stow nvim && stow zsh && stow i3
 sudo apt install feh
 ```
 
-19. Remove `iLock`
-
-```bash
-sudo apt remove i3lock
-```
-
-20. Install `i3lock-color`
-
-```bash
-git clone https://github.com/Raymo111/i3lock-color.git
-cd i3lock-color
-./install-i3lock-color.sh
-```
-
-21. Install theme
-
-```bash
-sudo apt install materia-gtk-theme papirus-icon-theme
-```
-
-22. Install `lxappearance`
-
-```bash
-sudo apt install lxappearance
-```
-
-23. Type `lxappearance`
-
-```bash
-lxappearance
-```
-
-24. Install `picom`
+19. Install `picom`
 
 ```bash
 sudo apt install picom
 ```
 
-25. Install `fonts-droid-fallback`
+20. Install `fonts-droid-fallback`
 
 ```bash
 sudo apt install fonts-droid-fallback
 ```
 
-26. Install `pavucontrol`
+21. Install `pavucontrol`
 
 ```bash
 sudo apt install pavucontrol
 ```
 
-27. Download and install the following programs:
+22. Download and install the following programs:
 
 ```bash
 Spotify
@@ -183,7 +151,7 @@ Postman
 Redis Insight
 ```
 
-28. Install `polybar`
+23. Install `polybar`
 
 ```bash
 sudo apt install polybar
