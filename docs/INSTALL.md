@@ -3,13 +3,12 @@
 ## Linux
 
 ### Installation
-
 1. Clone the repository to `~/.dotfiles`
 
 2. Run
 
 ```bash
-apt-get install update && apt-get install -y build-essential git curl file
+apt-get install -y build-essential git curl file stow
 ```
 
 3. Install `brew`
@@ -145,10 +144,7 @@ sudo apt install pavucontrol
 Spotify
 Discord
 Slack
-DBeaver
 Docker
-Postman
-Redis Insight
 ```
 
 23. Install `polybar`
