@@ -121,14 +121,13 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: Chrome "
 set $ws2 "2: Terminal "
-set $ws3 "3: Various "
+set $ws3 "3: Music "
 set $ws4 "4: Discord 󰙯"
-set $ws5 "5: Music "
-set $ws6 "6: Slack "
-set $ws7 "7: Docker "
+set $ws5 "5: Slack "
+set $ws6 "6: Docker "
+set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -157,13 +156,10 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # classes
 assign [class="Google-chrome"] $ws1
 assign [class="kitty"] $ws2
-assign [class="Postman"] $ws3
-assign [class="RedisInsight-v2"] $ws3
-assign [class="DBeaver"] $ws3
+for_window [class="^Spotify"] move --no-auto-back-and-forth to workspace $ws3
 assign [class="discord"] $ws4
-for_window [class="^Spotify"] move --no-auto-back-and-forth to workspace $ws5
-assign [class="Slack"] $ws6
-for_window [class="Docker Desktop"] move --no-auto-back-and-forth to workspace $ws7
+assign [class="Slack"] $ws5
+for_window [class="Docker Desktop"] move --no-auto-back-and-forth to workspace $ws6
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -221,13 +217,8 @@ bindsym $mod+r mode "resize"
 exec google-chrome
 exec kitty
 exec spotify
-exec redisinsight
-exec postman
 exec discord
 exec slack
-
-# Shortcut for Lockscreen
-bindsym $mod+x exec /home/$USER/.dotfiles/i3/.config/i3/lock
 
 # Transparency with picom compositor
 exec_always picom -f
