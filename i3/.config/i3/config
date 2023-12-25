@@ -39,6 +39,9 @@ exec_always feh --bg-fill ~/.dotfiles/i3/static/wallpaper.jpg
 # screen before suspend. Use loginctl lock-session to lock your screen.
 # exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+# Avoid screen from locking
+exec --no-startup-id xset s off -dpms
+
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
@@ -244,7 +247,3 @@ client.focused          $bgcolor        $bgcolor        $text           $indicat
 client.unfocused        $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
 client.focused_inactive $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
 client.urgent           $u-bgcolor      $u-bgcolor      $text           $u-bgcolor
-
-# Fig
-no_focus [class="Fig" instance="fig" window_role="autocomplete"]
-for_window [class="Fig" instance="fig" window_role="autocomplete"] border pixel 0
