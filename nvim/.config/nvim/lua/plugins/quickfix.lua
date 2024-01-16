@@ -4,7 +4,7 @@ return {
   dependencies = {
     'junegunn/fzf',
   },
-  ft = { 'qf' },
+  ft = 'qf',
   config = function()
     require('bqf').setup({
       auto_enable = true,
