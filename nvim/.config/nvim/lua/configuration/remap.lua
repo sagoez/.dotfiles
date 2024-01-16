@@ -40,6 +40,7 @@ vim.keymap.set("n", "<leader>ee", function()
   vim.diagnostic.open_float(0, { scope = "line" })
 end)
 
+vim.keymap.set("v", "<C-r>", [["hy:%s/<C-r>h//gc<left><left><left>]])
 
 local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap('n', '<C-,>', '<Cmd>BufferPrevious<CR>', opts)
