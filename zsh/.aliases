@@ -13,3 +13,6 @@ alias icat="kitty +kitten icat"
 # Search directory using fzf
 alias sd="cd ~ && cd \$(find * -type d | fzf)"
 
+
+# Conduktor --> Kafka GUI | Temporary
+alias conduktor="GDK_SCALE=2 /opt/conduktor/bin/Conduktor > /dev/null 2>&1 &"
