@@ -12,7 +12,10 @@
 set $mod Mod4
 
 # Remove borders from windows
-hide_edge_borders both
+hide_edge_borders smart_no_gaps
+gaps inner 5
+gaps outer 5
+smart_gaps on
 
 # Remove title bar from windows
 for_window [class="^.*"] border pixel 0
@@ -224,7 +227,7 @@ exec discord
 exec slack
 
 # Transparency with picom compositor
-exec_always picom -f
+exec_always picom --config ~/.config/picom/picom.conf
 
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
@@ -242,6 +245,7 @@ set $in-bgcolor #3636364D
 set $focused-ws #523d6480
 set $bar-color  #523d640D
 
+
 #                       border          background      text            indicator (a line which shows where the next window will be placed)     
 client.focused          $bgcolor        $bgcolor        $text           $indicator
 client.unfocused        $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
@@ -250,3 +254,5 @@ client.urgent           $u-bgcolor      $u-bgcolor      $text           $u-bgcol
 
 # Always merge ~/.Xresources
 exec_always --no-startup-id xrdb -merge ~/.Xresources
+
+
