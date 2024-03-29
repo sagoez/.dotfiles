@@ -1,3 +1,4 @@
+-- TODO: Add more languages
 return {
   'nvim-treesitter/nvim-treesitter-context',
   config = function()

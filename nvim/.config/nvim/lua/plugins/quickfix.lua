@@ -10,6 +10,11 @@ return {
       auto_enable = true,
       auto_resize_height = true, -- highly recommended enable
       preview = {
+        auto_preview = true,
+        show_scroll_bar = true,
+        winblend = 0,
+        wrap = false,
+        buf_label = true,
         win_height = 12,
         win_vheight = 12,
         delay_syntax = 80,
