@@ -2,7 +2,6 @@ return {
   { "j-hui/fidget.nvim",                tag = "legacy" },
   { "folke/neodev.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
-  { "folke/todo-comments.nvim" },
   { "dstein64/vim-startuptime",         cmd = "StartupTime" },
   { "nvim-tree/nvim-web-devicons",      lazy = true },
   { "machakann/vim-sandwich" },
