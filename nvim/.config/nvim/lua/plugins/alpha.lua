@@ -5,6 +5,29 @@ return {
     'nvim-lua/plenary.nvim'
   },
   config = function()
+    local header = {
+      type = "text",
+      val = {
+        "  ⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠀⠀",
+        "⢸⣍⡙⢿⣏⠉⠉⠉⠋⠉⠉⣩⣾⢋⣩⡇",
+        "⢸⡈⢿⣦⡙⢳⣄⠀⠀⣠⡶⢋⣵⡿⢃⡇",
+        "⢸⣙⠿⣮⢋⢷⡝⣣⠸⣫⡴⢛⣵⡾⢋⡇",
+        "⢸⣝⢿⣮⣜⢷⢸⢋⡄⣫⡶⣃⣵⡾⣫⡇",
+        "⢸⠙⢶⣭⢚⠷⢰⣯⢆⣩⡾⣃⣭⡶⠋⡇",
+        "⢸⠀⠳⣾⣘⡃⠰⡣⢋⣵⠞⡃⣽⡶⠀⡇",
+        "⢸⠀⠐⠾⡍⡃⡺⢞⣁⠶⣛⢭⡷⠂⠀⡇",
+        "⠘⠤⣀⠙⠶⠆⣚⠽⢐⣫⠍⠶⠊⣀⠤⠃",
+        "⠀⠀⠈⠙⢫⣬⣖⠃⠙⢊⣚⡋⠊⠁⠀⠀",
+        "⠀⠀⠀⠀⠀⠀⠈⠙⠋⠁⠀⠀⠀⠀⠀⠀",
+        "    SASAGEYO!   ",
+      },
+      opts = {
+        position = "center",
+        hl = "Type",
+        wrap = "nowrap",
+      },
+    }
+
     local dashboard = require('alpha.themes.dashboard');
     local theme = require('alpha.themes.theta');
     local buttons = {
@@ -12,15 +35,15 @@ return {
       val = {
         { type = "text",    val = "Quick links", opts = { hl = "SpecialComment", position = "center" } },
         { type = "padding", val = 1 },
-        dashboard.button("e", "  New file", "<cmd>ene<CR>"),
+        -- dashboard.button("e", "  New file", "<cmd>ene<CR>"),
         dashboard.button("SPC f f", "󰈞  Find file"),
         dashboard.button("SPC l g", "󰊄  Live grep"),
         -- open buffer with a message on the footer after switching to the learning directory
         dashboard.button("l", "  Learning",
           "<cmd>cd ~/Learning/ <CR> <cmd>echo 'Switched to Learning directory' <CR>"),
         dashboard.button("w", "  Work", "<cmd>cd ~/Evolution/ <CR> <cmd>echo 'Switched to Evolution directory' <CR>"),
-        dashboard.button("c", "  Configuration",
-          "<cmd>cd ~/.config/nvim/ <CR> <cmd>echo 'Switched to Configuration directory' <CR>"),
+        -- dashboard.button("c", "  Configuration",
+        -- "<cmd>cd ~/.config/nvim/ <CR> <cmd>echo 'Switched to Configuration directory' <CR>"),
         dashboard.button("u", "  Update plugins", "<cmd>Lazy sync<CR>"),
         dashboard.button("q", "󰅚  Quit", "<cmd>qa<CR>"),
       },
@@ -54,7 +77,7 @@ return {
     theme.config = {
       layout = {
         { type = "padding", val = 2 },
-        theme.header,
+        header,
         { type = "padding", val = 2 },
         section_mru,
         { type = "padding", val = 2 },
@@ -65,4 +88,3 @@ return {
     require 'alpha'.setup(theme.config)
   end
 };
-
