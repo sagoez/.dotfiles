@@ -3,7 +3,6 @@ return {
   { "folke/neodev.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
   { "dstein64/vim-startuptime",         cmd = "StartupTime" },
-  { "nvim-tree/nvim-web-devicons",      lazy = true },
   { "machakann/vim-sandwich" },
   { "neovim/nvim-lspconfig" },
   {

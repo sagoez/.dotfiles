@@ -1,4 +1,3 @@
--- TODO: Add more languages
 return {
   'nvim-treesitter/nvim-treesitter-context',
   config = function()
@@ -15,6 +14,9 @@ return {
         enable = true,
         --disable = { "scala" },
       },
+      sync_install = true,
+      modules = {},
+      ignore_install = {},
     })
   end
 }
