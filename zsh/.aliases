@@ -1,5 +1,5 @@
 # Open a directory in the current window in neovim
-alias vi="nvim"
+alias vi="neovide"
 
 # Go to Evolution directory
 alias e="cd $HOME/Evolution/"
