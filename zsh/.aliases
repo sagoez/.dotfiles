@@ -1,11 +1,17 @@
 # Open a directory in the current window in neovim
-alias vi="neovide"
+alias vi="nvim"
+
+# Open currenct directory in neovide
+alias nvi="neovide ."
 
 # Go to Evolution directory
-alias e="cd $HOME/Evolution/"
+alias work="cd $HOME/Evolution/"
 
 # Go to Learning directory
-alias m="cd $HOME/Learning/"
+alias learn="cd $HOME/Learning/"
+
+# Go to .dotfiles directory
+alias dot="cd $HOME/.dotfiles/"
 
 # Open image in kitty terminal
 alias icat="kitty +kitten icat"

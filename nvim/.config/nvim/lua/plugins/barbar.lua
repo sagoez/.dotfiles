@@ -8,7 +8,7 @@ return {
       auto_hide = 0,
       animation = true,
       clickable = false,
-      maximum_padding = math.huge,
+      -- maximum_padding = math.huge,
       highlight_alternate = false,
       focus_on_close = 'left',
       icons = {
@@ -18,11 +18,11 @@ return {
           [vim.diagnostic.severity.INFO] = { enabled = false },
           [vim.diagnostic.severity.HINT] = { enabled = true, icon = '' },
         },
-        preset = 'slanted',
-        inactive = { button = '', separator = { left = '', right = '' } },
+        preset = 'powerline',
+        inactive = { button = '' --[[ , separator = { left = '', right = ''  ]] },
         current = { button = '' },
         pinned = { button = '' },
-        separator = { left = '', right = '' },
+        --   -- separator = { left = '', right = '' },
       }
     })
   end,
