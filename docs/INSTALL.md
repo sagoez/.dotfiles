@@ -8,7 +8,7 @@
 2. Run
 
 ```bash
-apt-get install -y build-essential git curl file stow
+apt-get install -y build-essential git curl file stow blueman
 ```
 
 3. Install `brew`
