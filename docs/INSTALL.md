@@ -163,3 +163,11 @@ sudo apt install polybar
 ```bash
 cd ~/.dotfiles && stow nvim && stow zsh && stow gpg
 ```
+
+# Troubleshooting
+
+- [Git GPG signing fails without a clear message](https://stackoverflow.com/questions/52444915/git-gpg-signing-fails-without-a-clear-message)
+- [How to understand the `gpg failed to sign the data` problem in git](https://gist.github.com/paolocarrasco/18ca8fe6e63490ae1be23e84a7039374)
+- [GPG Suite, new key failed permission denied](https://gpgtools.tenderapp.com/discussions/feedback/17657-install-os-x)
+- [GPG Suite on MacOS](https://gist.github.com/danieleggert/b029d44d4a54b328c0bac65d46ba4c65)
+- [Handling multiple Git identities](https://gist.github.com/Jonalogy/54091c98946cfe4f8cdab2bea79430f9)
