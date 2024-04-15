@@ -1,8 +1,11 @@
 # Open a directory in the current window in neovim
 alias vi="nvim"
 
-# Open currenct directory in neovide
-alias nvi="neovide ."
+# Open a directory with neovide
+alias nvi="neovide"
+
+# Open currenct directory in neovide (for mac only)
+alias macvi='open --new -b com.neovide.neovide --args ${PWD}'
 
 # Go to Evolution directory
 alias work="cd $HOME/Evolution/"
