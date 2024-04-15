@@ -3,7 +3,7 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down"
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" })
 
 -- move line below as a continuation of the current line
-vim.keymap.set("n", "J", "mzJ`z", { desc = "Move line below as a continuation of the current line" })
+vim.keymap.set("n", "J", "mzJ`z", { desc = "Move line below as a continuation of the current line" });
 
 -- move cursor below faster
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Move cursor below faster" })
@@ -62,14 +62,15 @@ end, { desc = "Enable spell checking and set the language to English" })
 
 -- open a floating window with the diagnostics of the current line
 vim.keymap.set("n", "<leader>ee", function()
-  vim.diagnostic.open_float(0, { scope = "line" })
+  vim.diagnostic.open_float({}, { scope = "line" })
 end, { desc = "Open a floating window with the diagnostics of the current line" })
 
 -- will take the selected text and search for replace in the current buffer
 vim.keymap.set("v", "<C-r>", [["hy:%s/<C-r>h//gc<left><left><left>]])
 
 -- open the quickfix list and place it in the middle of the screen
-vim.keymap.set("n", "<leader>co", [[:vimgrep /\w\+/j % | copen<CR>]], { desc = "Open the quickfix list" })
+vim.keymap.set("n", "<leader>co", [[:vimgrep /\w\+/j % | copen<CR>]],
+  { desc = "Open the quickfix list in the current buffer that contains words" })
 
 -- navigate between buffers with <C-,> and <C-.>
 vim.api.nvim_set_keymap('n', '<C-,>', '<Cmd>BufferPrevious<CR>',
@@ -78,4 +79,23 @@ vim.api.nvim_set_keymap('n', '<C-.>', '<Cmd>BufferNext<CR>',
   { noremap = true, silent = true, desc = "Navigate to the next buffer" })
 -- close the current buffer with <C-c>
 vim.api.nvim_set_keymap('n', '<C-c>', '<Cmd>BufferClose<CR>',
-  { noremap = true, silent = true, desc = "Close the current buffer" })
+  { noremap = true, silent = true, desc = "Close the current buffer" }
+)
+
+vim.keymap.set('n', '<leader>frc', function()
+  local search = vim.fn.input("Search > ")
+  local replace = vim.fn.input("Replace > ")
+
+  vim.cmd("vimgrep /" .. search .. "/j %")
+  vim.cmd("copen")
+  vim.cmd("cdo s/" .. search .. "/" .. replace .. "/gc")
+end)
+
+vim.keymap.set('n', '<leader>frg', function()
+  local search = vim.fn.input("Search > ")
+  local replace = vim.fn.input("Replace > ")
+
+  vim.cmd("vimgrep /" .. search .. "/j **/*")
+  vim.cmd("copen")
+  vim.cmd("cdo s/" .. search .. "/" .. replace .. "/gc")
+end)

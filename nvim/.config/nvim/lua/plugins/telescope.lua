@@ -20,6 +20,10 @@ return {
       require("telescope.builtin").find_files({ cwd = "~/.config/nvim", layout_strategy = "vertical" })
     end, { desc = "Find dotfiles" })
 
+    vim.keymap.set("n", "<leader>fb", function()
+      require("telescope.builtin").buffers({ layout_strategy = "vertical" })
+    end, { desc = "Find buffers" })
+
     vim.keymap.set("n", "<leader>lg", function()
       require("telescope.builtin").live_grep({ layout_strategy = "vertical" })
     end, { desc = "Live grep" })
