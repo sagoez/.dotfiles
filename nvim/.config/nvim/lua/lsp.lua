@@ -22,19 +22,19 @@ local setup = function()
 
   local on_attach = function(client, bufnr)
     -- LSP agnostic mappings
-    map("n", "gd", vim.lsp.buf.definition)
-    map("n", "gtd", vim.lsp.buf.type_definition)
-    map("n", "K", vim.lsp.buf.hover)
-    map("n", "gi", vim.lsp.buf.implementation)
-    map("n", "gr", vim.lsp.buf.references)
-    map("n", "<leader>sh", vim.lsp.buf.signature_help)
-    map("n", "<leader>rn", vim.lsp.buf.rename)
-    map("n", "<leader>ca", vim.lsp.buf.code_action)
-    map("n", "<leader>cl", vim.lsp.codelens.run)
+    map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+    map("n", "gtd", vim.lsp.buf.type_definition, { desc = "Go to type definition" })
+    map("n", "K", vim.lsp.buf.hover, { desc = "Show hover" })
+    map("n", "gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
+    map("n", "gr", vim.lsp.buf.references, { desc = "Show references" })
+    map("n", "<leader>sh", vim.lsp.buf.signature_help, { desc = "Show signature help" })
+    map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
+    map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
+    map("n", "<leader>cl", vim.lsp.codelens.run, { desc = "Run code lens" })
 
     map("n", "<leader>f", function()
       vim.lsp.buf.format({ async = true })
-    end)
+    end, { desc = "Format" })
 
     api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
   end
@@ -82,21 +82,21 @@ local setup = function()
   metals_config.on_attach = function(client, bufnr)
     on_attach(client, bufnr)
 
-    map("v", "KA", require("metals").type_of_range)
+    map("v", "KA", require("metals").type_of_range, { desc = "Type of range" })
 
     map("n", "<leader>ws", function()
       require("metals").hover_worksheet({ border = "single" })
-    end)
+    end, { desc = "Hover worksheet" })
 
-    map("n", "<leader>tt", require("metals.tvp").toggle_tree_view)
+    map("n", "<leader>tt", require("metals.tvp").toggle_tree_view, { desc = "Toggle tree view" })
 
-    map("n", "<leader>tr", require("metals.tvp").reveal_in_tree)
+    map("n", "<leader>tr", require("metals.tvp").reveal_in_tree, { desc = "Reveal in tree" })
 
-    map("n", "<leader>mmc", require("metals").commands)
+    map("n", "<leader>mmc", require("metals").commands, { desc = "Metals commands" })
 
     map("n", "<leader>mts", function()
       require("metals").toggle_setting("showImplicitArguments")
-    end)
+    end, { desc = "Toggle show implicit arguments" })
 
     api.nvim_create_autocmd("CursorHold", {
       callback = vim.lsp.buf.document_highlight,
@@ -163,15 +163,15 @@ local setup = function()
       },
     }
 
-    map("n", "<leader>dc", require("dap").continue)
-    map("n", "<leader>dr", require("dap").repl.toggle)
-    map("n", "<leader>dK", require("dap.ui.widgets").hover)
+    map("n", "<leader>dc", require("dap").continue, { desc = "Continue debugging" })
+    map("n", "<leader>dr", require("dap").repl.toggle, { desc = "Toggle REPL" })
+    map("n", "<leader>dK", require("dap.ui.widgets").hover, { desc = "Hover" })
     map("n", "<leader>dt", function()
       require("dap").toggle_breakpoint('x == 6')
-    end)
-    map("n", "<leader>dso", require("dap").step_over)
-    map("n", "<leader>dsi", require("dap").step_into)
-    map("n", "<leader>drl", require("dap").run_last)
+    end, { desc = "Toggle breakpoint" })
+    map("n", "<leader>dso", require("dap").step_over, { desc = "Step over" })
+    map("n", "<leader>dsi", require("dap").step_into, { desc = "Step into" })
+    map("n", "<leader>drl", require("dap").run_last, { desc = "Run last" })
 
     dap.listeners.after["event_terminated"]["nvim-metals"] = function(session, body)
       --vim.notify("Tests have finished!")
