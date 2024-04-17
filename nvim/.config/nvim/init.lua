@@ -16,20 +16,25 @@ vim.opt.rtp:prepend(lazypath)
 require('configuration.remap')
 require('configuration.set')
 require('lazy').setup('plugins')
+vim.cmd("colorscheme kanagawa")
 require('lsp').setup()
 
+
+-- Neovide configuration
 if vim.g.neovide then
   -- Neovide configuration for transparency
   local alpha = function()
     return string.format("%x", math.floor((255 * vim.g.transparency) or 0.8))
   end
 
-  vim.g.neovide_transparency = 0.6
-  vim.g.transparency = 1
-  vim.g.neovide_window_blurred = true
+  vim.g.neovide_transparency = 0.5
+  vim.g.transparency = 0.8
   vim.g.neovide_background_color = "#0f1117" .. alpha()
+  vim.g.neovide_window_blurred = true
   vim.g.neovide_show_border = false
   vim.opt.linespace = 0
+  vim.g.neovide_theme = 'Kanagawa'
+  vim.g.neovide_unlink_border_highlights = true
 
   -- Font configuration
   vim.opt.guifont = "FiraCode Nerd Font:h18"
@@ -42,5 +47,3 @@ if vim.g.neovide then
     { noremap = true, silent = true }
   )
 end
-
-vim.cmd("colorscheme kanagawa")

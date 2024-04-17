@@ -1,11 +1,12 @@
 local g = vim.g
-
+local o = vim.o
 local opt = vim.opt
 local global_opt = vim.opt_global
+local indent = 2
 
 g.netrw_gx = "<cWORD>"
 
-local indent = 2
+o.background = ""
 
 -- global
 global_opt.shortmess:append("c")
@@ -47,7 +48,7 @@ opt.modeline = false
 
 g.copilot_assume_mapped = true
 g.copilot_filetypes = {
-    ["*"] = true
+  ["*"] = true
 }
 
 opt.nu = true
@@ -63,10 +64,10 @@ opt.signcolumn = "yes"
 opt.isfname:append("@-@")
 
 -- vim.api.nvim_create_autocmd({ "BufEnter" }, {
-  --  callback = function(args)
-   --     if vim.fn.isdirectory(args.match) == 1 then
-     --       vim.cmd("NvimTreeToggle")
-       --     return true
-        --end
-    --end,
+--  callback = function(args)
+--     if vim.fn.isdirectory(args.match) == 1 then
+--       vim.cmd("NvimTreeToggle")
+--     return true
+--end
+--end,
 --})
