@@ -277,8 +277,12 @@ local setup = function()
     cmd = { "cs", "launch", "com.disneystreaming.smithy:smithy-language-server:0.0.21", "--", "0" },
   })
 
+  require("typescript-tools").setup({
+    on_attach = on_attach,
+  })
+
   -- These server just use the vanilla setup
-  local servers = { "bashls", "dockerls", "html", "tsserver", "gopls", "clangd" }
+  local servers = { "bashls", "dockerls", "html", "gopls", "clangd" }
   for _, server in pairs(servers) do
     lsp_config[server].setup({ on_attach = on_attach })
   end
