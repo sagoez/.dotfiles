@@ -12,9 +12,9 @@ local setup = function()
     capabilities = capabilities,
   })
 
-  require("fidget").setup({
-    -- add any options here, or leave empty to use the default settings
-  })
+  -- require("fidget").setup({
+  --   -- add any options here, or leave empty to use the default settings
+  -- })
 
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
 
