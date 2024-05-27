@@ -25,7 +25,8 @@ return {
         "lua_ls",
         "rust_analyzer",
         "yamlls",
-        "tsserver"
+        "tsserver",
+        "elixirls"
       }
     }
   end

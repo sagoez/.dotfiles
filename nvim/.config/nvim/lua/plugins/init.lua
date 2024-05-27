@@ -1,5 +1,4 @@
 return {
-  -- { "j-hui/fidget.nvim",                tag = "legacy" },
   { "folke/neodev.nvim" },
   { "williamboman/mason-lspconfig.nvim" },
   { "dstein64/vim-startuptime",         cmd = "StartupTime" },

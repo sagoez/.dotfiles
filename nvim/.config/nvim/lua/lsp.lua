@@ -12,10 +12,6 @@ local setup = function()
     capabilities = capabilities,
   })
 
-  -- require("fidget").setup({
-  --   -- add any options here, or leave empty to use the default settings
-  -- })
-
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
 
   local lsp_group = api.nvim_create_augroup("lsp", { clear = true })
@@ -190,6 +186,10 @@ local setup = function()
     group = nvim_metals_group,
   })
 
+  --================================
+  -- Rust specific setup
+  --================================
+
   local rust_tools_opts = {
     tools = {
       hover_with_actions = false,
@@ -220,7 +220,10 @@ local setup = function()
 
   require("rust-tools").setup(rust_tools_opts)
 
-  -- For editing tree-sitter grammars
+  --================================
+  -- Other LSP servers setup
+  --================================
+
   vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     pattern = { "grammar.js", "corpus/*.txt" },
     callback = function()
@@ -235,13 +238,6 @@ local setup = function()
 
   lsp_config.lua_ls.setup({
     on_attach = on_attach,
-    commands = {
-      Format = {
-        function()
-          require("stylua-nvim").format_file()
-        end,
-      },
-    },
     settings = {
       Lua = {
         diagnostics = { globals = { "vim", "it", "describe", "before_each" } },
@@ -250,31 +246,22 @@ local setup = function()
     },
   })
 
-  lsp_config.jsonls.setup({
-    on_attach = on_attach,
-    commands = {
-      Format = {
-        function()
-          vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line("$"), 0 })
-        end,
-      },
-    },
-  })
-
   lsp_config.yamlls.setup({
-    on_attach = on_attach,
+    on_attach = function(client, bufnr)
+      client.server_capabilities.documentFormattingProvider = true
+      on_attach(client, bufnr)
+    end,
     settings = {
       yaml = {
+        format = {
+          enable = true,
+        },
         schemas = {
-          ["https://raw.githubusercontent.com/oyvindberg/bleep/master/schema.json"] = "bleep.yaml",
+          ["https://raw.githubusercontent.com/docker/cli/master/cli/compose/schema/data/config_schema_v3.10.json"] =
+          "*-compose.yaml",
         },
       },
     },
-  })
-
-  lsp_config.smithy_ls.setup({
-    on_attach = on_attach,
-    cmd = { "cs", "launch", "com.disneystreaming.smithy:smithy-language-server:0.0.21", "--", "0" },
   })
 
   require("typescript-tools").setup({
@@ -282,7 +269,7 @@ local setup = function()
   })
 
   -- These server just use the vanilla setup
-  local servers = { "bashls", "dockerls", "html", "gopls", "clangd" }
+  local servers = { "bashls", "dockerls", "html", "gopls", "clangd", "sqls", "gleam", "elixirls", "jsonls" }
   for _, server in pairs(servers) do
     lsp_config[server].setup({ on_attach = on_attach })
   end
