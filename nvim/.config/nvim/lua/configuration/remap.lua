@@ -82,6 +82,7 @@ vim.api.nvim_set_keymap('n', '<C-c>', '<Cmd>BufferClose<CR>',
   { noremap = true, silent = true, desc = "Close the current buffer" }
 )
 
+-- find and replace with confirmation
 vim.keymap.set('n', '<leader>frc', function()
   local search = vim.fn.input("Search > ")
   local replace = vim.fn.input("Replace > ")
@@ -89,13 +90,12 @@ vim.keymap.set('n', '<leader>frc', function()
   vim.cmd("vimgrep /" .. search .. "/j %")
   vim.cmd("copen")
   vim.cmd("cdo s/" .. search .. "/" .. replace .. "/gc")
-end)
+end, { noremap = true, silent = true, desc = "Find and replace in current buffer with confirmation" })
 
+-- find and replace in all buffers with confirmation
 vim.keymap.set('n', '<leader>frg', function()
   local search = vim.fn.input("Search > ")
   local replace = vim.fn.input("Replace > ")
 
   vim.cmd("vimgrep /" .. search .. "/j **/*")
-  vim.cmd("copen")
-  vim.cmd("cdo s/" .. search .. "/" .. replace .. "/gc")
-end)
+end, { noremap = true, silent = true, desc = "Find and replace in all buffers with confirmation" })
