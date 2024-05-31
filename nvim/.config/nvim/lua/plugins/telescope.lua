@@ -43,6 +43,7 @@ return {
     )
 
     local actions = require("telescope.actions")
+    local open_with_trouble = require("trouble.sources.telescope").open
 
     require("telescope").setup({
       defaults = {
@@ -52,7 +53,10 @@ return {
         grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
         mappings = {
           n = {
-            ["f"] = actions.send_to_qflist,
+            ["<C-T>"] = open_with_trouble,
+          },
+          i = {
+            ["<C-T>"] = open_with_trouble,
           },
         },
       },
