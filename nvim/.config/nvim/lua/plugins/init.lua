@@ -32,10 +32,8 @@ return {
     "supermaven-inc/supermaven-nvim",
     config = function()
       require("supermaven-nvim").setup({
-        keymaps = {
-          -- A for `autocomplete`
-          accept_suggestion = "<Tab>",
-        },
+        disable_keymaps = true,
+        disable_inline_completion = true
       })
     end,
   },
