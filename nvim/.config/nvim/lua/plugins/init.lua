@@ -29,6 +29,12 @@ return {
     opts = {},
   },
   {
+    "supermaven-inc/supermaven-nvim",
+    config = function()
+      require("supermaven-nvim").setup({})
+    end,
+  },
+  {
     "glepnir/lspsaga.nvim",
     branch = "main",
     config = function()
@@ -41,7 +47,6 @@ return {
   { "stevearc/dressing.nvim",  event = "VeryLazy" },
   { "wakatime/vim-wakatime" },
   { "windwp/nvim-autopairs" },
-  { "github/copilot.vim" },
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
