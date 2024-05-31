@@ -14,12 +14,12 @@ return {
 
     cmp.setup({
       sources = {
-        { name = "nvim_lsp",               priority = 10 },
+        { name = "supermaven",             priority = 10 },
+        { name = "nvim_lsp",               priority = 15 },
         { name = "buffer" },
         { name = "vsnip" },
         { name = "path" },
         { name = "nvim_lsp_signature_help" },
-        { name = "supermaven" },
       },
       snippet = {
         expand = function(args)
