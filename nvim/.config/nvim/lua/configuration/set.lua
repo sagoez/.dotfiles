@@ -46,6 +46,11 @@ opt.expandtab = true
 opt.fileformat = "unix"
 opt.modeline = false
 
+g.copilot_assume_mapped = true
+g.copilot_filetypes = {
+  ["*"] = true
+}
+
 opt.nu = true
 opt.relativenumber = true
 opt.swapfile = false

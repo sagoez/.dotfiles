@@ -28,15 +28,7 @@ return {
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
     opts = {},
   },
-  {
-    "supermaven-inc/supermaven-nvim",
-    config = function()
-      require("supermaven-nvim").setup({
-        disable_keymaps = true,
-        disable_inline_completion = true
-      })
-    end,
-  },
+  { "github/copilot.vim" },
   {
     "glepnir/lspsaga.nvim",
     branch = "main",
@@ -47,7 +39,7 @@ return {
       { "nvim-tree/nvim-web-devicons" },
     }
   },
-  { "stevearc/dressing.nvim",  event = "VeryLazy" },
+  { "stevearc/dressing.nvim", event = "VeryLazy" },
   { "wakatime/vim-wakatime" },
   { "windwp/nvim-autopairs" },
   {
