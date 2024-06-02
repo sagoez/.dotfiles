@@ -1,6 +1,6 @@
 # Install
 
-## Linux
+## Arch Linux
 
 ### Installation
 1. Clone the repository to `~/.dotfiles`
@@ -8,7 +8,7 @@
 2. Run
 
 ```bash
-apt-get install -y build-essential git curl file stow blueman
+yay -Sy git curl file stow blueman
 ```
 
 3. Install `brew`
@@ -20,7 +20,7 @@ apt-get install -y build-essential git curl file stow blueman
 4. Install `zsh`
 
 ```bash
-sudo apt install zsh && chsh -s $(which zsh)
+yay zsh && zsh
 ```
 
 5. Install `oh my zsh`
@@ -29,7 +29,11 @@ sudo apt install zsh && chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-6. Install [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/FiraCode.zip)
+6. Install FiraCode Nerd
+
+```bash
+sudo pacman -S ttt-firacode-nerd
+```
 
 7. Install `Powerlevel10k`
 
@@ -71,19 +75,13 @@ git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
 11. Install `ruby`
 
 ```bash
-sudo apt install ruby-full
+sudo pacman -S ruby
 ```
 
 12. Install `colorls`
 
 ```bash
 sudo gem install colorls
-```
-
-13. Install i3
-
-```bash
-sudo apt install i3
 ```
 
 14. Install jabba
@@ -101,48 +99,10 @@ coursier setup
 brew uninstall --ignore-dependencies java
 ```
 
-16. Install kitty
-
-```bash
-curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-sudo ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten /usr/local/sbin/
-cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
-cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
-sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
-sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
-
-```
 17. Stow folders
 
 ```bash
-cd ~/.dotfiles && stow nvim && stow zsh && stow i3
-```
-
-
-## Optionally on Ubuntu to personalise your wm
-
-18. Install `feh`
-
-```bash
-sudo apt install feh
-```
-
-19. Install `picom`
-
-```bash
-sudo apt install picom
-```
-
-20. Install `fonts-droid-fallback`
-
-```bash
-sudo apt install fonts-droid-fallback
-```
-
-21. Install `pavucontrol`
-
-```bash
-sudo apt install pavucontrol
+cd ~/.dotfiles && stow nvim && stow zsh && stow hypr
 ```
 
 22. Download and install the following programs:
@@ -154,12 +114,6 @@ Slack
 Docker
 ```
 
-23. Install `polybar`
-
-```bash
-sudo apt install polybar
-```
-
 # MacOS
 
 ### Installation
@@ -168,7 +122,7 @@ sudo apt install polybar
 2. Stow folders
 
 ```bash
-cd ~/.dotfiles && stow nvim && stow zsh && stow gpg
+cd ~/.dotfiles && stow nvim && stow zsh
 ```
 
 # Troubleshooting

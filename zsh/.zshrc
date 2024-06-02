@@ -15,7 +15,7 @@ fi
 export LC_ALL=en_US.UTF-8
 
 # GpG agent
-export GPG_TTY=$(tty)
+export GPG_TTY=`tty`
 gpgconf --launch gpg-agent
 
 # Path to your oh-my-zsh installation.
