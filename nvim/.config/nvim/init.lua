@@ -33,7 +33,7 @@ if vim.g.neovide then
   vim.g.neovide_unlink_border_highlights = true
 
   -- Font configuration
-  vim.opt.guifont = "FiraCode Nerd Font:h18"
+  vim.opt.guifont = "FiraCode Nerd Font Mono:h18"
 
   -- Keybindings for clipboard
   vim.keymap.set(
