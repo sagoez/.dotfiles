@@ -6,18 +6,17 @@ local setup = function()
     -- add any options here, or leave empty to use the default settings
   })
   local lsp_config = require("lspconfig")
-  local capabilities = require("cmp_nvim_lsp").default_capabilities()
+  local cmp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
   lsp_config.util.default_config = vim.tbl_extend("force", lsp_config.util.default_config, {
-    capabilities = capabilities,
+    capabilities = cmp_capabilities,
   })
 
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
 
   local lsp_group = api.nvim_create_augroup("lsp", { clear = true })
 
-  local on_attach = function(client, bufnr)
-    -- LSP agnostic mappings
+  local on_attach = function(_, bufnr)
     map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
     map("n", "gtd", vim.lsp.buf.type_definition, { desc = "Go to type definition" })
     map("n", "K", vim.lsp.buf.hover, { desc = "Show hover" })
@@ -27,12 +26,11 @@ local setup = function()
     map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
     map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
     map("n", "<leader>cl", vim.lsp.codelens.run, { desc = "Run code lens" })
-
     map("n", "<leader>f", function()
       vim.lsp.buf.format({ async = true })
     end, { desc = "Format" })
 
-    api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+    api.nvim_set_option_value("omnifunc", "v:lua.vim.lsp.omnifunc", { buf = bufnr })
   end
 
   --================================
@@ -45,35 +43,21 @@ local setup = function()
     },
   }
 
-
-  local function metals_status_handler(err, status, ctx)
-    local val = {}
-    -- trim and remove spinner
-    local text = status.text:gsub('[⠇⠋⠙⠸⠴⠦]', ''):gsub("^%s*(.-)%s*$", "%1")
-    if status.hide then
-      val = { kind = "end" }
-    elseif status.show then
-      val = { kind = "begin", title = text }
-    elseif status.text then
-      val = { kind = "report", message = text }
-    else
-      return
-    end
-    local msg = { token = "metals", value = val }
-    vim.lsp.handlers["$/progress"](err, msg, ctx)
-  end
-
-  metals_config.handlers = { ['metals/status'] = metals_status_handler }
-
   metals_config.settings = {
+    defaultBspToBuildTool = true,
+    enableSemanticHighlighting = false,
     showImplicitArguments = true,
     showImplicitConversionsAndClasses = true,
     showInferredType = true,
     serverVersion = "latest.snapshot",
   }
 
-  metals_config.init_options.statusBarProvider = "on"
-  metals_config.capabilities = capabilities
+  metals_config.init_options = {
+    statusBarProvider = "off",
+    icons = "unicode"
+  }
+
+  metals_config.capabilities = cmp_capabilities
 
   metals_config.on_attach = function(client, bufnr)
     on_attach(client, bufnr)
@@ -264,12 +248,25 @@ local setup = function()
     },
   })
 
+  local client_capabilities = vim.lsp.protocol.make_client_capabilities()
+  client_capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+  lsp_config.jsonls.setup({
+    capabilities = client_capabilities,
+    on_attach = on_attach,
+  })
+
+  lsp_config.html.setup({
+    capabilities = client_capabilities,
+    on_attach = on_attach,
+  })
+
   require("typescript-tools").setup({
     on_attach = on_attach,
   })
 
   -- These server just use the vanilla setup
-  local servers = { "bashls", "dockerls", "html", "gopls", "clangd", "sqls", "gleam", "elixirls", "jsonls" }
+  local servers = { "bashls", "dockerls", "gopls", "clangd", "sqls", "gleam", "elixirls" }
   for _, server in pairs(servers) do
     lsp_config[server].setup({ on_attach = on_attach })
   end

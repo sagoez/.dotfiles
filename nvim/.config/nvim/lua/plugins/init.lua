@@ -1,6 +1,6 @@
 return {
   { "folke/neodev.nvim" },
-  { "williamboman/mason-lspconfig.nvim" },
+  -- { "williamboman/mason-lspconfig.nvim" },
   { "dstein64/vim-startuptime",         cmd = "StartupTime" },
   { "machakann/vim-sandwich" },
   { "neovim/nvim-lspconfig" },
