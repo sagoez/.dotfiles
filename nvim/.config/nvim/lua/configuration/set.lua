@@ -55,19 +55,10 @@ opt.nu = true
 opt.relativenumber = true
 opt.swapfile = false
 opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
 opt.hlsearch = false
 opt.incsearch = true
 opt.scrolloff = 16
 opt.signcolumn = "yes"
 opt.isfname:append("@-@")
-
--- vim.api.nvim_create_autocmd({ "BufEnter" }, {
---  callback = function(args)
---     if vim.fn.isdirectory(args.match) == 1 then
---       vim.cmd("NvimTreeToggle")
---     return true
---end
---end,
---})
