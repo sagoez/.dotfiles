@@ -1,8 +1,13 @@
 return {
   "rcarriga/nvim-notify",
   config = function()
-    local notify = require("notify")._config()
     require("notify").setup({
+      on_open = function()
+      end,
+      on_close = function()
+      end,
+      max_width = 80,
+      max_height = 15,
       background_colour = "NotifyBackground",
       fps = 60,
       icons = {

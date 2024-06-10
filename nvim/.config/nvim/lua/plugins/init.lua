@@ -1,7 +1,5 @@
 return {
   { "folke/neodev.nvim" },
-  -- { "williamboman/mason-lspconfig.nvim" },
-  { "dstein64/vim-startuptime",         cmd = "StartupTime" },
   { "machakann/vim-sandwich" },
   { "neovim/nvim-lspconfig" },
   {
@@ -41,11 +39,5 @@ return {
   },
   { "stevearc/dressing.nvim", event = "VeryLazy" },
   { "wakatime/vim-wakatime" },
-  { "windwp/nvim-autopairs" },
-  {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function() vim.fn["mkdp#util#install"]() end,
-  }
+  { "windwp/nvim-autopairs" }
 }

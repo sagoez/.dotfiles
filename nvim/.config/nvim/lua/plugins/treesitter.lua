@@ -9,7 +9,6 @@ return {
         lint_events = { "BufWrite", "CursorHold" },
       },
       ensure_installed = "all",
-
       treesitter = {
         enable = false
       },

@@ -9,9 +9,6 @@ return {
     local builtin = require('telescope.builtin')
 
     vim.keymap.set('n', '<C-p>', builtin.git_files, { desc = "Open files not in gitignore" })
-    -- vim.keymap.set('n', '<leader>fs', function()
-    -- builtin.grep_string({ search = vim.fn.input("Grep > ") });
-    -- end)
     vim.keymap.set("n", "<leader>ff", function()
       require("telescope.builtin").find_files({ layout_strategy = "vertical" })
     end, { desc = "Find files" })
@@ -34,15 +31,12 @@ return {
 
     vim.keymap.set("n", "<leader>mc", require("telescope").extensions.metals.commands, { desc = "Metals commands" })
 
-    -- vim.keymap.set("n", "<leader>cc", require("telescope").extensions.coursier.complete)
-
     vim.keymap.set("n", "gds", require("telescope.builtin").lsp_document_symbols, { desc = "Document symbols" })
 
     vim.keymap.set("n", "gws", require("telescope.builtin").lsp_dynamic_workspace_symbols,
       { desc = "Workspace symbols. In case of Scala prefix with # to include library symbols" }
     )
 
-    local actions = require("telescope.actions")
     local open_with_trouble = require("trouble.sources.telescope").open
 
     require("telescope").setup({

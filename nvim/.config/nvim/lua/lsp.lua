@@ -153,7 +153,7 @@ local setup = function()
     map("n", "<leader>dsi", require("dap").step_into, { desc = "Step into" })
     map("n", "<leader>drl", require("dap").run_last, { desc = "Run last" })
 
-    dap.listeners.after["event_terminated"]["nvim-metals"] = function(session, body)
+    dap.listeners.after["event_terminated"]["nvim-metals"] = function(_, _)
       --vim.notify("Tests have finished!")
       dap.repl.open()
     end

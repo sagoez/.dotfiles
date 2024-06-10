@@ -147,7 +147,7 @@ return {
 
     local Event = api.events.Event
     api.events.subscribe(Event.NodeRenamed, function(data)
-      local clients = vim.lsp.get_active_clients()
+      local clients = vim.lsp.get_clients()
       local params = make_rename_params(data.old_name, data.new_name)
       for _, client in ipairs(clients) do
         local didRename = vim.tbl_get(client, "server_capabilities", "workspace", "fileOperations", "didRename")
@@ -159,13 +159,13 @@ return {
     end)
 
     api.events.subscribe(Event.WillRenameNode, function(data)
-      local clients = vim.lsp.get_active_clients()
+      local clients = vim.lsp.get_clients()
       local params = make_rename_params(data.old_name, data.new_name)
-      for _, client in ipairs(clients) do
+      for buf_nr, client in ipairs(clients) do
         local willRename = vim.tbl_get(client, "server_capabilities", "workspace", "fileOperations", "willRename")
         if willRename ~= nil then
           -- local filters = willRename.filters or {}
-          local resp = client.request_sync("workspace/willRenameFiles", params, 1000)
+          local resp = client.request_sync("workspace/willRenameFiles", params, 1000, buf_nr)
           if resp and resp.result ~= nil then
             vim.lsp.util.apply_workspace_edit(resp.result, client.offset_encoding)
           end
