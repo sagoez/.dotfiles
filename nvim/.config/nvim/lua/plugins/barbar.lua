@@ -8,7 +8,6 @@ return {
       auto_hide = 0,
       animation = true,
       clickable = false,
-      -- maximum_padding = math.huge,
       highlight_alternate = false,
       focus_on_close = 'left',
       icons = {
