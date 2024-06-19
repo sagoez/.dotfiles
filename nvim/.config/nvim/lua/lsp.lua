@@ -265,8 +265,17 @@ local setup = function()
     on_attach = on_attach,
   })
 
+  -- Remember to install the ElixirLS server
+  -- curl -fLO https://github.com/elixir-lsp/elixir-ls/releases/download/v0.22.0/elixir-ls-v0.22.0.zip or latest
+  -- unzip elixir-ls-v0.22.0.zip -d /usr/local/bin/elixir-ls
+  -- chmod +x /usr/local/bin/elixir-ls/language_server.sh
+  require 'lspconfig'.elixirls.setup {
+    -- Unix
+    cmd = { "/usr/local/bin/elixir-ls/language_server.sh" },
+  }
+
   -- These server just use the vanilla setup
-  local servers = { "bashls", "dockerls", "gopls", "clangd", "sqls", "gleam", "elixirls" }
+  local servers = { "bashls", "dockerls", "gopls", "clangd", "sqls", "gleam" }
   for _, server in pairs(servers) do
     lsp_config[server].setup({ on_attach = on_attach })
   end
