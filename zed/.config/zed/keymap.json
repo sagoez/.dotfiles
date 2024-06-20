@@ -15,8 +15,8 @@
       "g ]": "editor::GoToDiagnostic",
       "g [": "editor::GoToPrevDiagnostic",
       "space x x": "diagnostics::Deploy",
-      "space n t": "workspace::ToggleLeftDock",
       "ctrl-w ctrl-w": "project_panel::ToggleFocus",
+      "space n t": "workspace::ToggleLeftDock",
       "ctrl-c": [
         "pane::CloseActiveItem",
         {
@@ -52,6 +52,12 @@
     "context": "Editor && vim_mode == insert && !menu",
     "bindings": {
       "j j": "vim::NormalBefore"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-w ctrl-w": "project_panel::ToggleFocus"
     }
   }
 ]
