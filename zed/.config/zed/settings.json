@@ -1,0 +1,22 @@
+{
+  "theme": "Kanagawa Wave",
+  "vim_mode": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "buffer_font_family": "FiraCode Nerd Font",
+  "relative_line_numbers": true,
+  "cursor_blink": false,
+  "base_keymap": "VSCode",
+  "scrollbar": {
+    "show": "never"
+  },
+  "buffer_line_height": "comfortable",
+  "terminal": {
+    "font_family": "FiraCode Nerd Font",
+    "font_size": 16,
+    "line_height": "comfortable"
+  },
+  "inlay_hints": {
+    "enabled": true
+  }
+}

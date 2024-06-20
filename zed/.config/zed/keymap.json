@@ -1,0 +1,57 @@
+[
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work in normal & visual mode
+      "shift-k": "editor::Hover",
+      "space c a": "editor::ToggleCodeActions",
+      "space l g": "pane::DeploySearch",
+      "space r n": "editor::Rename",
+      "g r": "editor::FindAllReferences",
+      "g i": "editor::GoToImplementation",
+      "g t d": "editor::GoToTypeDefinition",
+      "space l f": "file_finder::Toggle",
+      "space f": "editor::Format",
+      "g ]": "editor::GoToDiagnostic",
+      "g [": "editor::GoToPrevDiagnostic",
+      "space x x": "diagnostics::Deploy",
+      "space n t": "workspace::ToggleLeftDock",
+      "ctrl-w ctrl-w": "project_panel::ToggleFocus",
+      "ctrl-c": [
+        "pane::CloseActiveItem",
+        {
+          "saveIntent": "saveAll"
+        }
+      ],
+      "space o": "tab_switcher::Toggle",
+      "/": "search::FocusSearch"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      // put key-bindings here if you want them to work only in normal mode
+      "ctrl-d": ["workspace::SendKeystrokes", "8 j"],
+      "ctrl-u": ["workspace::SendKeystrokes", "8 k"]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {
+      // visual, visual line & visual block modes
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !VimObject",
+    "bindings": {
+      "shift-j": "editor::MoveLineDown",
+      "shift-k": "editor::MoveLineUp"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      "j j": "vim::NormalBefore"
+    }
+  }
+]
