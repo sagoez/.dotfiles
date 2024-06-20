@@ -16,6 +16,7 @@
       "g [": "editor::GoToPrevDiagnostic",
       "space x x": "diagnostics::Deploy",
       "ctrl-w ctrl-w": "project_panel::ToggleFocus",
+      "space n f": "pane::RevealInProjectPanel",
       "space n t": "workspace::ToggleLeftDock",
       "ctrl-c": [
         "pane::CloseActiveItem",
@@ -38,6 +39,8 @@
   {
     "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
     "bindings": {
+      "ctrl-d": ["workspace::SendKeystrokes", "8 j"],
+      "ctrl-u": ["workspace::SendKeystrokes", "8 k"]
       // visual, visual line & visual block modes
     }
   },
@@ -58,6 +61,18 @@
     "context": "Workspace",
     "bindings": {
       "ctrl-w ctrl-w": "project_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "r": "project_panel::Rename",
+      "x": "project_panel::Cut",
+      "p": "project_panel::Paste",
+      "d": "project_panel::Delete",
+      "tab": "project_panel::Open",
+      "a": "project_panel::NewFile",
+      "shift-a": "project_panel::NewDirectory"
     }
   }
 ]
