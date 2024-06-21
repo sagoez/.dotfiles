@@ -10,21 +10,21 @@
       "g r": "editor::FindAllReferences",
       "g i": "editor::GoToImplementation",
       "g t d": "editor::GoToTypeDefinition",
-      "space l f": "file_finder::Toggle",
-      "space f": "editor::Format",
+      "space f f": "file_finder::Toggle",
+      "shift-f": "editor::Format",
       "g ]": "editor::GoToDiagnostic",
       "g [": "editor::GoToPrevDiagnostic",
       "space x x": "diagnostics::Deploy",
       "ctrl-w ctrl-w": "project_panel::ToggleFocus",
       "space n f": "pane::RevealInProjectPanel",
       "space n t": "workspace::ToggleLeftDock",
+      "space s": "editor::SelectAllMatches",
       "ctrl-c": [
         "pane::CloseActiveItem",
         {
           "saveIntent": "saveAll"
         }
       ],
-      "space o": "tab_switcher::Toggle",
       "/": "search::FocusSearch"
     }
   },
@@ -73,6 +73,13 @@
       "tab": "project_panel::Open",
       "a": "project_panel::NewFile",
       "shift-a": "project_panel::NewDirectory"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-,": "pane::ActivatePrevItem",
+      "ctrl-.": "pane::ActivateNextItem"
     }
   }
 ]
