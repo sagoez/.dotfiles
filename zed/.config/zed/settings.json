@@ -1,4 +1,7 @@
 {
+  "tab_bar": {
+    "show": true
+  },
   "theme": "Kanagawa Wave",
   "vim_mode": true,
   "ui_font_size": 16,

@@ -1,5 +1,13 @@
 [
   {
+    "bindings": {
+      "ctrl-w ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+      "ctrl-w ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+      "ctrl-w ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+      "ctrl-w ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+    }
+  },
+  {
     "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
     "bindings": {
       // put key-bindings here if you want them to work in normal & visual mode
@@ -15,7 +23,7 @@
       "g ]": "editor::GoToDiagnostic",
       "g [": "editor::GoToPrevDiagnostic",
       "space x x": "diagnostics::Deploy",
-      "ctrl-w ctrl-w": "project_panel::ToggleFocus",
+      "ctrl-w ctrl-w": "terminal_panel::ToggleFocus",
       "space n f": "pane::RevealInProjectPanel",
       "space n t": "workspace::ToggleLeftDock",
       "space s": "editor::SelectAllMatches",
@@ -80,6 +88,12 @@
     "bindings": {
       "ctrl-,": "pane::ActivatePrevItem",
       "ctrl-.": "pane::ActivateNextItem"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-w ctrl-w": "workspace::ActivatePane"
     }
   }
 ]
