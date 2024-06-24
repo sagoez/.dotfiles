@@ -13,7 +13,12 @@
       // put key-bindings here if you want them to work in normal & visual mode
       "shift-k": "editor::Hover",
       "space c a": "editor::ToggleCodeActions",
-      "space l g": "pane::DeploySearch",
+      "space l g": [
+        "pane::DeploySearch",
+        {
+          "replace_enabled": true
+        }
+      ],
       "space r n": "editor::Rename",
       "g r": "editor::FindAllReferences",
       "g i": "editor::GoToImplementation",
@@ -23,7 +28,7 @@
       "g ]": "editor::GoToDiagnostic",
       "g [": "editor::GoToPrevDiagnostic",
       "space x x": "diagnostics::Deploy",
-      "ctrl-w ctrl-w": "terminal_panel::ToggleFocus",
+      "ctrl-w ctrl-w": "project_panel::ToggleFocus",
       "space n f": "pane::RevealInProjectPanel",
       "space n t": "workspace::ToggleLeftDock",
       "space s": "editor::SelectAllMatches",
@@ -80,20 +85,23 @@
       "d": "project_panel::Delete",
       "tab": "project_panel::Open",
       "a": "project_panel::NewFile",
-      "shift-a": "project_panel::NewDirectory"
+      "shift-a": "project_panel::NewDirectory",
+      "cmd-t": "terminal_panel::ToggleFocus"
     }
   },
   {
     "context": "Editor",
     "bindings": {
       "ctrl-,": "pane::ActivatePrevItem",
-      "ctrl-.": "pane::ActivateNextItem"
+      "ctrl-.": "pane::ActivateNextItem",
+      "cmd-t": "terminal_panel::ToggleFocus"
     }
   },
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-w ctrl-w": "workspace::ActivatePane"
+      "ctrl-w ctrl-w": "project_panel::ToggleFocus",
+      "cmd-t": "workspace::NewTerminal"
     }
   }
 ]
