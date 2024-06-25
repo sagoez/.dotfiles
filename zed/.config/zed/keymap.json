@@ -41,8 +41,7 @@
       "/": [
         "buffer_search::Deploy",
         {
-          "replace_enabled": true,
-          "selection_search_enabled": true
+          "replace_enabled": true
         }
       ]
     }
