@@ -28,4 +28,4 @@ windows:
       - layout:
           cwd: /Users/samuel/Evolution
       - layout:
-          cwd: /Users/samuel/.warp
+          cwd: /Users/samuel/Learning

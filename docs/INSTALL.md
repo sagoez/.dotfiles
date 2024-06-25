@@ -54,37 +54,31 @@ git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git \
   ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
 ```
 
-10. Install `fzf-tab`
-
-```bash
-git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
-```
-
-11. Install `zsh-autosuggestions`
+10. Install `zsh-autosuggestions`
 
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
-12. Install `git-open`
+11. Install `git-open`
 
 ```bash
 git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
 ```
 
-13. Install `ruby`
+12. Install `ruby`
 
 ```bash
 sudo pacman -S ruby
 ```
 
-14. Install `colorls`
+13. Install `colorls`
 
 ```bash
 sudo gem install colorls
 ```
 
-15. Install jabba
+14. Install jabba
 
 ```bash
 curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
@@ -92,20 +86,20 @@ jabba install openjdk@1.17-0
 jabba alias default openjdk@1.17.0
 ```
 
-16. Setup coursier
+15. Setup coursier
 
 ```bash
 coursier setup
 brew uninstall --ignore-dependencies java
 ```
 
-17. Stow folders
+16. Stow folders
 
 ```bash
 cd ~/.dotfiles && stow nvim && stow zsh && stow hypr
 ```
 
-18. Download and install the following programs:
+17. Download and install the following programs:
 
 ```bash
 Spotify
