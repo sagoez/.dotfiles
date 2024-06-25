@@ -40,7 +40,10 @@
       ],
       "/": [
         "buffer_search::Deploy",
-        { "replace_enabled": true, "selection_search_enabled": true }
+        {
+          "replace_enabled": true,
+          "selection_search_enabled": true
+        }
       ]
     }
   },
@@ -89,7 +92,16 @@
       "tab": "project_panel::Open",
       "a": "project_panel::NewFile",
       "shift-a": "project_panel::NewDirectory",
-      "cmd-t": "terminal_panel::ToggleFocus"
+      "cmd-t": "terminal_panel::ToggleFocus",
+      "space f f": "file_finder::Toggle",
+      "space n t": "workspace::ToggleLeftDock",
+      "space x x": "diagnostics::Deploy",
+      "space l g": [
+        "pane::DeploySearch",
+        {
+          "replace_enabled": true
+        }
+      ]
     }
   },
   {
