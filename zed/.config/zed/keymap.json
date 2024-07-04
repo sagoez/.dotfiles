@@ -25,6 +25,7 @@
       "space z a": "editor::Fold",
       "space z m": "editor::FoldAll",
       "space z r": "editor::Unfold",
+      "space z u": "editor::UnfoldAll",
       "g t d": "editor::GoToTypeDefinition",
       "space f f": "file_finder::Toggle",
       "shift-f": "editor::Format",
