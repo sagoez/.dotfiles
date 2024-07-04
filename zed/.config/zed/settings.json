@@ -1,4 +1,11 @@
 {
+  "assistant": {
+    "provider": {
+      "name": "openai",
+      "default_model": "gpt-4o",
+      "available_models": []
+    }
+  },
   "tab_bar": {
     "show": true
   },
@@ -20,6 +27,6 @@
     "line_height": "comfortable"
   },
   "inlay_hints": {
-    "enabled": true
+    "enabled": false
   }
 }
