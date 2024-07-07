@@ -1,11 +1,5 @@
 {
-  "assistant": {
-    "default_open_ai_model": "gpt-3.5-turbo",
-    "provider": {
-      "name": "openai",
-      "default_model": "gpt-3.5-turbo"available_models": []
-    }
-  },
+  "vim_mode": true,
   "tab_bar": {
     "show": true
   },
