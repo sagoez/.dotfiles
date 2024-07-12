@@ -88,11 +88,11 @@ local setup = function()
       buffer = bufnr,
       group = lsp_group,
     })
-    api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
-      callback = vim.lsp.codelens.refresh,
-      buffer = bufnr,
-      group = lsp_group,
-    })
+    -- api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
+    --   callback = vim.lsp.codelens.refresh(),
+    --   buffer = bufnr,
+    --   group = lsp_group,
+    -- })
     api.nvim_create_autocmd("FileType", {
       pattern = { "dap-repl" },
       callback = function()
