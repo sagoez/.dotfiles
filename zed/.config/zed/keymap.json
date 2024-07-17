@@ -18,7 +18,7 @@
       "space z u": "editor::UnfoldLines",
       "g t d": "editor::GoToTypeDefinition",
       "space f f": "file_finder::Toggle",
-      "shift-f": "editor::Format",
+      "space space f": "editor::Format",
       "g ]": "editor::GoToDiagnostic",
       "g [": "editor::GoToPrevDiagnostic",
       "space x x": "diagnostics::Deploy",
