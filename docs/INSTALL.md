@@ -126,3 +126,4 @@ cd ~/.dotfiles && stow nvim && stow zsh
 - [GPG Suite, new key failed permission denied](https://gpgtools.tenderapp.com/discussions/feedback/17657-install-os-x)
 - [GPG Suite on MacOS](https://gist.github.com/danieleggert/b029d44d4a54b328c0bac65d46ba4c65)
 - [Handling multiple Git identities](https://gist.github.com/Jonalogy/54091c98946cfe4f8cdab2bea79430f9)
+- [Install Arch Linux](https://www.youtube.com/watch?v=lfUWwZqzHmA&ab_channel=SolDoesTech)
