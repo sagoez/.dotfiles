@@ -4,9 +4,6 @@ alias vi="nvim"
 # Open a directory with neovide
 alias nvi="neovide"
 
-# Open currenct directory in neovide (for mac only)
-alias macvi='open --new -b com.neovide.neovide --args ${PWD}'
-
 # Go to Evolution directory
 alias work="cd $HOME/Evolution/"
 
@@ -22,6 +19,5 @@ alias icat="kitty +kitten icat"
 # Search directory using fzf
 alias sd="cd ~ && cd \$(find * -type d | fzf)"
 
-
-# Conduktor --> Kafka GUI | Temporary
-alias conduktor="GDK_SCALE=2 /opt/conduktor/bin/Conduktor > /dev/null 2>&1 &"
+# Make python3 as python
+alias python=python3
