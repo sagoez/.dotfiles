@@ -13,6 +13,9 @@
   "scrollbar": {
     "show": "never"
   },
+  "tabs": {
+    "file_icons": true
+  },
   "buffer_line_height": "comfortable",
   "terminal": {
     "font_family": "FiraCode Nerd Font",

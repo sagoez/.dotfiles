@@ -23,6 +23,7 @@
       "g [": "editor::GoToPrevDiagnostic",
       "space x x": "diagnostics::Deploy",
       "ctrl-w ctrl-w": "project_panel::ToggleFocus",
+      "space d d": "editor::ToggleHunkDiff",
       "space n f": "pane::RevealInProjectPanel",
       "space n t": "workspace::ToggleLeftDock",
       "space s": "editor::SelectAllMatches",
