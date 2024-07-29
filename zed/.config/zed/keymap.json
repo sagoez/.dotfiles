@@ -110,7 +110,16 @@
     "context": "Terminal",
     "bindings": {
       "ctrl-w ctrl-w": "project_panel::ToggleFocus",
-      "cmd-t": "workspace::NewTerminal"
+      "cmd-t": "workspace::NewTerminal",
+      "space f f": "file_finder::Toggle",
+      "space l g": [
+        "pane::DeploySearch",
+        {
+          "replace_enabled": true
+        }
+      ],
+      "space x x": "diagnostics::Deploy",
+      "space n t": "workspace::ToggleLeftDock"
     }
   }
 ]
