@@ -14,6 +14,7 @@
       "space r n": "editor::Rename",
       "g r": "editor::FindAllReferences",
       "g i": "editor::GoToImplementation",
+      "g h": "editor::ShowSignatureHelp",
       "space z a": "editor::Fold",
       "space z u": "editor::UnfoldLines",
       "g t d": "editor::GoToTypeDefinition",
