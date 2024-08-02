@@ -24,7 +24,7 @@
     "line_height": "comfortable"
   },
   "inlay_hints": {
-    "enabled": true
+    "enabled": false
   },
   "lsp": {
     "rust-analyzer": {
