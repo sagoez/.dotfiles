@@ -178,24 +178,11 @@
           "NameLength": 0
         },
         {
-          "type": "executiontime",
-          "style": "plain",
-          "template": "<transparent></>  {{ .FormattedMs }}⠀",
-          "properties": {
-            "always_enabled": true
-          },
-          "background": "#83769c",
-          "foreground": "#ffffff",
-          "Text": "",
-          "Duration": 0,
-          "NameLength": 0
-        },
-        {
           "type": "status",
           "style": "diamond",
           "background_templates": ["{{ if gt .Code 0 }}#e91e63{{ end }}"],
           "trailing_diamond": "",
-          "template": "<parentBackground></>  ",
+          "template": "  ",
           "properties": {
             "always_enabled": true
           },
@@ -211,27 +198,14 @@
       "type": "rprompt",
       "segments": [
         {
-          "type": "shell",
+          "type": "executiontime",
           "style": "plain",
-          "template": "<#0077c2,transparent></>  {{ .Name }} <transparent,#0077c2></>",
+          "template": "<#0077c2,transparent></>  {{ .FormattedMs }} <transparent,#0077c2></>",
           "background": "#0077c2",
           "foreground": "#ffffff",
-          "Text": "",
-          "Duration": 0,
-          "NameLength": 0
-        },
-        {
-          "type": "ytm",
-          "style": "powerline",
-          "powerline_symbol": "",
-          "invert_powerline": true,
-          "template": "  {{ .Icon }}{{ if ne .Status \"stopped\" }}{{ .Artist }} - {{ .Track }}{{ end }} ",
           "properties": {
-            "paused_icon": " ",
-            "playing_icon": " "
+            "always_enabled": true
           },
-          "background": "#1BD760",
-          "foreground": "#111111",
           "Text": "",
           "Duration": 0,
           "NameLength": 0
