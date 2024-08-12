@@ -35,50 +35,44 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 sudo pacman -S ttt-firacode-nerd
 ```
 
-7. Install `Powerlevel10k`
-
-```bash
-git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
-```
-
-8. Install `Brewfile`
+7. Install `Brewfile`
 
 ```bash
 cd ~/.dotfiles/brew && brew bundle
 ```
 
-9. Install `fast-syntax-highlighting`
+8. Install `fast-syntax-highlighting`
 
 ```bash
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git \
   ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
 ```
 
-10. Install `zsh-autosuggestions`
+9. Install `zsh-autosuggestions`
 
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
-11. Install `git-open`
+10. Install `git-open`
 
 ```bash
 git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
 ```
 
-12. Install `ruby`
+11. Install `ruby`
 
 ```bash
 sudo pacman -S ruby
 ```
 
-13. Install `colorls`
+12. Install `colorls`
 
 ```bash
 sudo gem install colorls
 ```
 
-14. Install jabba
+13. Install jabba
 
 ```bash
 curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
@@ -86,17 +80,17 @@ jabba install openjdk@1.17-0
 jabba alias default openjdk@1.17.0
 ```
 
-15. Setup coursier
+14. Setup coursier
 
 ```bash
 coursier setup
 brew uninstall --ignore-dependencies java
 ```
 
-16. Stow folders
+15. Stow folders
 
 ```bash
-cd ~/.dotfiles && stow nvim && stow zsh && stow hypr
+cd ~/.dotfiles && stow nvim && stow zsh && stow hypr && stow k9s && stow kitty && stow zed
 ```
 
 17. Download and install the following programs:
@@ -107,18 +101,6 @@ Discord
 Slack
 Docker
 ```
-
-# MacOS
-
-### Installation
-
-1. Run pertinent steps from previous Linux block
-2. Stow folders
-
-```bash
-cd ~/.dotfiles && stow nvim && stow zsh
-```
-
 # Troubleshooting
 
 - [Git GPG signing fails without a clear message](https://stackoverflow.com/questions/52444915/git-gpg-signing-fails-without-a-clear-message)
