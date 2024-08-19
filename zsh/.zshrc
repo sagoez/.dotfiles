@@ -17,7 +17,7 @@ gpgconf --launch gpg-agent
 export ZSH="$HOME/.oh-my-zsh"
 
 # Add wisely, as too many plugins slow down shell startup.
-plugins=( git fast-syntax-highlighting zsh-autosuggestions git-open )
+plugins=( git fast-syntax-highlighting zsh-autosuggestions git-open direnv )
 
 source $ZSH/oh-my-zsh.sh
 
