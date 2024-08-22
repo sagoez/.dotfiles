@@ -14,7 +14,7 @@ alias dot="cd $HOME/.dotfiles/"
 alias icat="kitty +kitten icat"
 
 # Search directory using fzf
-alias sd="cd ~ && cd \$(find * -type d | fzf)"
+alias sd='IFS=$'\''\n'\''; cd "$(find ~ . -type d | fzf)"'
 
 # Make python3 as python
 alias python=python3

@@ -1,3 +1,11 @@
+# Locale
+export LC_ALL=en_US.UTF-8
+
+# GpG agent
+export GPG_TTY=`tty`
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
 
 # IF CARGO AND GO ARE INSTALLED
 if [[ -d "$HOME/.cargo" && -d "$HOME/go" ]]; then
