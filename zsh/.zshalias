@@ -13,8 +13,5 @@ alias dot="cd $HOME/.dotfiles/"
 # Open image in kitty terminal
 alias icat="kitty +kitten icat"
 
-# Search directory using fzf
-alias sd='IFS=$'\''\n'\''; cd "$(find ~ . -type d | fzf)"'
-
 # Make python3 as python
 alias python=python3
