@@ -5,7 +5,7 @@
   "theme": "Kanagawa Wave",
   "vim_mode": true,
   "ui_font_size": 14,
-  "buffer_font_size": 12,
+  "buffer_font_size": 14,
   "buffer_font_family": "FiraCode Nerd Font",
   "relative_line_numbers": true,
   "cursor_blink": false,
@@ -28,9 +28,6 @@
   },
   "inlay_hints": {
     "enabled": false
-  },
-  "features": {
-    "inline_completion_provider": "supermaven"
   },
   "lsp": {
     "rust-analyzer": {

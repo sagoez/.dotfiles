@@ -2,7 +2,7 @@
 export LC_ALL=en_US.UTF-8
 
 # GpG agent
-export GPG_TTY=`tty`
+export GPG_TTY=$(tty)
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
