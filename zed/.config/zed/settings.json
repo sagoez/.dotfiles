@@ -4,8 +4,8 @@
   },
   "theme": "Kanagawa Wave",
   "vim_mode": true,
-  "ui_font_size": 14,
-  "buffer_font_size": 14,
+  "ui_font_size": 12,
+  "buffer_font_size": 12,
   "buffer_font_family": "FiraCode Nerd Font",
   "relative_line_numbers": true,
   "cursor_blink": false,
@@ -20,7 +20,7 @@
   "buffer_line_height": "comfortable",
   "terminal": {
     "font_family": "FiraCode Nerd Font",
-    "font_size": 16,
+    "font_size": 12,
     "line_height": "comfortable"
   },
   "features": {
