@@ -1,8 +1,8 @@
 # Open a directory in the current window in neovim
 alias vi="nvim"
 
-# Go to Evolution directory
-alias work="cd $HOME/Evolution/"
+# Go to Work directory
+alias work="cd $HOME/Work/"
 
 # Go to Learning directory
 alias learn="cd $HOME/Learning/"
