@@ -26,6 +26,7 @@ local setup = function()
     map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
     map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
     map("n", "<leader>cl", vim.lsp.codelens.run, { desc = "Run code lens" })
+    map("n", "<leader>awf", vim.lsp.buf.add_workspace_folder)
     map("n", "<leader>f", function()
       vim.lsp.buf.format({ async = true })
     end, { desc = "Format" })
@@ -88,11 +89,11 @@ local setup = function()
       buffer = bufnr,
       group = lsp_group,
     })
-    -- api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
-    --   callback = vim.lsp.codelens.refresh(),
-    --   buffer = bufnr,
-    --   group = lsp_group,
-    -- })
+    api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
+      callback = vim.lsp.codelens.refresh,
+      buffer = bufnr,
+      group = lsp_group,
+    })
     api.nvim_create_autocmd("FileType", {
       pattern = { "dap-repl" },
       callback = function()
@@ -265,17 +266,8 @@ local setup = function()
     on_attach = on_attach,
   })
 
-  -- Remember to install the ElixirLS server
-  -- curl -fLO https://github.com/elixir-lsp/elixir-ls/releases/download/v0.22.0/elixir-ls-v0.22.0.zip or latest
-  -- unzip elixir-ls-v0.22.0.zip -d /usr/local/bin/elixir-ls
-  -- chmod +x /usr/local/bin/elixir-ls/language_server.sh
-  require 'lspconfig'.elixirls.setup {
-    -- Unix
-    cmd = { "/usr/local/bin/elixir-ls/language_server.sh" },
-  }
-
   -- These server just use the vanilla setup
-  local servers = { "bashls", "dockerls", "gopls", "clangd", "sqls", "gleam" }
+  local servers = { "bashls", "dockerls", "gopls", "clangd", "sqls" }
   for _, server in pairs(servers) do
     lsp_config[server].setup({ on_attach = on_attach })
   end
@@ -284,3 +276,6 @@ end
 return {
   setup = setup,
 }
+-- if vim.g.neovide then
+--     -- Put anything you want to happen only in Neovide here
+-- end
