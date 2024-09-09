@@ -167,10 +167,6 @@ if.app-id = 'dev.zed.Zed'
 run = "move-node-to-workspace 3"
 
 [[on-window-detected]]
-if.app-id = 'com.neovide.neovide'
-run = "move-node-to-workspace 3"
-
-[[on-window-detected]]
 if.app-id = 'com.postmanlabs.mac'
 run = "move-node-to-workspace 4"
 
