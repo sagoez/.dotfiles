@@ -31,9 +31,6 @@ if vim.g.neovide then
   vim.g.neovide_padding_left = 0
   --
   vim.opt.guifont = "FiraCode Nerd Font Mono:h14"
-  vim.g.neovide_transparency = 0.1
-  vim.g.transparency = 1
-  vim.g.neovide_background_color = ("#1F1F28" .. string.format("%x", math.floor(((255 * vim.g.transparency) or 0.8))))
 
 
   vim.keymap.set(
