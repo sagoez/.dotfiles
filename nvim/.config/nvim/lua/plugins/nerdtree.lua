@@ -118,6 +118,20 @@ return {
       renderer = {
         -- highlight_opened_files = 'name',
         icons = {
+          show = {
+            file = true,
+            folder = true,
+          },
+          web_devicons = {
+            file = {
+              enable = true,
+              color = false,
+            },
+            folder = {
+              enable = false,
+              color = false,
+            },
+          },
           git_placement = "before",
           glyphs = {
             git = {
