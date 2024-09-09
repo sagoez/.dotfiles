@@ -32,7 +32,7 @@ return {
           FloatBorder = { bg = "none" },
           FloatTitle = { bg = "none" },
           NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
-          LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+          LazyFloat = { bg = theme.ui.bg_p2 },
           TelescopeBorder = { bg = theme.ui.bg_m3 },
           TelescopeTitle = { fg = theme.ui.special1, bold = true },
           Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 }, -- add `blend = vim.o.pumblend` to enable transparency

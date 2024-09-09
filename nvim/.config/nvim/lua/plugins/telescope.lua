@@ -43,6 +43,7 @@ return {
       defaults = {
         file_ignore_patterns = { "target", "node_modules", "parser.c", "%.min.js" },
         prompt_prefix = "❯",
+        color_devicons = true,
         file_previewer = require("telescope.previewers").vim_buffer_cat.new,
         grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
         mappings = {
