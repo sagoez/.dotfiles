@@ -36,6 +36,16 @@ return {
     end,
   },
   {
+    "nvim-pack/nvim-spectre",
+    build = false,
+    lazy = true,
+    cmd = "Spectre",
+    opts = { open_cmd = "noswapfile vnew" },
+    keys = {
+      { "<leader>fra", function() require("spectre").open() end, desc = "Replace in files (Spectre)" },
+    },
+  },
+  {
     "glepnir/lspsaga.nvim",
     branch = "main",
     config = function()
@@ -45,7 +55,7 @@ return {
       { "nvim-tree/nvim-web-devicons" },
     }
   },
-  { "stevearc/dressing.nvim", event = "VeryLazy" },
+  { "stevearc/dressing.nvim",  event = "VeryLazy" },
   { "wakatime/vim-wakatime" },
   { "windwp/nvim-autopairs" }
 }

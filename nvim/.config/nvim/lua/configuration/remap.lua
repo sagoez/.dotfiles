@@ -82,6 +82,8 @@ vim.api.nvim_set_keymap('n', '<C-c>', '<Cmd>BufferClose<CR>',
   { noremap = true, silent = true, desc = "Close the current buffer" }
 )
 
+-- Will keep these two configs as I test spectre.nvim. If I like it I'll remove these two configs
+
 -- find and replace with confirmation
 vim.keymap.set('n', '<leader>frc', function()
   local search = vim.fn.input("Search > ")
