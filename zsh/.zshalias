@@ -1,5 +1,6 @@
 # Open a directory in the current window in neovim
 alias vi="neovide"
+alias vim="nvim"
 
 # Go to Work directory
 alias work="cd $HOME/Work/"
