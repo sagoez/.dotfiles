@@ -1,5 +1,5 @@
 # Open a directory in the current window in neovim
-alias vi="neovide"
+alias vi="neovide --fork"
 alias vim="nvim"
 
 # Go to Work directory
