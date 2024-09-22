@@ -7,9 +7,12 @@ export GPG_TTY=$(tty)
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# Define GOPATH
+export GOPATH="$HOME/Go" # default packages installation path
+
 # IF CARGO AND GO ARE INSTALLED
-if [[ -d "$HOME/.cargo" && -d "$HOME/go" ]]; then
-  export GOPATH="$HOME/go" # default packages installation path
+if [[ -d "$HOME/.cargo" && -d "$HOME/Go" ]]; then
+  export GOMODCACHE="$HOME/Go/pkg/mod"
   export PATH="$GOPATH/bin:$HOME/.cargo/bin:$PATH"
   . "$HOME/.cargo/env"
 else
