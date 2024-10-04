@@ -1,6 +1,6 @@
 # Install
 
-## Arch Linux
+## Linux
 
 ### Installation
 1. Clone the repository to `~/.dotfiles`
@@ -8,7 +8,7 @@
 2. Run
 
 ```bash
-yay -Sy git curl file stow blueman
+sudo apt-get install -y build-essential git curl file stow blueman
 ```
 
 3. Install `brew`
@@ -20,7 +20,7 @@ yay -Sy git curl file stow blueman
 4. Install `zsh`
 
 ```bash
-yay zsh && zsh
+sudo apt install zsh && chsh -s $(which zsh)
 ```
 
 5. Install `oh my zsh`
@@ -29,32 +29,28 @@ yay zsh && zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-6. Install FiraCode Nerd
+6. Install [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip)
 
-```bash
-sudo pacman -S ttt-firacode-nerd
-```
-
-7. Install `Brewfile`
+8. Install `Brewfile`
 
 ```bash
 cd ~/.dotfiles/brew && brew bundle
 ```
 
-8. Install `fast-syntax-highlighting`
+9. Install `fast-syntax-highlighting`
 
 ```bash
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git \
   ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
 ```
 
-9. Install `zsh-autosuggestions`
+10. Install `zsh-autosuggestions`
 
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
-10. Install `git-open`
+11. Install `git-open`
 
 ```bash
 git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
@@ -63,7 +59,7 @@ git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
 11. Install `ruby`
 
 ```bash
-sudo pacman -S ruby
+sudo apt install ruby-full
 ```
 
 12. Install `colorls`
@@ -72,7 +68,19 @@ sudo pacman -S ruby
 sudo gem install colorls
 ```
 
-13. Install jabba
+13. Install i3
+
+```bash
+sudo apt install i3 picom polybar feh pavucontrol rofi
+/usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2024.03.04_all.deb keyring.deb SHA256:f9bb4340b5ce0ded29b7e014ee9ce788006e9bbfe31e96c09b2118ab91fca734
+sudo apt install ./keyring.deb
+echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" | sudo tee /etc/apt/sources.list.d/sur5r-i3.list
+sudo apt update
+rm keyring.deb
+sudo apt upgrade
+```
+
+14. Install jabba
 
 ```bash
 curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
@@ -80,27 +88,30 @@ jabba install openjdk@1.17-0
 jabba alias default openjdk@1.17.0
 ```
 
-14. Setup coursier
+15. Setup coursier
 
 ```bash
 coursier setup
 brew uninstall --ignore-dependencies java
 ```
 
-15. Stow folders
+16. Install kitty
+
+```bash
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+sudo ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten /usr/local/sbin/
+cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
+sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
+sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
+```
+
+17. Stow folders
 
 ```bash
 cd ~/.dotfiles && stow nvim && stow zsh && stow hypr && stow k9s && stow kitty && stow zed
 ```
 
-17. Download and install the following programs:
-
-```bash
-Spotify
-Discord
-Slack
-Docker
-```
 # Troubleshooting
 
 - [Git GPG signing fails without a clear message](https://stackoverflow.com/questions/52444915/git-gpg-signing-fails-without-a-clear-message)
@@ -108,4 +119,3 @@ Docker
 - [GPG Suite, new key failed permission denied](https://gpgtools.tenderapp.com/discussions/feedback/17657-install-os-x)
 - [GPG Suite on MacOS](https://gist.github.com/danieleggert/b029d44d4a54b328c0bac65d46ba4c65)
 - [Handling multiple Git identities](https://gist.github.com/Jonalogy/54091c98946cfe4f8cdab2bea79430f9)
-- [Install Arch Linux](https://www.youtube.com/watch?v=lfUWwZqzHmA&ab_channel=SolDoesTech)
