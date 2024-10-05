@@ -8,7 +8,7 @@
 2. Run
 
 ```bash
-sudo apt-get install -y build-essential git curl file stow blueman acpi
+sudo apt-get install -y build-essential git curl file stow blueman acpi libusb-1.0-0 libusb-1.0-0-dev shutter
 ```
 
 3. Install `brew`
