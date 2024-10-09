@@ -2,6 +2,7 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/themes/.default.omp.json)"
 fi
 
+# TODO: Remove after migrating Linux to Nix
 if [ $(uname) = "Darwin" ]; then
     export PATH="/opt/homebrew/bin:$PATH"
 fi
