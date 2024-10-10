@@ -5,25 +5,8 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    homebrew-bundle = {
-      url = "github:homebrew/homebrew-bundle";
-      flake = false;
-    };
-    homebrew-services = {
-      url = "github:homebrew/homebrew-services";
-      flake = false;
-    };
-    homebrew-core = {
-      url = "github:homebrew/homebrew-core";
-      flake = false;
-    };
-    homebrew-cask = {
-      url = "github:homebrew/homebrew-cask";
-      flake = false;
-    };
   };
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, homebrew-bundle, homebrew-services, homebrew-core, homebrew-cask }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs }:
   let
     configuration = { pkgs, config, ... }: {
 
@@ -65,7 +48,6 @@
           pkgs.neovide
           pkgs.google-cloud-sdk
           pkgs.ngrok
-          pkgs.raycast
           pkgs.jetbrains.datagrip
           pkgs.jetbrains.idea-community
           pkgs.jetbrains.rust-rover
@@ -76,15 +58,12 @@
           pkgs.slack
           pkgs.google-chrome
           pkgs.colorls
-          # Linux specific
-          # pkgs.k3s
-          # pkgs.shutter
-          # pkgs.zsh
-          # MacOS specific
           pkgs.pinentry_mac
           pkgs.bartender
+          pkgs.raycast
         ];
 
+        # Homebrew needs to be installed on its own!
         homebrew = {
           enable = true;
           brews = [
@@ -94,7 +73,6 @@
           casks = [
             "1password-cli"
             "1password"
-            "nikitabobko/tap/aerospace"
           ];
           masApps = {
             "Spark" = 1176895641;
@@ -126,6 +104,10 @@
           done
               '';
 
+      users.users.samuel.home = "/Users/samuel";
+      nix.configureBuildUsers = true;
+      nix.useDaemon = true;
+
       system.defaults = {
         dock.autohide = true;
         NSGlobalDomain."com.apple.swipescrolldirection" = false;
@@ -144,6 +126,7 @@
           "${pkgs.kitty}/Applications/Kitty.app"
         ];
       };
+
 
       # List all the custom fonts to be installed
       fonts.packages = [ pkgs.fira-code-nerdfont ];
@@ -167,6 +150,9 @@
 
       # The platform the configuration will be used on.
       nixpkgs.hostPlatform = "aarch64-darwin";
+
+      # Enable Touch ID for sudo
+      security.pam.enableSudoTouchIdAuth = true;
     };
   in
   {
@@ -175,22 +161,6 @@
     darwinConfigurations."macos" = nix-darwin.lib.darwinSystem {
       modules = [ 
           configuration 
-          nix-homebrew.darwinModules.nix-homebrew
-          {
-            nix-homebrew = {
-              user = "samuel";
-              enable = true;
-              enableRosetta = true;
-              autoMigrate = true;
-              taps = {
-                "homebrew/bundle" = homebrew-bundle;
-                "homebrew/services" = homebrew-services;
-                "homebrew/core" = homebrew-core;
-                "homebrew/cask" = homebrew-cask;
-              };
-              mutableTaps = false;
-            };
-          }
         ];
     };
 
