@@ -14,6 +14,7 @@ if [[ `uname` == "Linux" ]]; then
 
     # Define GOPATH
     export GOPATH="$HOME/Go" # default packages installation path
+    alias pbcopy="xclip -sel clip"
     
     if [[ -d "$HOME/.cargo" && -d "$HOME/Go" ]]; then
       export GOMODCACHE="$HOME/Go/pkg/mod"
