@@ -6,10 +6,6 @@
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    nikitabokbo-tap = {
-      url = "github:nikitabobko/homebrew-tap";
-      flake = false;
-    };
     homebrew-bundle = {
       url = "github:homebrew/homebrew-bundle";
       flake = false;
@@ -27,10 +23,7 @@
       flake = false;
     };
   };
-  # Add this to home nixos
-  # sudo chown -R $(whoami) $(brew --prefix)/*
-
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, nikitabokbo-tap, homebrew-bundle, homebrew-services, homebrew-core, homebrew-cask }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, homebrew-bundle, homebrew-services, homebrew-core, homebrew-cask }:
   let
     configuration = { pkgs, config, ... }: {
 
@@ -101,7 +94,7 @@
           casks = [
             "1password-cli"
             "1password"
-            # "nikitabobko/tap/aerospace"
+            "nikitabobko/tap/aerospace"
           ];
           masApps = {
             "Spark" = 1176895641;
@@ -141,10 +134,11 @@
         NSGlobalDomain.AppleInterfaceStyle = "Dark";
         dock.mru-spaces = false;
         dock.show-recents = false;
+        dock.static-only = false;
         dock.persistent-apps = [ 
           "/Applications/Structured.app/"
           "/Applications/Spark.app/"
-          "${pkgs.google-chrome}/Applications/Google\/Chrome.app"
+          "${pkgs.google-chrome}/Applications/Google\ Chrome.app"
           "${pkgs.discord}/Applications/Discord.app"
           "${pkgs.slack}/Applications/Slack.app"
           "${pkgs.kitty}/Applications/Kitty.app"
@@ -193,8 +187,6 @@
                 "homebrew/services" = homebrew-services;
                 "homebrew/core" = homebrew-core;
                 "homebrew/cask" = homebrew-cask;
-                # "nikitabobko/homebrew-tap" = nikitabokbo-tap;
-                # "nikitabobko/tap" = nikitabokbo-tap;
               };
               mutableTaps = false;
             };
