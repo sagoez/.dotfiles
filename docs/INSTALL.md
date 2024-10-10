@@ -169,6 +169,8 @@ coursier setup
 brew uninstall --ignore-dependencies java
 ```
 
+### Post i3 installation
+
 16. Install kitty:
 
 ```bash
@@ -186,7 +188,19 @@ sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/sha
 curl https://sh.rustup.rs -sSf | sh
 ```
 
-17. Stow folders:
+18. Install applications:
+
+- Slack
+- Spotify
+- Google Chrome
+- Postman
+- Docker
+- Idea Toolbox (IntelliJ & Datagrip)
+- Discord
+- 1Password
+
+
+19. Stow folders:
 
 ```bash
 cd ~/.dotfiles && stow nvim && stow zsh && stow k9s && stow kitty && stow i3

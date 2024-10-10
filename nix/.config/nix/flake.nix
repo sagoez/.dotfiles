@@ -16,6 +16,7 @@
       environment.systemPackages =
         [ 
           pkgs.rustup
+          pkgs.spotify
           pkgs.neovim
           pkgs.mkalias
           pkgs.coursier
