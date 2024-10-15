@@ -15,6 +15,7 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [ 
+          pkgs.delta
           pkgs.rustup
           pkgs.spotify
           pkgs.neovim
