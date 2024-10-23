@@ -75,7 +75,13 @@ stow nvim && stow zsh && stow k9s && stow kitty && stow aerospace
 mkdir ~/Go/ && mkdir ~/Work/ && mkdir ~/Learning/
 ```
 
-13. Install applications [MacOS]:
+13. Install kitty:
+
+```bash
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+```
+
+14. Install applications [MacOS]:
 
 - 1Password
 - Postman
