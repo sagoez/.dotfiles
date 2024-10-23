@@ -57,19 +57,25 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 curl https://sh.rustup.rs -sSf | sh
 ```
 
-10. Stow the folders:
+10. Install colorls:
+
+```bash
+sudo gem install colorls
+```
+
+11. Stow the folders:
 
 ```bash
 stow nvim && stow zsh && stow k9s && stow kitty && stow aerospace
 ```
 
-11. Make sure you have created the following directories:
+12. Make sure you have created the following directories:
 
 ```bash
 mkdir ~/Go/ && mkdir ~/Work/ && mkdir ~/Learning/
 ```
 
-12. Install applications [MacOS]:
+13. Install applications [MacOS]:
 
 - 1Password
 - Postman

@@ -16,3 +16,8 @@ alias icat="kitty +kitten icat"
 
 # Make python3 as python
 alias python=python3
+
+
+if [[ `uname` == "Linux" ]]; then
+  alias pbcopy="xclip -sel clip"
+fi

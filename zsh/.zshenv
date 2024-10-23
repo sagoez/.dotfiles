@@ -7,23 +7,23 @@ export GPG_TTY=$(tty)
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# Define GOPATH
+export GOPATH="$HOME/Go" # default packages installation path
+
+# IF CARGO AND GO ARE INSTALLED
+if [[ -d "$HOME/.cargo" && -d "$HOME/Go" ]]; then
+  export GOMODCACHE="$HOME/Go/pkg/mod"
+  export PATH="$GOPATH/bin:$HOME/.cargo/bin:$PATH"
+else
+  echo -e "\033[0;31mWARNING: Cargo and Go are not installed\033[0m"
+fi
+
+# >>> eval homebrew <<<
 if [[ `uname` == "Linux" ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     export PATH="$HOME/.local/share/coursier/bin:$PATH"
-
-    # Define GOPATH
-    export GOPATH="$HOME/Go" # default packages installation path
-    alias pbcopy="xclip -sel clip"
-    
-    if [[ -d "$HOME/.cargo" && -d "$HOME/Go" ]]; then
-      export GOMODCACHE="$HOME/Go/pkg/mod"
-      export PATH="$GOPATH/bin:$HOME/.cargo/bin:$PATH"
-      else
-      echo -e "\033[0;31mWARNING: Cargo and Go are not installed\033[0m"
-    fi
 else
     eval "$(/opt/homebrew/bin/brew shellenv)"
-    export PATH="$HOME/.cargo/bin:$PATH"
     export PATH="/Users/$USER/Library/Application Support/Coursier/bin:$PATH"
 fi
 
