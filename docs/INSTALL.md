@@ -14,22 +14,15 @@ git clone https://github.com/sagoez/.dotfiles.git ~/.dotfiles
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-3. Go into the `~/.dotfiles/nix/.config/` and run:
+3. Install [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip)
 
-
-```bash
-cd ~/.dotfiles/nix/.config/
-nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake ./nix#macos
-```
-
-- To reload the configuration run:
+4. Install `Brewfile`
 
 ```bash
-cd ~/.dotfiles/nix/.config/
-darwin-rebuild switch --flake ./nix#macos && brew install --cask nikitabobko/tap/aerospace
+cd ~/.dotfiles/brew && brew bundle
 ```
 
-4. Install jabba and setup coursier:
+5. Install jabba and setup coursier:
 
 ```bash
 curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
@@ -39,36 +32,57 @@ coursier setup
 brew uninstall --ignore-dependencies java
 ```
 
-5. Install `oh my zsh`
+6. Install `oh my zsh`
 
 ```bash
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-6. Install `fast-syntax-highlighting`
+7. Install `fast-syntax-highlighting`
 
 ```bash
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git \
   ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
 ```
 
-7. Install `zsh-autosuggestions`
+8. Install `zsh-autosuggestions`
 
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
-8. Configure rustup: 
+9. Install cargo:
 
 ```bash
-rustup default stable
+curl https://sh.rustup.rs -sSf | sh
 ```
 
-8. Stow the folders:
+10. Stow the folders:
 
 ```bash
-stow nvim && stow zsh && stow hypr && stow k9s && stow kitty && stow aerospace
+stow nvim && stow zsh && stow k9s && stow kitty && stow aerospace
 ```
+
+11. Make sure you have created the following directories:
+
+```bash
+mkdir ~/Go/ && mkdir ~/Work/ && mkdir ~/Learning/
+```
+
+12. Install applications [MacOS]:
+
+- 1Password
+- Postman
+- Google Chrome
+- Spotify
+- Slack
+- Bartender 5
+- Shottr
+- Discord
+- Structured
+- Spark Mail
+- Idea Toolbox (IntelliJ & Datagrip)
+- Docker Desktop
 
 ## Linux
 
@@ -188,16 +202,21 @@ sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/sha
 curl https://sh.rustup.rs -sSf | sh
 ```
 
-18. Install applications:
+18. Make sure you have created the following directories:
+
+```bash
+mkdir ~/Go/ && mkdir ~/Work/ && mkdir ~/Learning/
+```
+
+19. Install applications [Linux]:
 
 - Slack
 - Spotify
 - Google Chrome
 - Postman
-- Docker
+- Docker Desktop
 - Idea Toolbox (IntelliJ & Datagrip)
 - Discord
-- 1Password
 
 
 19. Stow folders:
