@@ -25,6 +25,8 @@ if [[ `uname` == "Linux" ]]; then
 else
     eval "$(/opt/homebrew/bin/brew shellenv)"
     export PATH="/Users/$USER/Library/Application Support/Coursier/bin:$PATH"
+    # export /usr/local/bin/
+    export PATH="/usr/local/bin:$PATH"
 fi
 
 export K9S_CONFIG_DIR=~/.config/k9s
