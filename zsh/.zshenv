@@ -35,7 +35,8 @@ fi
 
 if [[ -d "$HOME/.atuin/bin" ]]; then
   . "$HOME/.atuin/bin/env"
-  eval "$(atuin init zsh)"
+  eval "$(atuin init zsh --disable-up-arrow --disable-ctrl-r)"
+  bindkey '^a' atuin-search
 fi
 
 export K9S_CONFIG_DIR=~/.config/k9s
