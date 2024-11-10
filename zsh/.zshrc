@@ -141,8 +141,3 @@ if [[ -o zle ]]; then
 fi
 
 source $HOME/.zshalias
-export PATH="${HOME}/.fvm/bin:${HOME}/.fluvio/bin:${PATH}"
-
-. "$HOME/.atuin/bin/env"
-
-eval "$(atuin init zsh)"
