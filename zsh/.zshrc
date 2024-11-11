@@ -140,4 +140,12 @@ if [[ -o zle ]]; then
     [[ "${+functions[compdef]}" -ne 0 ]] && \compdef __zoxide_z_complete z
 fi
 
+if [[ -d "$HOME/.atuin/bin" ]]; then
+  . "$HOME/.atuin/bin/env"
+  eval "$(atuin init zsh --disable-ctrl-r)"
+  bindkey '^a' atuin-search
+  bindkey '^[[A' atuin-search
+  bindkey '^[OA' atuin-up-search
+fi
+
 source $HOME/.zshalias

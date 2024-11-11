@@ -33,10 +33,5 @@ if [[ -d "$HOME/.fluvio" ]]; then
   export PATH="${HOME}/.fvm/bin:${HOME}/.fluvio/bin:${PATH}"
 fi
 
-if [[ -d "$HOME/.atuin/bin" ]]; then
-  . "$HOME/.atuin/bin/env"
-  eval "$(atuin init zsh --disable-up-arrow --disable-ctrl-r)"
-  bindkey '^a' atuin-search
-fi
-
 export K9S_CONFIG_DIR=~/.config/k9s
+
