@@ -144,7 +144,7 @@ if [[ -d "$HOME/.atuin/bin" ]]; then
   . "$HOME/.atuin/bin/env"
   eval "$(atuin init zsh --disable-ctrl-r)"
   bindkey '^a' atuin-search
-  bindkey '^[[A' atuin-search
+  bindkey '^[[A' atuin-up-search
   bindkey '^[OA' atuin-up-search
 fi
 
