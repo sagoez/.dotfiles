@@ -82,7 +82,13 @@ mkdir ~/Go/ && mkdir ~/Work/ && mkdir ~/Learning/
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 ```
 
-14. Install applications [MacOS]:
+14. Install atuin:
+
+```bash
+curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+```
+
+15. Install applications [MacOS]:
 
 - 1Password
 - Postman
@@ -221,7 +227,12 @@ curl https://sh.rustup.rs -sSf | sh
 mkdir ~/Go/ && mkdir ~/Work/ && mkdir ~/Learning/
 ```
 
-19. Install applications [Linux]:
+19. Install atuin:
+```bash
+curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+```
+
+20. Install applications [Linux]:
 
 - Slack
 - Spotify
@@ -232,7 +243,7 @@ mkdir ~/Go/ && mkdir ~/Work/ && mkdir ~/Learning/
 - Discord
 
 
-19. Stow folders:
+21. Stow folders:
 
 ```bash
 cd ~/.dotfiles && stow nvim && stow zsh && stow k9s && stow kitty && stow i3
