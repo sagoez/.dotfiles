@@ -186,6 +186,7 @@
           "template": " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }}\uf295 ",
           "foreground": "#ffffff",
           "powerline_symbol": "\ue0b2",
+          "leading_powerline_symbol": "\ue0b2",
           "background": "#f36943",
           "type": "battery",
           "style": "powerline",
@@ -194,6 +195,15 @@
             "{{if eq \"Discharging\" .State.String}}#ff5722{{end}}",
             "{{if eq \"Full\" .State.String}}#4caf50{{end}}"
           ],
+          "invert_powerline": true
+        },
+        {
+          "type": "kubectl",
+          "style": "powerline",
+          "foreground": "#ffffff",
+          "background": "#2a67e5",
+          "powerline_symbol": "\ue0b2",
+          "template": " ⎈ {{ .Context }}{{ if .Namespace }} :: {{ .Namespace }}{{ end }} ",
           "invert_powerline": true
         },
         {
