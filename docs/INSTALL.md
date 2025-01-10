@@ -14,7 +14,7 @@ git clone https://github.com/sagoez/.dotfiles.git ~/.dotfiles
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-3. Install [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip)
+3. Install [FiraCode Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/FiraCode.zip)
 
 4. Install `Brewfile`
 
@@ -136,7 +136,7 @@ sudo apt install zsh && chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-6. Install [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip)
+6. Install [FiraCode Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/FiraCode.zip)
 
 8. Install `Brewfile`:
 
