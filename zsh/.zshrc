@@ -24,7 +24,7 @@ if [ -x "$(command -v bat)" ]; then
     alias cat="bat"
 fi
 
-[ -s "$HOME/.jabba/jabba.sh" ] && source "$HOME/.jabba/jabba.sh"
+[ -s "$HOMEBREW_PREFIX/opt/jabba/jabba.sh" ] && . "$HOMEBREW_PREFIX/opt/jabba/jabba.sh"
 
 # =============================================================================
 #
