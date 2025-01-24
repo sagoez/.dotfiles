@@ -24,7 +24,7 @@ if [ -x "$(command -v bat)" ]; then
     alias cat="bat"
 fi
 
-[ -s "$HOMEBREW_PREFIX/opt/jabba/jabba.sh" ] && . "$HOMEBREW_PREFIX/opt/jabba/jabba.sh"
+[ -s "$JABBA_HOME/jabba.sh" ] && source "$JABBA_HOME/jabba.sh"
 
 # =============================================================================
 #
@@ -149,12 +149,10 @@ if [[ -d "$HOME/.atuin/bin" ]]; then
 fi
 
 source $HOME/.zshalias
-#
-# # The next line updates PATH for the Google Cloud SDK.
-# if [ -f '/home/sagoez/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/home/sagoez/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-#
-# # The next line enables shell command completion for gcloud.
-# if [ -f '/home/sagoez/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/sagoez/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# The next line updates PATH for the Google Cloud SDK.
+export PATH="$HOMEBREW_PREFIX/share/google-cloud-sdk/bin/:$PATH"
+
 # . "/home/sagoez/.deno/env"
 # # Initialize zsh completions (added by deno install script)
 # autoload -Uz compinit

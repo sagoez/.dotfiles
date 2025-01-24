@@ -25,7 +25,7 @@ cd ~/.dotfiles/brew && brew bundle
 5. Install jabba and setup coursier:
 
 ```bash
-brew install jabba
+curl -sL https://github.com/Jabba-Team/jabba/raw/main/install.sh | bash && . ~/.jabba/jabba.sh
 jabba install openjdk@1.17-0
 jabba alias default openjdk@1.17.0
 coursier setup
