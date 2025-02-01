@@ -3,10 +3,10 @@ alias vi="neovide --fork"
 alias vim="nvim"
 
 # Go to Work directory
-alias work="cd $HOME/Work/"
+alias work="cd $HOME/Developer/Work/"
 
 # Go to Learning directory
-alias learn="cd $HOME/Learning/"
+alias learn="cd $HOME/Developer/Learn/"
 
 # Go to .dotfiles directory
 alias dot="cd $HOME/.dotfiles/"

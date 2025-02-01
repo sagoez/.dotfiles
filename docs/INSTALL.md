@@ -67,13 +67,13 @@ sudo gem install colorls
 11. Stow the folders:
 
 ```bash
-stow nvim && stow zsh && stow k9s && stow kitty && stow aerospace
+stow nvim && stow zsh && stow k9s && stow kitty && stow aerospace && stow atuin
 ```
 
 12. Make sure you have created the following directories:
 
 ```bash
-mkdir ~/Go/ && mkdir ~/Work/ && mkdir ~/Learning/
+mkdir ~/Developer/ && mkdir ~/Developer/Work/ && mkdir ~/Developer/Learn/
 ```
 
 13. Install kitty:
@@ -102,6 +102,12 @@ curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
 - Spark Mail
 - Idea Toolbox (IntelliJ & Datagrip)
 - Docker Desktop
+- [Stats](https://github.com/exelban/stats) 
+- One Switch
+- NotchNook
+- Sleeve
+- GoodNotes
+- Notion
 
 ## Linux
 
@@ -190,7 +196,7 @@ sudo apt upgrade
 14. Install jabba:
 
 ```bash
-curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
+curl -sL https://github.com/Jabba-Team/jabba/raw/main/install.sh | bash && . ~/.jabba/jabba.sh
 jabba install openjdk@1.17-0
 jabba alias default openjdk@1.17.0
 ```
@@ -224,7 +230,7 @@ curl https://sh.rustup.rs -sSf | sh
 18. Make sure you have created the following directories:
 
 ```bash
-mkdir ~/Go/ && mkdir ~/Work/ && mkdir ~/Learning/
+mkdir ~/Go/ && mkdir ~/Work/ && mkdir ~/Learn/
 ```
 
 19. Install atuin:
@@ -246,7 +252,7 @@ curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
 21. Stow folders:
 
 ```bash
-cd ~/.dotfiles && stow nvim && stow zsh && stow k9s && stow kitty && stow i3
+cd ~/.dotfiles && stow nvim && stow zsh && stow k9s && stow kitty && stow i3 && stow atuin
 ```
 
 # Troubleshooting

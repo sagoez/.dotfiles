@@ -2,7 +2,6 @@ if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/themes/.default.omp.json)"
 fi
 
-# TODO: Remove after migrating Linux to Nix
 if [ $(uname) = "Darwin" ]; then
     export PATH="/opt/homebrew/bin:$PATH"
 fi
@@ -153,15 +152,10 @@ source $HOME/.zshalias
 # The next line updates PATH for the Google Cloud SDK.
 export PATH="$HOMEBREW_PREFIX/share/google-cloud-sdk/bin/:$PATH"
 
-# . "/home/sagoez/.deno/env"
-# # Initialize zsh completions (added by deno install script)
-# autoload -Uz compinit
-# compinit 
-#
-# # pnpm
-# export PNPM_HOME="/home/sagoez/.local/share/pnpm"
-# case ":$PATH:" in
-#   *":$PNPM_HOME:"*) ;;
-#   *) export PATH="$PNPM_HOME:$PATH" ;;
-# esac
-# # pnpm end
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

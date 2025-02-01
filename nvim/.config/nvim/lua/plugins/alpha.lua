@@ -39,9 +39,9 @@ return {
         dashboard.button("SPC f f", "󰈞  Find file"),
         dashboard.button("SPC l g", "󰊄  Live grep"),
         -- open buffer with a message on the footer after switching to the learning directory
-        dashboard.button("l", "  Learning",
-          "<cmd>cd ~/Learning/ <CR> <cmd>echo 'Switched to Learning directory' <CR>"),
-        dashboard.button("w", "  Work", "<cmd>cd ~/Work/ <CR> <cmd>echo 'Switched to Evolution directory' <CR>"),
+        dashboard.button("l", "  Learn",
+          "<cmd>cd ~/Developer/Learn/ <CR> <cmd>echo 'Switched to Learning directory' <CR>"),
+        dashboard.button("w", "  Work", "<cmd>cd ~/Developer/Work/ <CR> <cmd>echo 'Switched to Evolution directory' <CR>"),
         dashboard.button("c", "  Configuration",
           "<cmd>cd ~/.config/nvim/ <CR> <cmd>echo 'Switched to Configuration directory' <CR>"),
         dashboard.button("u", "  Update plugins", "<cmd>Lazy sync<CR>"),
