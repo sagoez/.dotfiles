@@ -1,0 +1,196 @@
+---
+title: Install Guide
+description: A guide to installing my dotfiles on Linux.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+<Steps>
+
+    <ol>
+    
+        <li> 
+        Clone the repository to `~/.dotfiles`:
+        
+        ```bash frame="code"
+        git clone https://github.com/sagojez/.dotfiles.git ~/.dotfiles
+        ```
+        </li>
+        
+        <li>
+        Install necessary packages:
+        
+        ```bash frame="code"
+        sudo apt-get install -y build-essential git curl file stow blueman acpi libusb-1.0-0 libusb-1.0-0-dev shutter
+        ```
+        </li>
+        
+        <li>
+        Install `homebrew`:
+        
+        ```bash frame="code"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        ```
+        </li>
+        
+        <li>
+        Install `zsh`:
+        
+        ```bash frame="code"
+        sudo apt install zsh && chsh -s $(which zsh)
+        ```
+        </li>
+        
+        <li>
+        Install `oh my zsh`:
+        
+        ```bash frame="code"
+        sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+        ```
+        </li>
+        
+        <li>
+        Install [FiraCode Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/FiraCode.zip)
+        </li>
+        
+        <li>
+        Install `Brewfile`:
+        
+        ```bash frame="code"
+        cd ~/.dotfiles/brew && brew bundle
+        ```
+        </li>
+        
+        <li>
+        Install `fast-syntax-highlighting`:
+        
+        ```bash frame="code"
+        git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git \
+          ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+        ```
+        </li>
+        
+        <li>
+        Install `zsh-autosuggestions`:
+        
+        ```bash frame="code"
+        git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+        ```
+        </li>
+        
+        <li>
+        Install `git-open`:
+        
+        ```bash frame="code"
+        git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
+        ```
+        </li>
+        
+        <li>
+        Install `ruby`:
+        
+        ```bash frame="code"
+        sudo apt install ruby-full
+        ```
+        </li>
+        
+        <li>
+        Install `colorls`:
+        
+        ```bash frame="code"
+        sudo gem install colorls
+        ```
+        </li>
+        
+        <li>
+        Install i3:
+        
+        ```bash frame="code"
+        sudo apt install i3 picom polybar feh pavucontrol rofi
+        /usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2024.03.04_all.deb keyring.deb SHA256:f9bb4340b5ce0ded29b7e014ee9ce788006e9bbfe31e96c09b2118ab91fca734
+        sudo apt install ./keyring.deb
+        echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" | sudo tee /etc/apt/sources.list.d/sur5r-i3.list
+        sudo apt update
+        rm keyring.deb
+        sudo apt upgrade
+        ```
+        </li>
+        
+        <li>
+        Install jabba:
+        
+        ```bash frame="code"
+        curl -sL https://github.com/Jabba-Team/jabba/raw/main/install.sh | bash && . ~/.jabba/jabba.sh
+        jabba install openjdk@1.17-0
+        jabba alias default openjdk@1.17.0
+        ```
+        </li>
+        
+        <li>
+        Setup coursier:
+        
+        ```bash frame="code"
+        coursier setup
+        brew uninstall --ignore-dependencies java
+        ```
+        </li>
+        
+        <li>
+        Install kitty:
+        
+        ```bash frame="code"
+        curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+        sudo ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten /usr/local/sbin/
+        cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+        cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
+        sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
+        sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
+        ```
+        </li>
+        
+        <li>
+        Install cargo:
+        
+        ```bash frame="code"
+        curl https://sh.rustup.rs -sSf | sh
+        ```
+        </li>
+        
+        <li>
+        Create directories:
+        
+        ```bash frame="code"
+        mkdir ~/Go/ && mkdir ~/Work/ && mkdir ~/Learn/
+        ```
+        </li>
+        
+        <li>
+        Install atuin:
+        
+        ```bash frame="code"
+        curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+        ```
+        </li>
+        <li>
+        Stow folders:
+        
+        ```bash frame="code"
+        cd ~/.dotfiles && stow nvim && stow zsh && stow k9s && stow kitty && stow i3 && stow atuin
+        ```
+        </li>
+        <li>
+        Install applications [Linux]:
+            <CardGrid>
+                    <LinkCard href="https://slack.com/" target="_blank" title="Slack" />
+                    <LinkCard href="https://spotify.com/" target="_blank" title="Spotify" />
+                    <LinkCard href="https://www.google.com/chrome/" target="_blank" title="Google Chrome" />
+                    <LinkCard href="https://postman.com/" target="_blank" title="Postman" />
+                    <LinkCard href="https://www.docker.com/products/docker-desktop/" target="_blank" title="Docker Desktop" />
+                    <LinkCard href="https://www.jetbrains.com/toolbox-app/" target="_blank" title="Idea Toolbox" />
+                    <LinkCard href="https://discord.com/" target="_blank" title="Discord" />
+            </CardGrid>
+        </li>
+    </ol>
+
+</Steps>
