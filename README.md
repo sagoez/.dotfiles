@@ -1,6 +1,6 @@
 # Dotfiles
 
-![Preview](./docs/public/preview.mp4)
+![Preview](https://github.com/user-attachments/assets/57999fb2-0a37-4739-b792-ed03293e16f4)
 
 To see a full guide on how to use these configuration, please visit [install](./docs/INSTALL.md) page.
 
