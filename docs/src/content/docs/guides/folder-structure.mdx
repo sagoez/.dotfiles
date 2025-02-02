@@ -1,0 +1,107 @@
+---
+title: Folder Structure
+description: Folder structure of my dotfiles.
+---
+
+Here is the folder structure of my dotfiles:
+
+import { FileTree } from '@astrojs/starlight/components';
+
+<FileTree>
+- ~/.dotfiles
+    - .gitignore
+    - README.md
+    - aerospace
+        - .config
+            - aerospace
+                - aerospace.toml
+    - atuin
+        - .config
+            - atuin
+                - config.toml
+    - brew
+        - **Brewfile**
+        - Brewfile.lock.json
+    - docs
+        - INSTALL.md
+    - i3
+        - **.Xresources**
+        - .config
+            - i3
+                - **config**
+            - picom
+                - picom.conf
+            - polybar
+                - **config.ini**
+                - launch.sh
+            - touchpad
+                - configure.sh
+        - static
+            - options
+                - 3133092.jpg
+                - 4960469.jpg
+                - 6090598.jpg
+            - wallpaper.jpg
+    - ideavim
+        - **.ideavimrc**
+    - k9s
+        - .config
+            - k9s
+                - aliases.yaml
+                - config.yaml
+                - skins
+                    - default.yaml
+    - keyboard
+        - crkbd.layout.json
+    - kitty
+        - .config
+            - kitty
+                - kitty.conf
+                - session
+                    - work.conf
+                - theme.conf
+    - nvim
+        - .config
+            - nvim
+                - init.lua
+                - lazy-lock.json
+                - lua
+                    - configuration
+                        - remap.lua
+                        - set.lua
+                    - lsp.lua
+                    - plugins
+                        - alpha.lua
+                        - barbar.lua
+                        - catppuccin.lua
+                        - cmp.lua
+                        - comment.lua
+                        - fugitive.lua
+                        - gitsign.lua
+                        - icons.lua
+                        - indent.lua
+                        - init.lua
+                        - lightbulb.lua
+                        - nerdtree.lua
+                        - noice.lua
+                        - notify.lua
+                        - nui.lua
+                        - quickfix.lua
+                        - spectre.lua
+                        - statusline.lua
+                        - telescope.lua
+                        - todo.lua
+                        - treesitter.lua
+                        - trouble.lua
+                        - undotree.lua
+                        - whichkey.lua
+    - zsh
+        - .config
+            - oh-my-posh
+                - themes
+                    - .default.omp.json
+        - **.zprofile**
+        - **.zshalias**
+        - **.zshenv**
+        - .zshrc
+</FileTree>

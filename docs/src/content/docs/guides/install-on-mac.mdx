@@ -1,0 +1,149 @@
+---
+title: Install Guide
+description: A guide to installing my dotfiles on Mac.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+<Steps>
+
+    <ol>
+    
+        <li> 
+        Clone the repository to `~/.dotfiles`:
+        
+        ```bash frame="code"
+        git clone https://github.com/sagojez/.dotfiles.git ~/.dotfiles
+        ```
+        </li>
+        
+        <li>
+        Install [Homebrew](https://brew.sh/):
+        
+        ```bash frame="code"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        ```
+        </li>
+        
+        <li>
+        Install [FiraCode Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/FiraCode.zip)
+        </li>
+        
+        <li>
+        Install `Brewfile`
+        
+        ```bash frame="code"
+        cd ~/.dotfiles/brew && brew bundle
+        ```
+        </li>
+        
+        <li>
+        Install jabba and setup coursier:
+       
+        ```bash frame="code"
+        curl -sL https://github.com/Jabba-Team/jabba/raw/main/install.sh | bash && . ~/.jabba/jabba.sh
+        jabba install openjdk@1.17-0
+        jabba alias default openjdk@1.17.0
+        coursier setup
+        brew uninstall --ignore-dependencies java
+        ```
+        </li>
+        
+        <li>
+        Install `oh my zsh`
+        
+        ```bash frame="code"
+        sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+        ```
+        </li>
+        
+        <li>
+        Install `fast-syntax-highlighting`
+        
+        ```bash frame="code"
+        git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git \
+          ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+        ```
+        </li>
+        
+        <li>
+        Install `zsh-autosuggestions` and `git clone`
+        
+        ```bash frame="code"
+        git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+        git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
+        ```
+        </li>
+        
+        <li>
+        Install cargo:
+        
+        ```bash frame="code"
+        curl https://sh.rustup.rs -sSf | sh
+        ```
+        </li>
+        
+        <li>
+        Install colorls:
+        
+        ```bash frame="code"
+        sudo gem install colorls
+        ```
+        </li>
+        <li>
+        Make sure you have created the following directories:
+        
+        ```bash frame="code"
+        mkdir ~/Developer/ && mkdir ~/Developer/Work/ && mkdir ~/Developer/Learn/
+        ```
+        </li>
+        
+        <li>
+        Install kitty:
+        
+        ```bash frame="code"
+        curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+        ```
+        </li>
+        
+        <li>
+        Install atuin:
+        
+        ```bash frame="code"
+        curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+        ```
+        </li>
+        <li>
+        Stow the folders:
+        
+        ```bash frame="code"
+        stow nvim && stow zsh && stow k9s && stow kitty && stow aerospace && stow atuin && stow ideavim
+        ```
+        </li>
+        
+        <li>
+        Install applications:
+            <CardGrid>
+                    <LinkCard href="https://1password.com/" target="_blank" title="1Password" />
+                    <LinkCard href="https://postman.com/" title="Postman" target="_blank" />
+                    <LinkCard href="https://www.google.com/chrome/" title="Google Chrome"  target="_blank" />
+                    <LinkCard href="https://spotify.com/" target="_blank" title="Spotify" />
+                    <LinkCard href="https://slack.com/" target="_blank" title="Slack" />
+                    <LinkCard href="https://www.macbartender.com/" target="_blank" title="Bartender 5" />
+                    <LinkCard href="https://shottr.cc/" target="_blank" title="Shottr" />
+                    <LinkCard href="https://discord.com/" target="_blank" title="Discord" />
+                    <LinkCard href="https://structured.app/" target="_blank" title="Structured" />
+                    <LinkCard href="https://apps.apple.com/us/app/spark-mail-ai-email-inbox/id997102246" target="_blank" title="Spark Mail" />
+                    <LinkCard href="https://www.jetbrains.com/toolbox-app/" target="_blank" title="Idea Toolbox" />
+                    <LinkCard href="https://www.docker.com/products/docker-desktop/" target="_blank" title="Docker Desktop" />
+                    <LinkCard href="https://github.com/exelban/stats" target="_blank" title="Stats" />
+                    <LinkCard href="https://fireball.studio/oneswitch" target="_blank" title="One Switch" />
+                    <LinkCard href="https://lo.cafe/notchnook" target="_blank" title="NotchNook" />
+                    <LinkCard href="https://apps.apple.com/us/app/sleeve-for-spotify-music/id1606145041?mt=12" target="_blank" title="Sleeve" />
+                    <LinkCard href="https://apps.apple.com/us/app/goodnotes-6/id1444383602" target="_blank" title="GoodNotes 6" />
+            </CardGrid>
+        </li>
+    </ol>
+
+</Steps>
