@@ -55,4 +55,4 @@ Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro 
 
 ## Preview
 
-![preview](./public/preview.gif)
+<video src="https://github.com/user-attachments/assets/57999fb2-0a37-4739-b792-ed03293e16f4" controls/>
