@@ -26,3 +26,7 @@ fi
 
 export K9S_CONFIG_DIR=~/.config/k9s
 
+if [[ "$JABBA_HOME" == "" ]]; then
+    export JABBA_HOME="$HOME/.jabba"
+fi
+
