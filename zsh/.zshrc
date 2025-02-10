@@ -24,8 +24,6 @@ if [ -x "$(command -v bat)" ]; then
 fi
 
 
-[ -s "$HOMEBREW_PREFIX/opt/jabba/jabba.sh" ] && . "$HOMEBREW_PREFIX/opt/jabba/jabba.sh"
-
 # =============================================================================
 #
 # Utility functions for zoxide.
@@ -160,3 +158,5 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+[ -s "$JABBA_HOME/jabba.sh" ] && source "$JABBA_HOME/jabba.sh"
