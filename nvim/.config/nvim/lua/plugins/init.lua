@@ -45,7 +45,7 @@ return {
       { "nvim-tree/nvim-web-devicons" },
     }
   },
-  { "stevearc/dressing.nvim",  event = "VeryLazy" },
+  { "stevearc/dressing.nvim", event = "VeryLazy" },
   { "wakatime/vim-wakatime" },
   { "windwp/nvim-autopairs" }
 }
