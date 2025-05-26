@@ -21,14 +21,19 @@
       "space f f": "file_finder::Toggle",
       "space space f": "editor::Format",
       "g ]": "editor::GoToDiagnostic",
-      "g [": "editor::GoToPreviousDiagnostic",
+      "g [": "editor::GoToPrevDiagnostic",
       "space x x": "diagnostics::Deploy",
       "ctrl-w ctrl-w": "project_panel::ToggleFocus",
-      "space d d": "editor::ToggleSelectedDiffHunks",
+      "space d d": "editor::ToggleHunkDiff",
       "space n f": "pane::RevealInProjectPanel",
       "space n t": "workspace::ToggleLeftDock",
       "space s": "editor::SelectAllMatches",
-      "ctrl-c": ["pane::CloseActiveItem", { "save_intent": "save_all" }],
+      "ctrl-c": [
+        "pane::CloseActiveItem",
+        {
+          "saveIntent": "saveAll"
+        }
+      ],
       "/": [
         "buffer_search::Deploy",
         {
@@ -97,7 +102,7 @@
   {
     "context": "Editor",
     "bindings": {
-      "ctrl-,": "pane::ActivatePreviousItem",
+      "ctrl-,": "pane::ActivatePrevItem",
       "ctrl-.": "pane::ActivateNextItem",
       "cmd-t": "terminal_panel::ToggleFocus"
     }

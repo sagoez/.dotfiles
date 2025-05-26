@@ -33,8 +33,21 @@
   "lsp": {
     "rust-analyzer": {
       "initialization_options": {
-        "checkOnSave": {
+        "check": {
           "command": "clippy"
+        },
+        "checkOnSave": true,
+        "rustfmt": {
+          "extraArgs": ["+nightly"]
+        }
+      },
+      "format_on_save": "on"
+    },
+    "typescript-language-server": {
+      "initialization_options": {
+        "preferences": {
+          "strictNullChecks": true,
+          "target": "ES2020"
         }
       }
     }
