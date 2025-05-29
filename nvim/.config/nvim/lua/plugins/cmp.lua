@@ -14,7 +14,6 @@ return {
 
     cmp.setup({
       sources = {
-        { name = "supermaven",             priority = 10 },
         { name = "nvim_lsp" },
         { name = "buffer" },
         { name = "vsnip" },

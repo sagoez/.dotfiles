@@ -27,15 +27,6 @@ return {
     opts = {},
   },
   {
-    "supermaven-inc/supermaven-nvim",
-    config = function()
-      require("supermaven-nvim").setup({
-        -- your config here
-        disable_inline_completion = true,
-      })
-    end,
-  },
-  {
     "glepnir/lspsaga.nvim",
     branch = "main",
     config = function()
