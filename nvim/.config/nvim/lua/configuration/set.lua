@@ -6,7 +6,7 @@ local indent = 2
 
 g.netrw_gx = "<cWORD>"
 
-o.background = ""
+-- o.background = ""
 
 -- global
 global_opt.shortmess:append("c")
