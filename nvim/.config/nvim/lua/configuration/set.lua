@@ -26,10 +26,10 @@ global_opt.laststatus = 3
 global_opt.mouse = ""
 global_opt.cmdheight = 0
 
-g.copilot_assume_mapped = true
-g.copilot_filetypes = {
-  ["*"] = true
-}
+-- g.copilot_assume_mapped = true
+-- g.copilot_filetypes = {
+--   ["*"] = true
+-- }
 
 if g.light then
   global_opt.background = "light"

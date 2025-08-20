@@ -14,7 +14,6 @@ return {
       "mfussenegger/nvim-dap",
     },
   },
-  { "github/copilot.vim" },
   {
     'junegunn/fzf',
     event = "VeryLazy",
