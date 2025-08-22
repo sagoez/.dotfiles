@@ -21,3 +21,5 @@ alias python=python3
 if [[ `uname` == "Linux" ]]; then
   alias pbcopy="xclip -sel clip"
 fi
+
+alias search="atuin search -i"
