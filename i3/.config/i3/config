@@ -162,9 +162,9 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 # classes
 assign [class="Google-chrome"] $ws1
 assign [class="kitty"] $ws2
+assign [class="^warp"] $ws2
 # for_window [class="^Spotify"] move --no-auto-back-and-forth to workspace $ws3
 assign [class="neovide"] $ws3
-assign [class="^warp"] $ws3
 for_window [class="^Postman"] move --no-auto-back-and-forth to workspace $ws4
 # assign [class="discord"] $ws4
 assign [class="Slack"] $ws5
