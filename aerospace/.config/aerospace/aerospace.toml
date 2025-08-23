@@ -188,6 +188,11 @@ run = "move-node-to-workspace 3"
 
 
 [[on-window-detected]]
+if.app-id = 'dev.warp.Warp-Stable'
+run = "move-node-to-workspace 3"
+
+
+[[on-window-detected]]
 if.app-id = 'com.postmanlabs.mac'
 run = "move-node-to-workspace 4"
 
