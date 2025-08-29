@@ -198,6 +198,9 @@ local setup = function()
           checkOnSave = {
             command = "clippy",
           },
+          rustfmt = {
+            extraArgs = { "+nightly", },
+          }
         },
       },
     },
