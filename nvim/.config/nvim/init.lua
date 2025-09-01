@@ -39,6 +39,6 @@ if vim.g.neovide then
     function() vim.api.nvim_paste(vim.fn.getreg('+'), true, -1) end,
     { noremap = true, silent = true }
   )
-
-  vim.cmd.colorscheme "catppuccin"
 end
+
+vim.cmd.colorscheme "catppuccin"
