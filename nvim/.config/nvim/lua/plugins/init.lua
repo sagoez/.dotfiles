@@ -21,6 +21,7 @@ return {
       vim.fn['fzf#install']()
     end
   },
+  { "github/copilot.vim" },
   {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
