@@ -1,5 +1,6 @@
 local api = vim.api
 local map = vim.keymap.set
+local g = vim.g
 
 local setup = function()
   require("neodev").setup({
@@ -175,7 +176,7 @@ local setup = function()
   -- Rust specific setup
   --================================
 
-  local rust_tools_opts = {
+  g.rustaceanvim = {
     tools = {
       hover_with_actions = false,
       reload_workspace_from_cargo_toml = true,
@@ -205,8 +206,6 @@ local setup = function()
       },
     },
   }
-
-  require("rust-tools").setup(rust_tools_opts)
 
   --================================
   -- Other LSP servers setup
@@ -270,7 +269,7 @@ local setup = function()
   require("typescript-tools").setup({
     on_attach = function(client, bufnr)
       on_attach(client, bufnr)
-      
+
       map("n", "<leader>to", "<cmd>TSToolsOrganizeImports<cr>", { desc = "Organize Imports", buffer = bufnr })
       map("n", "<leader>ts", "<cmd>TSToolsSortImports<cr>", { desc = "Sort Imports", buffer = bufnr })
       map("n", "<leader>tu", "<cmd>TSToolsRemoveUnused<cr>", { desc = "Remove Unused", buffer = bufnr })

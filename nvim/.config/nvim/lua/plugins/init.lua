@@ -6,7 +6,11 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
   },
-  { "simrat39/rust-tools.nvim" },
+  {
+    'mrcjkb/rustaceanvim',
+    version = '^6',
+    lazy = false,
+  },
   {
     "scalameta/nvim-metals",
     dependencies = {
