@@ -6,16 +6,14 @@ local setup = function()
   require("neodev").setup({
     -- add any options here, or leave empty to use the default settings
   })
-  local lsp_config = require("lspconfig")
+  local lsp_config = vim.lsp
   local cmp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-  lsp_config.util.default_config = vim.tbl_extend("force", lsp_config.util.default_config, {
-    capabilities = cmp_capabilities,
-  })
+  lsp_config.util.default_config = vim.tbl_extend("force", lsp_config.util.default_config or {},
+    { capabilities = cmp_capabilities, }
+  )
 
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
-
-  local lsp_group = api.nvim_create_augroup("lsp", { clear = true })
 
   local on_attach = function(_, bufnr)
     map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
@@ -63,6 +61,8 @@ local setup = function()
 
   metals_config.on_attach = function(client, bufnr)
     on_attach(client, bufnr)
+
+    local lsp_group = api.nvim_create_augroup("metals", { clear = true })
 
     map("v", "KA", require("metals").type_of_range, { desc = "Type of range" })
 
@@ -223,7 +223,7 @@ local setup = function()
     command = "set syntax=javascript",
   })
 
-  lsp_config.lua_ls.setup({
+  lsp_config.config('lua_ls', {
     on_attach = on_attach,
     settings = {
       Lua = {
@@ -233,7 +233,7 @@ local setup = function()
     },
   })
 
-  lsp_config.yamlls.setup({
+  lsp_config.config('yamlls', {
     on_attach = function(client, bufnr)
       client.server_capabilities.documentFormattingProvider = true
       on_attach(client, bufnr)
@@ -254,18 +254,17 @@ local setup = function()
   local client_capabilities = vim.lsp.protocol.make_client_capabilities()
   client_capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-  lsp_config.jsonls.setup({
+  lsp_config.config('jsonls', {
     capabilities = client_capabilities,
     on_attach = on_attach,
   })
 
-  lsp_config.html.setup({
+  lsp_config.config('html', {
     capabilities = client_capabilities,
     on_attach = on_attach,
   })
 
   -- TypeScript configuration
-  local api = require("typescript-tools.api")
   require("typescript-tools").setup({
     on_attach = function(client, bufnr)
       on_attach(client, bufnr)
@@ -340,7 +339,7 @@ local setup = function()
     },
   })
 
-  lsp_config.sqlls.setup({
+  lsp_config.config('sqlls', {
     cmd = { "sql-language-server", "up", "--method", "stdio" },
     on_attach = on_attach,
     filetypes = { "sql", "mysql", "pgsql" },
@@ -352,7 +351,7 @@ local setup = function()
   -- These server just use the vanilla setup
   local servers = { "bashls", "dockerls", "gopls", "clangd", "html" }
   for _, server in pairs(servers) do
-    lsp_config[server].setup({ on_attach = on_attach })
+    lsp_config.config(server, { on_attach = on_attach })
   end
 end
 
