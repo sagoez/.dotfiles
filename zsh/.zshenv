@@ -33,3 +33,7 @@ if [[ -z "$HOMEBREW_PREFIX" ]]; then
         export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
     fi
 fi
+
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
