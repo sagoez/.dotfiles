@@ -1,6 +1,5 @@
 return {
   { "folke/neodev.nvim" },
-  { "machakann/vim-sandwich" },
   { "neovim/nvim-lspconfig" },
   {
     "nvim-treesitter/nvim-treesitter",

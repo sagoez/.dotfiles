@@ -23,7 +23,7 @@ global_opt.clipboard = "unnamed"
 global_opt.completeopt = { "menuone", "noinsert", "noselect" }
 global_opt.scrolloff = 5
 global_opt.laststatus = 3
-global_opt.mouse = ""
+-- global_opt.mouse = ""
 global_opt.cmdheight = 0
 
 -- g.copilot_assume_mapped = true
