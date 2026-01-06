@@ -27,17 +27,27 @@
     "font_size": 12,
     "line_height": "comfortable"
   },
-  "features": {
-    "inline_completion_provider": "supermaven"
-  },
   "inlay_hints": {
     "enabled": false
   },
   "lsp": {
     "rust-analyzer": {
       "initialization_options": {
-        "checkOnSave": {
+        "check": {
           "command": "clippy"
+        },
+        "checkOnSave": true,
+        "rustfmt": {
+          "extraArgs": ["+nightly"]
+        }
+      },
+      "format_on_save": "on"
+    },
+    "typescript-language-server": {
+      "initialization_options": {
+        "preferences": {
+          "strictNullChecks": true,
+          "target": "ES2020"
         }
       }
     }
