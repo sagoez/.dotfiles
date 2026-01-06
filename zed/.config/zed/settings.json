@@ -1,11 +1,14 @@
 {
+  "features": {
+    "edit_prediction_provider": "copilot",
+  },
   "tab_bar": {
-    "show": true
+    "show": true,
   },
   "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "Catppuccin Frappé"
+    "mode": "light",
+    "light": "Catppuccin Latte",
+    "dark": "One Dark",
   },
   "vim_mode": true,
   "ui_font_size": 16,
@@ -15,41 +18,40 @@
   "cursor_blink": false,
   "base_keymap": "VSCode",
   "scrollbar": {
-    "show": "never"
+    "show": "never",
   },
   "auto_signature_help": true,
   "tabs": {
-    "file_icons": true
+    "file_icons": true,
   },
   "buffer_line_height": "comfortable",
   "terminal": {
     "font_family": "FiraCode Nerd Font",
     "font_size": 12,
-    "line_height": "comfortable"
+    "line_height": "comfortable",
   },
   "inlay_hints": {
-    "enabled": false
+    "enabled": false,
   },
   "lsp": {
     "rust-analyzer": {
       "initialization_options": {
         "check": {
-          "command": "clippy"
+          "command": "clippy",
         },
         "checkOnSave": true,
         "rustfmt": {
-          "extraArgs": ["+nightly"]
-        }
+          "extraArgs": ["+nightly"],
+        },
       },
-      "format_on_save": "on"
     },
     "typescript-language-server": {
       "initialization_options": {
         "preferences": {
           "strictNullChecks": true,
-          "target": "ES2020"
-        }
-      }
-    }
-  }
+          "target": "ES2020",
+        },
+      },
+    },
+  },
 }
