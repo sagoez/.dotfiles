@@ -1,4 +1,11 @@
 {
+  "agent": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-5-mini"
+    },
+    "model_parameters": []
+  },
   "features": {
     "edit_prediction_provider": "copilot",
   },
