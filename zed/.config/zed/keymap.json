@@ -101,7 +101,7 @@
     "bindings": {
       "ctrl-,": "pane::ActivatePreviousItem",
       "ctrl-.": "pane::ActivateNextItem",
-      "cmd-t": "terminal_panel::ToggleFocus",
+      "ctrl-w ctrl-w": "terminal_panel::ToggleFocus",
     },
   },
   {
