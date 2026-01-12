@@ -1,8 +1,10 @@
 {
+  "icon_theme": "Catppuccin Latte",
   "agent": {
+    "default_profile": "write",
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-5-mini"
+      "provider": "openai",
+      "model": "gpt-5.2"
     },
     "model_parameters": []
   },
@@ -13,9 +15,9 @@
     "show": true,
   },
   "theme": {
-    "mode": "light",
+    "mode": "dark",
     "light": "Catppuccin Latte",
-    "dark": "One Dark",
+    "dark": "Kanagawa Wave",
   },
   "vim_mode": true,
   "ui_font_size": 16,

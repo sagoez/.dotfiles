@@ -1,48 +1,113 @@
-tap "coursier/formulas"
+tap "autometrics-dev/tap"
 tap "derailed/k9s"
+tap "filosottile/musl-cross"
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "int128/kubelogin"
 tap "jandedobbeleer/oh-my-posh"
 tap "michaeleisel/zld"
 tap "nikitabobko/tap"
-tap "scalacenter/bloop"
+# Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Modern diagram scripting language that turns text to diagrams
+brew "d2"
+# Load/unload environment variables based on $PWD
 brew "direnv"
+# Embeddable SQL OLAP Database Management System
 brew "duckdb"
+# Modern, maintained replacement for ls
 brew "eza"
+# Simple, fast and user-friendly alternative to find
 brew "fd"
-brew "fzf"
-brew "git-delta"
-brew "git-lfs"
-brew "go"
+# OpenType text shaping engine
 brew "harfbuzz"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
+# Git extension for versioning large files
+brew "git-lfs"
+# Command-driven, interactive function plotting
+brew "gnuplot"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Improved top (interactive process viewer)
+brew "htop"
+# Lightweight and flexible command-line JSON processor
 brew "jq"
-brew "librdkafka"
-brew "kcat"
+# Kubernetes command-line interface
 brew "kubernetes-cli"
+# Tool that can switch between kubectl contexts easily and create aliases
 brew "kubectx"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Next-gen compiler infrastructure
+brew "llvm"
+# Language Server for the Lua language
 brew "lua-language-server"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Open-source, cross-platform JavaScript runtime environment
 brew "node"
+# Swiss-army knife of markup format conversion
 brew "pandoc"
+# Shell command parallelization utility
 brew "parallel"
+# Pinentry for GPG on Mac
 brew "pinentry-mac"
+# Protocol buffers (Google's data interchange format)
 brew "protobuf"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# HTTP regression testing and benchmarking utility
+brew "siege"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# Modern SSH server for teams managing distributed infrastructure
 brew "teleport"
+# Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Executes a program periodically, showing output fullscreen
 brew "watch"
+# Language Server for Yaml Files
 brew "yaml-language-server"
+# Cross-platform Java Version Manager
+brew "jabba"
+# Shell extension to navigate your filesystem faster
 brew "zoxide"
-brew "coursier/formulas/coursier"
+# Command line tool for Autometrics
+brew "autometrics-dev/tap/am"
+# Kubernetes CLI To Manage Your Clusters In Style!
 brew "derailed/k9s/k9s"
+# Linux cross compilers based on musl libc
+brew "filosottile/musl-cross/musl-cross"
+# A kubectl plugin for Kubernetes OpenID Connect authentication
 brew "int128/kubelogin/kubelogin"
-brew "jandedobbeleer/oh-my-posh/oh-my-posh"
+# Prompt theme engine for any shell
+brew "jandedobbeleer/oh-my-posh/oh-my-posh", link: false
+# AeroSpace is an i3-like tiling window manager for macOS
 cask "aerospace"
+# Set of tools to manage resources and applications hosted on Google Cloud
 cask "gcloud-cli"
+# Open-source keystroke visualiser
 cask "keycastr"
+# Neovim Client
 cask "neovide-app"
+# Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
+# System monitor for the menu bar
 cask "stats"
+go "golang.org/x/tools/gopls"
+cargo "bacon"
+cargo "cargo-expand"
+cargo "cargo-generate"
+cargo "cargo-insta"
+cargo "cargo-nextest"
+cargo "cargo-workspace-unused-pub"
+cargo "rustowl"
+cargo "sea-orm-cli"
+cargo "todo-tree"
+cargo "typeshare-cli"
+cargo "workflow"
