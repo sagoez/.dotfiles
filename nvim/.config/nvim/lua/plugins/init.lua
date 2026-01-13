@@ -1,6 +1,22 @@
 return {
   { "folke/neodev.nvim" },
   { "neovim/nvim-lspconfig" },
+  -- ERROR: Not working on Rust 1.94+
+  -- {
+  --   'cordx56/rustowl',
+  --   version = '*', -- Latest stable version
+  --   build = 'cargo install rustowl',
+  --   lazy = false, -- This plugin is already lazy
+  --   opts = {
+  --     client = {
+  --       on_attach = function(_, buffer)
+  --         vim.keymap.set('n', '<leader>o', function()
+  --           require('rustowl').toggle(buffer)
+  --         end, { buffer = buffer, desc = 'Toggle RustOwl' })
+  --       end
+  --     },
+  --   },
+  -- },
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
