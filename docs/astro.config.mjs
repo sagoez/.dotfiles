@@ -8,7 +8,7 @@ export default defineConfig({
 		starlight({
 			title: 'Dotfiles',
 			social: {
-				github: 'https://github.com/sagojez/.dotfiles',
+				github: 'https://github.com/sagoez/.dotfiles',
 			},
 			sidebar: [
 				{
