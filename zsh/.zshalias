@@ -1,6 +1,5 @@
 # Open a directory in the current window in neovim
-alias vi="neovide --fork"
-alias vim="nvim"
+alias vi="nvim"
 
 # Go to Work directory
 alias work="cd $HOME/Developer/Work/"

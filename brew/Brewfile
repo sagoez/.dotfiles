@@ -1,4 +1,3 @@
-tap "autometrics-dev/tap"
 tap "derailed/k9s"
 tap "filosottile/musl-cross"
 tap "homebrew/bundle"
@@ -77,8 +76,6 @@ brew "yaml-language-server"
 brew "jabba"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
-# Command line tool for Autometrics
-brew "autometrics-dev/tap/am"
 # Kubernetes CLI To Manage Your Clusters In Style!
 brew "derailed/k9s/k9s"
 # Linux cross compilers based on musl libc
@@ -93,12 +90,8 @@ cask "aerospace"
 cask "gcloud-cli"
 # Open-source keystroke visualiser
 cask "keycastr"
-# Neovim Client
-cask "neovide-app"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
-# System monitor for the menu bar
-cask "stats"
 go "golang.org/x/tools/gopls"
 cargo "bacon"
 cargo "cargo-expand"

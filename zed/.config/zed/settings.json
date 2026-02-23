@@ -4,9 +4,9 @@
     "default_profile": "write",
     "default_model": {
       "provider": "openai",
-      "model": "gpt-5.2"
+      "model": "gpt-5.2",
     },
-    "model_parameters": []
+    "model_parameters": [],
   },
   "features": {
     "edit_prediction_provider": "copilot",
@@ -62,5 +62,9 @@
         },
       },
     },
+  },
+  "colorize_brackets": true,
+  "collaboration_panel": {
+    "button": false,
   },
 }
