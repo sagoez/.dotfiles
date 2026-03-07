@@ -6,6 +6,7 @@
 " highlight search occurrences
 set number                        " line numbers
 set relativenumber                " relative line numbers
+set NERDTree
 
 set hlsearch                      " highlight search occurrences
 set ignorecase                    " ignore case in search patterns
