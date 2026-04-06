@@ -196,6 +196,10 @@ if.app-id = 'com.todesktop.230313mzl4w4u92' # Cursor
 run = "move-node-to-workspace 3"
 
 [[on-window-detected]]
+if.app-id = 'com.jetbrains.rustrover'
+run = "move-node-to-workspace 3"
+
+[[on-window-detected]]
 if.app-id = 'com.postmanlabs.mac'
 run = "move-node-to-workspace 4"
 
