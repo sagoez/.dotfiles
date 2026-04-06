@@ -30,7 +30,7 @@ if vim.g.neovide then
   vim.g.neovide_padding_right = 0
   vim.g.neovide_padding_left = 0
   --
-  vim.opt.guifont = "FiraCode Nerd Font:h14"
+  vim.opt.guifont = "DejaVuSansM Nerd Font Mono:h15"
 
 
   vim.keymap.set(
@@ -41,4 +41,4 @@ if vim.g.neovide then
   )
 end
 
-vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "tokyonight"

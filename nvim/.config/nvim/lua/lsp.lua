@@ -353,6 +353,9 @@ local setup = function()
   for _, server in pairs(servers) do
     lsp_config.config(server, { on_attach = on_attach })
   end
+
+  -- Enable all configured servers
+  vim.lsp.enable({ "lua_ls", "yamlls", "jsonls", "html", "sqlls", "bashls", "dockerls", "gopls", "clangd" })
 end
 
 return {

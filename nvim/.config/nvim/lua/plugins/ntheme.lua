@@ -1,13 +1,9 @@
 return {
-  "catppuccin/nvim",
-  priority = 1000, -- make sure to load this before all the other start plugins
+  "folke/tokyonight.nvim",
+  priority = 1000,
   config = function()
-    require("catppuccin").setup({
-      flavour = "frappe",
-      float = {
-        transparent = false, -- enable transparent floating windows
-        solid = false,       -- use solid styling for floating windows, see |winborder|
-      },
+    require("tokyonight").setup({
+      style = "night",
     })
   end
 }
