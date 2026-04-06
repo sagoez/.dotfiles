@@ -1,0 +1,148 @@
+---
+title: Install on Mac
+description: A guide to installing my dotfiles on Mac.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+import { Cards, Card } from "fumadocs-ui/components/card";
+
+<Steps>
+
+<Step>
+Clone the repository to `~/.dotfiles`:
+
+```bash
+git clone https://github.com/sagoez/.dotfiles.git ~/.dotfiles
+```
+</Step>
+
+<Step>
+Install [Homebrew](https://brew.sh/):
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+</Step>
+
+<Step>
+Install [DejaVuSansMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/DejaVuSansMono.zip)
+</Step>
+
+<Step>
+Install `Brewfile`
+
+```bash
+cd ~/.dotfiles/brew && brew bundle
+```
+</Step>
+
+<Step>
+Install jabba and setup coursier:
+
+```bash
+curl -sL https://github.com/Jabba-Team/jabba/raw/main/install.sh | bash && . ~/.jabba/jabba.sh
+jabba install openjdk@1.17-0
+jabba alias default openjdk@1.17.0
+coursier setup
+brew uninstall --ignore-dependencies java
+```
+</Step>
+
+<Step>
+Install `oh my zsh`
+
+```bash
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+</Step>
+
+<Step>
+Install `fast-syntax-highlighting`
+
+```bash
+git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git \
+  ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+```
+</Step>
+
+<Step>
+Install `zsh-autosuggestions` and `git-open`
+
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
+```
+</Step>
+
+<Step>
+Install cargo:
+
+```bash
+curl https://sh.rustup.rs -sSf | sh
+```
+</Step>
+
+<Step>
+Install colorls:
+
+```bash
+sudo gem install colorls
+```
+</Step>
+
+<Step>
+Make sure you have created the following directories:
+
+```bash
+mkdir ~/Developer/ && mkdir ~/Developer/Work/ && mkdir ~/Developer/Learn/
+```
+</Step>
+
+<Step>
+Install kitty:
+
+```bash
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+```
+</Step>
+
+<Step>
+Install atuin:
+
+```bash
+curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+```
+</Step>
+
+<Step>
+Stow the folders:
+
+```bash
+stow nvim && stow zsh && stow k9s && stow kitty && stow aerospace && stow atuin && stow ideavim
+```
+</Step>
+
+<Step>
+Install applications:
+
+<Cards>
+  <Card title="1Password" href="https://1password.com/" />
+  <Card title="Postman" href="https://postman.com/" />
+  <Card title="Google Chrome" href="https://www.google.com/chrome/" />
+  <Card title="Spotify" href="https://spotify.com/" />
+  <Card title="Slack" href="https://slack.com/" />
+  <Card title="Bartender 5" href="https://www.macbartender.com/" />
+  <Card title="Shottr" href="https://shottr.cc/" />
+  <Card title="Discord" href="https://discord.com/" />
+  <Card title="Structured" href="https://structured.app/" />
+  <Card title="Spark Mail" href="https://apps.apple.com/us/app/spark-mail-ai-email-inbox/id997102246" />
+  <Card title="Idea Toolbox" href="https://www.jetbrains.com/toolbox-app/" />
+  <Card title="Docker Desktop" href="https://www.docker.com/products/docker-desktop/" />
+  <Card title="One Switch" href="https://fireball.studio/oneswitch" />
+  <Card title="NotchNook" href="https://lo.cafe/notchnook" />
+  <Card title="Sleeve" href="https://apps.apple.com/us/app/sleeve-for-spotify-music/id1606145041?mt=12" />
+  <Card title="GoodNotes 6" href="https://apps.apple.com/us/app/goodnotes-6/id1444383602" />
+</Cards>
+</Step>
+
+</Steps>

@@ -1,0 +1,196 @@
+---
+title: Install on Linux
+description: A guide to installing my dotfiles on Linux.
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+import { Cards, Card } from "fumadocs-ui/components/card";
+
+<Steps>
+
+<Step>
+Clone the repository to `~/.dotfiles`:
+
+```bash
+git clone https://github.com/sagoez/.dotfiles.git ~/.dotfiles
+```
+</Step>
+
+<Step>
+Install necessary packages:
+
+```bash
+sudo apt-get install -y build-essential git curl file stow blueman acpi libusb-1.0-0 libusb-1.0-0-dev shutter
+```
+</Step>
+
+<Step>
+Install `homebrew`:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+</Step>
+
+<Step>
+Install `zsh`:
+
+```bash
+sudo apt install zsh && chsh -s $(which zsh)
+```
+</Step>
+
+<Step>
+Install `oh my zsh`:
+
+```bash
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+</Step>
+
+<Step>
+Install [DejaVuSansMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/DejaVuSansMono.zip)
+</Step>
+
+<Step>
+Install `Brewfile`:
+
+```bash
+cd ~/.dotfiles/brew && brew bundle
+```
+</Step>
+
+<Step>
+Install `fast-syntax-highlighting`:
+
+```bash
+git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git \
+  ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+```
+</Step>
+
+<Step>
+Install `zsh-autosuggestions`:
+
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+</Step>
+
+<Step>
+Install `git-open`:
+
+```bash
+git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
+```
+</Step>
+
+<Step>
+Install `ruby`:
+
+```bash
+sudo apt install ruby-full
+```
+</Step>
+
+<Step>
+Install `colorls`:
+
+```bash
+sudo gem install colorls
+```
+</Step>
+
+<Step>
+Install i3:
+
+```bash
+sudo apt install i3 picom polybar feh pavucontrol rofi
+/usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2024.03.04_all.deb keyring.deb SHA256:f9bb4340b5ce0ded29b7e014ee9ce788006e9bbfe31e96c09b2118ab91fca734
+sudo apt install ./keyring.deb
+echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-release | cut -f2 -d=) universe" | sudo tee /etc/apt/sources.list.d/sur5r-i3.list
+sudo apt update
+rm keyring.deb
+sudo apt upgrade
+```
+</Step>
+
+<Step>
+Install jabba:
+
+```bash
+curl -sL https://github.com/Jabba-Team/jabba/raw/main/install.sh | bash && . ~/.jabba/jabba.sh
+jabba install openjdk@1.17-0
+jabba alias default openjdk@1.17.0
+```
+</Step>
+
+<Step>
+Setup coursier:
+
+```bash
+coursier setup
+brew uninstall --ignore-dependencies java
+```
+</Step>
+
+<Step>
+Install kitty:
+
+```bash
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+sudo ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten /usr/local/sbin/
+cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
+sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
+sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
+```
+</Step>
+
+<Step>
+Install cargo:
+
+```bash
+curl https://sh.rustup.rs -sSf | sh
+```
+</Step>
+
+<Step>
+Create directories:
+
+```bash
+mkdir ~/Go/ && mkdir ~/Work/ && mkdir ~/Learn/
+```
+</Step>
+
+<Step>
+Install atuin:
+
+```bash
+curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+```
+</Step>
+
+<Step>
+Stow folders:
+
+```bash
+cd ~/.dotfiles && stow nvim && stow zsh && stow k9s && stow kitty && stow i3 && stow atuin
+```
+</Step>
+
+<Step>
+Install applications:
+
+<Cards>
+  <Card title="Slack" href="https://slack.com/" />
+  <Card title="Spotify" href="https://spotify.com/" />
+  <Card title="Google Chrome" href="https://www.google.com/chrome/" />
+  <Card title="Postman" href="https://postman.com/" />
+  <Card title="Docker Desktop" href="https://www.docker.com/products/docker-desktop/" />
+  <Card title="Idea Toolbox" href="https://www.jetbrains.com/toolbox-app/" />
+  <Card title="Discord" href="https://discord.com/" />
+</Cards>
+</Step>
+
+</Steps>
