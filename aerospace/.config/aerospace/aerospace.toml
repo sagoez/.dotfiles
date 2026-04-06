@@ -224,6 +224,10 @@ if.app-id = 'com.leomehlig.today'
 run = "move-node-to-workspace 6"
 
 [[on-window-detected]]
+if.app-id = 'com.jetbrains.datagrip'
+run = "move-node-to-workspace 6"
+
+[[on-window-detected]]
 if.app-id = 'io.podmandesktop.PodmanDesktop'
 run = "move-node-to-workspace 7"
 
