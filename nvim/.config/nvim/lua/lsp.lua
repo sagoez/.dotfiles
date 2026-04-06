@@ -3,32 +3,25 @@ local map = vim.keymap.set
 local g = vim.g
 
 local setup = function()
-  require("neodev").setup({
-    -- add any options here, or leave empty to use the default settings
-  })
   local lsp_config = vim.lsp
   local cmp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-  lsp_config.util.default_config = vim.tbl_extend("force", lsp_config.util.default_config or {},
-    { capabilities = cmp_capabilities, }
-  )
-
-  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "single" })
-
   local on_attach = function(_, bufnr)
-    map("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
-    map("n", "gtd", vim.lsp.buf.type_definition, { desc = "Go to type definition" })
-    map("n", "K", vim.lsp.buf.hover, { desc = "Show hover" })
-    map("n", "gi", vim.lsp.buf.implementation, { desc = "Go to implementation" })
-    map("n", "gr", vim.lsp.buf.references, { desc = "Show references" })
-    map("n", "<leader>sh", vim.lsp.buf.signature_help, { desc = "Show signature help" })
-    map("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
-    map("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
-    map("n", "<leader>cl", vim.lsp.codelens.run, { desc = "Run code lens" })
-    map("n", "<leader>awf", vim.lsp.buf.add_workspace_folder)
+    local opts = function(desc) return { buffer = bufnr, desc = desc } end
+
+    map("n", "gd", vim.lsp.buf.definition, opts("Go to definition"))
+    map("n", "gtd", vim.lsp.buf.type_definition, opts("Go to type definition"))
+    map("n", "K", function() vim.lsp.buf.hover({ border = "single" }) end, opts("Show hover"))
+    map("n", "gi", vim.lsp.buf.implementation, opts("Go to implementation"))
+    map("n", "gr", vim.lsp.buf.references, opts("Show references"))
+    map("n", "<leader>sh", vim.lsp.buf.signature_help, opts("Show signature help"))
+    map("n", "<leader>rn", vim.lsp.buf.rename, opts("Rename"))
+    map("n", "<leader>ca", vim.lsp.buf.code_action, opts("Code action"))
+    map("n", "<leader>cl", vim.lsp.codelens.run, opts("Run code lens"))
+    map("n", "<leader>awf", vim.lsp.buf.add_workspace_folder, opts("Add workspace folder"))
     map("n", "<leader>f", function()
       vim.lsp.buf.format({ async = true })
-    end, { desc = "Format" })
+    end, opts("Format"))
 
     api.nvim_set_option_value("omnifunc", "v:lua.vim.lsp.omnifunc", { buf = bufnr })
   end
@@ -224,6 +217,7 @@ local setup = function()
   })
 
   lsp_config.config('lua_ls', {
+    capabilities = cmp_capabilities,
     on_attach = on_attach,
     settings = {
       Lua = {
@@ -234,6 +228,7 @@ local setup = function()
   })
 
   lsp_config.config('yamlls', {
+    capabilities = cmp_capabilities,
     on_attach = function(client, bufnr)
       client.server_capabilities.documentFormattingProvider = true
       on_attach(client, bufnr)
@@ -251,16 +246,13 @@ local setup = function()
     },
   })
 
-  local client_capabilities = vim.lsp.protocol.make_client_capabilities()
-  client_capabilities.textDocument.completion.completionItem.snippetSupport = true
-
   lsp_config.config('jsonls', {
-    capabilities = client_capabilities,
+    capabilities = cmp_capabilities,
     on_attach = on_attach,
   })
 
   lsp_config.config('html', {
-    capabilities = client_capabilities,
+    capabilities = cmp_capabilities,
     on_attach = on_attach,
   })
 
@@ -344,14 +336,14 @@ local setup = function()
     on_attach = on_attach,
     filetypes = { "sql", "mysql", "pgsql" },
     root_dir = function(fname)
-      return lsp_config.util.find_git_ancestor(fname) or vim.loop.os_homedir()
+      return vim.fs.root(fname, '.git') or vim.uv.os_homedir() ---@diagnostic disable-line: undefined-field
     end,
   })
 
   -- These server just use the vanilla setup
-  local servers = { "bashls", "dockerls", "gopls", "clangd", "html" }
+  local servers = { "bashls", "dockerls", "gopls", "clangd" }
   for _, server in pairs(servers) do
-    lsp_config.config(server, { on_attach = on_attach })
+    lsp_config.config(server, { capabilities = cmp_capabilities, on_attach = on_attach })
   end
 
   -- Enable all configured servers
