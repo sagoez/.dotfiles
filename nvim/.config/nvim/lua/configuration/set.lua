@@ -41,7 +41,7 @@ opt.wrap = false
 opt.cursorline = true
 opt.signcolumn = "yes"
 opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 opt.foldenable = false
 
 opt.tabstop = indent
