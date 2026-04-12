@@ -1,9 +1,10 @@
 return {
-  "folke/tokyonight.nvim",
+  "ellisonleao/gruvbox.nvim",
   priority = 1000,
   config = function()
-    require("tokyonight").setup({
-      style = "night",
+    require("gruvbox").setup({
+      contrast = "soft",
     })
+    vim.o.background = "light"
   end
 }

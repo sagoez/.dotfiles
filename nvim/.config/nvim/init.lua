@@ -41,4 +41,4 @@ if vim.g.neovide then
   )
 end
 
-vim.cmd.colorscheme "tokyonight"
+vim.cmd.colorscheme "gruvbox"
