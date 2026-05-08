@@ -1,0 +1,57 @@
+{
+  "$schema": "https://raw.githubusercontent.com/manaflow-ai/cmux/main/web/data/cmux.schema.json",
+  "schemaVersion": 1,
+
+  // Match kitty Gruvbox Light setup.
+
+  "app": {
+    "appearance": "light"
+  },
+
+  "browser": {
+    "theme": "light"
+  },
+
+  "sidebarAppearance": {
+    "matchTerminalBackground": true,
+    "lightModeTintColor": "#d65d0e",
+    "tintColor": "#d65d0e",
+    "tintOpacity": 0.18
+  },
+
+  "workspaceColors": {
+    "colors": {
+      "Amber":    "#b57614",
+      "Aqua":     "#427b58",
+      "Blue":     "#076678",
+      "Brown":    "#7c6f64",
+      "Charcoal": "#3c3836",
+      "Crimson":  "#9d0006",
+      "Green":    "#79740e",
+      "Indigo":   "#076678",
+      "Magenta":  "#8f3f71",
+      "Navy":     "#076678",
+      "Olive":    "#79740e",
+      "Orange":   "#d65d0e",
+      "Purple":   "#8f3f71",
+      "Red":      "#cc241d",
+      "Rose":     "#b16286",
+      "Teal":     "#427b58"
+    }
+  },
+
+  // Shortcuts mirror kitty's ctrl+shift (kitty_mod) bindings:
+  //   kitty_mod+enter -> new pane in current "tab" -> splitRight
+  //   kitty_mod+t     -> new kitty tab           -> newSurface
+  //   kitty_mod+n     -> new OS window           -> newWindow
+  //   kitty_mod+f     -> fzf scrollback overlay  -> find
+  // The remaining defaults are left untouched.
+  "shortcuts": {
+    "bindings": {
+      "splitRight": "ctrl+shift+\r",
+      "newSurface": "ctrl+shift+t",
+      "newWindow":  "ctrl+shift+n",
+      "find":       "ctrl+shift+f"
+    }
+  }
+}

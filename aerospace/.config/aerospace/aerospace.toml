@@ -170,6 +170,10 @@ run = "move-node-to-workspace 2"
 if.app-id = 'com.mitchellh.ghostty'
 run = "move-node-to-workspace 2"
 
+[[on-window-detected]]
+if.app-id = 'com.cmuxterm.app'
+run = "move-node-to-workspace 2"
+
 
 [[on-window-detected]]
 if.app-id = 'dev.warp.Warp-Stable'
