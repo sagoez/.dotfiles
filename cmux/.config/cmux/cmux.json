@@ -41,7 +41,7 @@
   },
 
   // Shortcuts mirror kitty's ctrl+shift (kitty_mod) bindings:
-  //   kitty_mod+enter -> new pane in current "tab" -> splitRight
+  //   kitty_mod+enter -> new pane in current "tab" -> splitDown
   //   kitty_mod+t     -> new kitty tab           -> newSurface
   //   kitty_mod+n     -> new OS window           -> newWindow
   //   kitty_mod+f     -> fzf scrollback overlay  -> find
@@ -50,7 +50,7 @@
   // The remaining defaults are left untouched.
   "shortcuts": {
     "bindings": {
-      "splitRight":  "ctrl+shift+\r",
+      "splitDown":   "ctrl+shift+enter",
       "newSurface":  "ctrl+shift+t",
       "newWindow":   "ctrl+shift+n",
       "find":        "ctrl+shift+f",
