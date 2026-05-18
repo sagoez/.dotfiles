@@ -1,0 +1,150 @@
+{
+  "name": "Bone",
+  "dark": false,
+  "author": "Samuel",
+  "editorScheme": "/Bone.xml",
+  "colors": {
+    "boneBg": "#f4efe5",
+    "boneBgAlt": "#ece6da",
+    "boneBgDark": "#d8d0bf",
+    "boneFg": "#2a2520",
+    "boneFgMuted": "#8c8478",
+    "boneAccent": "#3d5a75",
+    "boneSelection": "#d8d0bf"
+  },
+  "ui": {
+    "*": {
+      "background": "boneBg",
+      "foreground": "boneFg",
+      "selectionBackground": "boneSelection",
+      "selectionForeground": "boneFg",
+      "selectionInactiveBackground": "boneBgAlt",
+      "selectionInactiveForeground": "boneFg",
+      "infoForeground": "boneFgMuted",
+      "disabledForeground": "boneFgMuted",
+      "disabledText": "boneFgMuted",
+      "borderColor": "boneBgDark",
+      "disabledBorderColor": "boneBgDark",
+      "focusedBorderColor": "boneAccent",
+      "hoverBackground": "boneBgAlt",
+      "lightSelectionBackground": "boneBgAlt"
+    },
+    "Borders": {
+      "color": "boneBgDark",
+      "ContrastBorderColor": "boneBgDark"
+    },
+    "Panel": {
+      "background": "boneBg",
+      "foreground": "boneFg"
+    },
+    "ToolWindow": {
+      "background": "boneBg",
+      "Header.background": "boneBgAlt",
+      "Header.inactiveBackground": "boneBg",
+      "HeaderTab.underlinedTabBackground": "boneBgAlt",
+      "HeaderTab.selectedInactiveBackground": "boneBgAlt"
+    },
+    "Tree": {
+      "background": "boneBg",
+      "foreground": "boneFg",
+      "selectionBackground": "boneBgDark",
+      "selectionForeground": "boneFg",
+      "selectionInactiveBackground": "boneBgAlt",
+      "selectionInactiveForeground": "boneFg",
+      "hash": "boneBgDark",
+      "rowHeight": 22
+    },
+    "List": {
+      "background": "boneBg",
+      "foreground": "boneFg",
+      "selectionBackground": "boneBgDark",
+      "selectionForeground": "boneFg",
+      "selectionInactiveBackground": "boneBgAlt"
+    },
+    "Table": {
+      "background": "boneBg",
+      "foreground": "boneFg",
+      "gridColor": "boneBgDark",
+      "selectionBackground": "boneBgDark",
+      "selectionForeground": "boneFg"
+    },
+    "TextField": {
+      "background": "boneBgAlt",
+      "foreground": "boneFg",
+      "borderColor": "boneBgDark",
+      "focusedBorderColor": "boneAccent"
+    },
+    "ComboBox": {
+      "background": "boneBgAlt",
+      "nonEditableBackground": "boneBgAlt",
+      "ArrowButton.background": "boneBgAlt"
+    },
+    "Button": {
+      "background": "boneBgAlt",
+      "foreground": "boneFg",
+      "startBackground": "boneBgAlt",
+      "endBackground": "boneBgAlt",
+      "startBorderColor": "boneBgDark",
+      "endBorderColor": "boneBgDark"
+    },
+    "Editor": {
+      "background": "boneBg",
+      "foreground": "boneFg",
+      "shortcutForeground": "boneAccent"
+    },
+    "EditorTabs": {
+      "background": "boneBg",
+      "underlinedTabBackground": "boneBgAlt",
+      "underlinedTabForeground": "boneFg",
+      "underlineColor": "boneAccent",
+      "inactiveUnderlineColor": "boneBgDark",
+      "hoverBackground": "boneBgAlt"
+    },
+    "TabbedPane": {
+      "background": "boneBg",
+      "contentAreaColor": "boneBgDark",
+      "selectedTabPaneBackground": "boneBg",
+      "underlineColor": "boneAccent"
+    },
+    "MainToolbar": {
+      "background": "boneBg",
+      "inactiveBackground": "boneBg"
+    },
+    "TitlePane": {
+      "background": "boneBg",
+      "inactiveBackground": "boneBg",
+      "infoForeground": "boneFg",
+      "inactiveInfoForeground": "boneFgMuted"
+    },
+    "StatusBar": {
+      "background": "boneBg",
+      "borderColor": "boneBgDark"
+    },
+    "MenuBar": {
+      "background": "boneBg",
+      "foreground": "boneFg",
+      "selectionBackground": "boneBgDark",
+      "selectionForeground": "boneFg",
+      "borderColor": "boneBgDark"
+    },
+    "Menu": {
+      "background": "boneBg",
+      "foreground": "boneFg",
+      "selectionBackground": "boneBgDark",
+      "selectionForeground": "boneFg"
+    },
+    "PopupMenu": {
+      "background": "boneBg",
+      "foreground": "boneFg",
+      "selectionBackground": "boneBgDark",
+      "selectionForeground": "boneFg",
+      "borderColor": "boneBgDark"
+    },
+    "ScrollBar": {
+      "background": "boneBg",
+      "thumbColor": "boneBgDark",
+      "hoverThumbColor": "boneFgMuted",
+      "trackColor": "boneBg"
+    }
+  }
+}

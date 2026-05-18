@@ -1,0 +1,12 @@
+<idea-plugin>
+  <id>com.samuel.bone-theme</id>
+  <name>Bone Theme</name>
+  <version>1.0.0</version>
+  <vendor>Samuel</vendor>
+  <description><![CDATA[Bone — neutral cream UI theme]]></description>
+  <idea-version since-build="231"/>
+  <depends>com.intellij.modules.platform</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <themeProvider id="bone" path="/themes/Bone.theme.json"/>
+  </extensions>
+</idea-plugin>
