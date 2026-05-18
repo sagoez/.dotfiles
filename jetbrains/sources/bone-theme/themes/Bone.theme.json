@@ -2,7 +2,7 @@
   "name": "Bone",
   "dark": false,
   "author": "Samuel",
-  "editorScheme": "/Bone.xml",
+  "editorScheme": "/themes/Bone.xml",
   "colors": {
     "boneBg": "#f4efe5",
     "boneBgAlt": "#ece6da",
