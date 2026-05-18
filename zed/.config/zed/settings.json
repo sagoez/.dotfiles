@@ -1,46 +1,173 @@
 {
-  "icon_theme": "Catppuccin Latte",
-  "agent": {
-    "default_profile": "write",
-    "default_model": {
-      "provider": "openai",
-      "model": "gpt-5.2",
-    },
-    "model_parameters": [],
+  "project_panel": {
+    "dock": "left",
   },
-  "features": {
-    "edit_prediction_provider": "copilot",
+  "outline_panel": {
+    "dock": "left",
+  },
+  "git_panel": {
+    "dock": "left",
+  },
+  "session": {
+    "trust_all_worktrees": true,
+  },
+  "icon_theme": {
+    "mode": "system",
+    "light": "Zed (Default)",
+    "dark": "Zed (Default)",
+  },
+  "indent_guides": {
+    "background_coloring": "indent_aware",
+  },
+  "edit_predictions": {
+    "allow_data_collection": "no",
+  },
+  "colorize_brackets": true,
+  "theme": {
+    "mode": "light",
+    "light": "Bone",
+    "dark": "Tokyo Night",
+  },
+  "collaboration_panel": {
+    "dock": "left",
+    "button": false,
+  },
+  "disable_ai": true,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "agent": {
+    "dock": "right",
+    "enable_feedback": false,
+    "default_profile": "write",
   },
   "tab_bar": {
     "show": true,
-  },
-  "theme": {
-    "mode": "dark",
-    "light": "Catppuccin Latte",
-    "dark": "Kanagawa Wave",
+    "show_nav_history_buttons": false,
   },
   "vim_mode": true,
-  "ui_font_size": 16,
+  "ui_font_size": 14,
   "buffer_font_size": 14,
-  "buffer_font_family": "FiraCode Nerd Font",
+  "buffer_font_family": "DejaVuSansM Nerd Font Mono",
   "relative_line_numbers": "enabled",
-  "cursor_blink": false,
+  "cursor_blink": true,
   "base_keymap": "VSCode",
   "scrollbar": {
-    "show": "never",
+    "show": "auto",
+    "git_diff": true,
+    "selected_text": true,
+    "selected_symbol": true,
+    "diagnostics": "all",
+    "search_results": true,
+    "cursors": true,
+  },
+  "minimap": {
+    "show": "auto",
+    "thumb": "always",
+    "current_line_highlight": "line",
   },
   "auto_signature_help": true,
   "tabs": {
     "file_icons": true,
+    "git_status": true,
+    "close_position": "right",
+    "show_diagnostics": "errors",
   },
-  "buffer_line_height": "comfortable",
+  "buffer_line_height": "standard",
   "terminal": {
-    "font_family": "FiraCode Nerd Font",
+    "font_family": "DejaVuSansM Nerd Font Mono",
     "font_size": 12,
-    "line_height": "comfortable",
+    "line_height": "standard",
+    "copy_on_select": true,
   },
   "inlay_hints": {
-    "enabled": false,
+    "enabled": true,
+    "show_parameter_hints": true,
+    "show_type_hints": true,
+    "show_other_hints": true,
+  },
+  "format_on_save": "on",
+  "remove_trailing_whitespace_on_save": true,
+  "ensure_final_newline_on_save": true,
+  "soft_wrap": "editor_width",
+  "preferred_line_length": 100,
+  "tab_size": 2,
+  "hard_tabs": false,
+  "current_line_highlight": "all",
+  "selection_highlight": true,
+  "show_whitespaces": "selection",
+  "autosave": "on_focus_change",
+  "confirm_quit": true,
+  "restore_on_startup": "last_workspace",
+  "use_autoclose": true,
+  "use_auto_surround": true,
+  "show_completions_on_input": true,
+  "show_completion_documentation": true,
+  "git": {
+    "git_gutter": "tracked_files",
+    "inline_blame": {
+      "enabled": true,
+      "delay_ms": 600,
+      "show_commit_summary": true,
+    },
+  },
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": true,
+    "selections_menu": true,
+  },
+  "file_finder": {
+    "file_icons": true,
+  },
+  "diagnostics": {
+    "button": true,
+    "include_warnings": true,
+    "inline": {
+      "enabled": true,
+      "update_debounce_ms": 150,
+      "padding": 4,
+      "min_column": 0,
+    },
+  },
+  "vim": {
+    "use_system_clipboard": "always",
+    "use_multiline_find": true,
+    "use_smartcase_find": true,
+    "toggle_relative_line_numbers": true,
+  },
+  "languages": {
+    "Rust": {
+      "format_on_save": "on",
+      "formatter": "language_server",
+    },
+    "TypeScript": {
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"],
+        },
+      },
+      "format_on_save": "on",
+    },
+    "JavaScript": {
+      "formatter": {
+        "external": {
+          "command": "prettier",
+          "arguments": ["--stdin-filepath", "{buffer_path}"],
+        },
+      },
+      "format_on_save": "on",
+    },
+    "JSON": {
+      "tab_size": 2,
+    },
+    "Markdown": {
+      "soft_wrap": "preferred_line_length",
+      "preferred_line_length": 80,
+      "remove_trailing_whitespace_on_save": false,
+      "format_on_save": "off",
+    },
   },
   "lsp": {
     "rust-analyzer": {
@@ -62,9 +189,5 @@
         },
       },
     },
-  },
-  "colorize_brackets": true,
-  "collaboration_panel": {
-    "button": false,
   },
 }

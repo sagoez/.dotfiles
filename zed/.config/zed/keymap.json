@@ -94,6 +94,8 @@
           "replace_enabled": true,
         },
       ],
+      "shift-m": "project_panel::CollapseAllEntries",
+      "m": "project_panel::ExpandSelectedEntry",
     },
   },
   {
