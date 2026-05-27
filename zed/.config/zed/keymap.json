@@ -32,7 +32,7 @@
       "/": [
         "buffer_search::Deploy",
         {
-          "replace_enabled": true,
+          "replace_enabled": false,
         },
       ],
     },

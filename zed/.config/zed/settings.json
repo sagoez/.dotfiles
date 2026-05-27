@@ -1,16 +1,11 @@
 {
   "agent_servers": {
     "codex-acp": {
-      "type": "registry"
+      "type": "registry",
     },
     "claude-acp": {
       "favorite_config_option_values": {
-        "mode": [
-          "plan"
-        ],
-        "model": [
-          "default"
-        ]
+        "mode": ["plan"],
       },
       "type": "registry",
     },
@@ -29,7 +24,7 @@
   },
   "code_lens": "on",
   "icon_theme": {
-    "mode": "system",
+    "mode": "dark",
     "light": "Zed (Default)",
     "dark": "Zed (Default)",
   },
@@ -43,9 +38,9 @@
   "show_edit_predictions": false,
   "colorize_brackets": true,
   "theme": {
-    "mode": "light",
-    "light": "Bone",
-    "dark": "Tokyo Night",
+    "mode": "dark",
+    "light": "Nord Light",
+    "dark": "Nord Dark",
   },
   "collaboration_panel": {
     "dock": "left",
@@ -69,7 +64,7 @@
   "vim_mode": true,
   "ui_font_size": 14,
   "buffer_font_size": 14,
-  "buffer_font_family": "DejaVuSansM Nerd Font",
+  "buffer_font_family": "DejaVuSansM Nerd Font Mono",
   "relative_line_numbers": "enabled",
   "cursor_blink": true,
   "base_keymap": "VSCode",
@@ -96,7 +91,7 @@
   },
   "buffer_line_height": "standard",
   "terminal": {
-    "font_family": "DejaVuSansM Nerd Font",
+    "font_family": "DejaVuSansM Nerd Font Mono",
     "font_size": 12,
     "line_height": "standard",
     "copy_on_select": true,
