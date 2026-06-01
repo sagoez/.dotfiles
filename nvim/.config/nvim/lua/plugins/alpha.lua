@@ -30,6 +30,7 @@ return {
 
     local dashboard = require('alpha.themes.dashboard');
     local theme = require('alpha.themes.theta');
+    theme.file_icons.enabled = false
     local buttons = {
       type = "group",
       val = {
