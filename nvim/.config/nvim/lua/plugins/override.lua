@@ -16,6 +16,17 @@ return {
       -- Notification History moved onto the freed-up <leader>n prefix.
       { "<leader>nh", function() Snacks.picker.notifications() end, desc = "Notification History" },
     },
+    opts = {
+      picker = {
+        sources = {
+          -- Snacks scans `~/dev` and `~/projects` by default. Neither exists
+          -- here, and `~/projects` is not `~/Projects` on a case-sensitive FS,
+          -- so the scan found nothing and the list was only the git roots of
+          -- :oldfiles - repos vanished as their files aged out.
+          projects = { dev = { "~/Work", "~/Work/starter", "~/Projects" } },
+        },
+      },
+    },
   },
 
   -- Folder list on the left: neo-tree ------------------------------------
